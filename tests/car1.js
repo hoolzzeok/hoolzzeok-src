@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',hasTouch:true,isMobile:true});const p=await c.newPage();
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html');await p.waitForTimeout(1000);await p.click('#ui-junior');await p.waitForTimeout(400);
+console.log('form: mode vis',await p.isVisible('#mode'),'ev-seg',await p.isVisible('#ev-seg'));
+await p.tap('#calc-go');await p.waitForTimeout(2500);
+console.log('result: mode vis',await p.isVisible('#mode'),'ev-seg',await p.isVisible('#ev-seg'));
+await p.$eval('#mode-car',e=>e.scrollIntoView({block:'center'}));await p.tap('#mode-car');await p.waitForTimeout(500);
+console.log('after car: ev-seg',await p.isVisible('#ev-seg'),await p.$$eval('#ev-seg button',a=>a.map(x=>x.textContent)), '| hint',await p.$eval('#mode-hint',e=>e.textContent.slice(0,80)));
+await p.$eval('#ev-seg',e=>e.scrollIntoView({block:'center'}));await p.screenshot({path:'shots/car1.jpg',type:'jpeg',quality:60});
+await b.close()})();

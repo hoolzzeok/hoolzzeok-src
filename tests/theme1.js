@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',colorScheme:'dark',hasTouch:true,isMobile:true});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html');await p.waitForTimeout(1000);await p.click('#ui-junior');await p.waitForTimeout(400);
+const pick=async(id,q)=>{await p.fill('#'+id,'');await p.type('#'+id,q,{delay:30});await p.waitForTimeout(250);await p.tap('#'+id+'-list li:visible >> nth=0');await p.waitForTimeout(300)};
+await pick('origin','양산');await pick('dest','무주');
+const btns=await p.$$eval('button',a=>a.filter(x=>x.offsetParent&&/테마 코스|드라마 촬영지|지도로 고르기|착한 밥집/.test(x.textContent)).map(x=>({t:x.textContent.trim(),id:x.id,cls:x.className,ds:JSON.stringify(x.dataset)})));console.log(btns);
+await p.screenshot({path:'shots/th0.jpg',type:'jpeg',quality:60});
+const t=await p.$('button:visible:has-text("테마 코스")');await t.tap();await p.waitForTimeout(800);
+console.log('after tap dest',await p.inputValue('#dest'),'| strip',await p.$eval('#ts-t',e=>e.textContent));
+await p.screenshot({path:'shots/th1.jpg',type:'jpeg',quality:60});
+console.log('errs',errs);await b.close()})();
