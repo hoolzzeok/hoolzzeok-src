@@ -6,3 +6,7 @@ db/inbox/
 **/raw/
 .env
 *.key
+db/img_lo_backup/
+site/index_*backup*.html
+tests/*
+!tests/*.js

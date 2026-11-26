@@ -18,11 +18,11 @@ for p in hoolzzeok_db:db hoolzzeok_site:site tests:tests; do
 done
 npm ls -g opencc-js >/dev/null 2>&1 || npm i -g opencc-js@1.0.5 >/dev/null 2>&1
 cd "$SRC/db"
-log "날씨"; python3 weather/fetch_weather.py | tail -1
+log "날씨"; (cd weather && python3 fetch_weather.py | tail -1)
 if [ "$MODE" = weekly ]; then
-  log "혼잡 예측"; python3 crowd/fetch_crowd.py | tail -1
-  log "KTX"; python3 train/fetch_train.py | tail -1
-  Y=$(TZ=Asia/Seoul date +%Y); log "공휴일"; python3 holiday/fetch_holiday.py "$Y" "$((Y+1))" | head -1
+  log "혼잡 예측"; (cd crowd && python3 fetch_crowd.py | tail -1)
+  log "KTX"; (cd train && python3 fetch_train.py | tail -1)
+  Y=$(TZ=Asia/Seoul date +%Y); log "공휴일"; (cd holiday && python3 fetch_holiday.py "$Y" "$((Y+1))" | head -1)
 fi
 python3 crowd/build_qtdata.py
 log "사이트 만들기"; bash build_all.sh "$WWW" | tail -1
