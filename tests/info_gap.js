@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage();
+await p.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html');await p.waitForTimeout(1000);
+const r=await p.evaluate(()=>{const ok=x=>x&&x.length;const all=PLACES.filter(p=>p.id!=='dokdo');
+ const noSp=all.filter(p=>!(INFO[p.id]&&ok(INFO[p.id].spots)));
+ const noHub=noSp.filter(p=>!((HUB[p.id]||[])[0]&&ok(HUB[p.id][0]))&&!ok(HUB_ALT[p.id]));
+ const kinds={};all.forEach(p=>kinds[p.kind]=(kinds[p.kind]||0)+1);
+ const spN=all.map(p=>(INFO[p.id]&&INFO[p.id].spots||[]).length);
+ return {all:all.length,kinds,noSpots:noSp.length,noSpotsNames:noSp.map(p=>p.ko).join(','),noHub:noHub.length,noHubNames:noHub.map(p=>p.ko).join(','),muju:{hub:(HUB.muju||[])[0],alt:HUB_ALT.muju,good:(GOOD.muju||[]).length},avgSpots:(spN.reduce((a,b)=>a+b,0)/spN.length).toFixed(1)}});
+console.log(JSON.stringify(r,null,1));await b.close()})();

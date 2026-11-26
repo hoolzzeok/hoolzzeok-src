@@ -4,11 +4,6 @@ await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
 await p.goto('file:///home/claude/www.hoolzzeok.com/index.html');await p.waitForTimeout(1000);await p.click('#ui-junior');await p.waitForTimeout(400);
 const pick=async(id,q)=>{await p.fill('#'+id,'');await p.type('#'+id,q,{delay:30});await p.waitForTimeout(250);await p.tap('#'+id+'-list li:visible >> nth=0');await p.waitForTimeout(300)};
 await pick('origin','양산');await pick('dest','무주');
-// theme course
-await p.tap('.qk-b[data-qk="2"]');await p.waitForTimeout(500);
-console.log('테마코스 후 dest',await p.inputValue('#dest'),'| note',await p.$eval('#qk-note p',e=>e.textContent).catch(()=>'none'),'| btns',await p.$$eval('#qk-note button',a=>a.map(x=>x.textContent).join(',')).catch(()=>''));
-await p.screenshot({path:'shots/qknote.jpg',type:'jpeg',quality:60});
-await p.tap('.qk-note-x');await p.waitForTimeout(200);console.log('닫은 뒤 note',await p.$('#qk-note')?'있음':'없음','dest',await p.inputValue('#dest'));
 // car kinds
 await p.$eval('#mode-car',e=>e.scrollIntoView({block:'center'}));await p.tap('#mode-car');await p.waitForTimeout(400);
 const val=async()=>p.$eval('#calc-go',e=>e.textContent.replace(/\s+/g,' ').trim());
