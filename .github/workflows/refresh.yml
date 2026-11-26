@@ -1,0 +1,53 @@
+# 훌쩍 공공데이터 자동 갱신 (GitHub Actions)
+# 필요한 저장소 Secrets: DATA_KEY, TOURAPI_KEY (공공데이터포털 인증키), WWW_TOKEN (chanist94/www.hoolzzeok.com 쓰기 권한 토큰)
+# 키 값은 로그에 자동으로 *** 처리되고, refresh.sh도 화면·파일에 쓰지 않음.
+name: refresh
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "daily(날씨) 또는 weekly(날씨+혼잡+KTX+공휴일)"
+        default: daily
+        type: choice
+        options: [daily, weekly]
+      dry:
+        description: "점검만 하고 배포 안 함"
+        default: false
+        type: boolean
+  # 첫 수동 실행이 성공하면 아래 두 줄의 주석(#)을 풀어 자동 실행을 켬
+  # schedule:
+  #   - cron: "47 21 * * 1-6"   # 한국 시간 일·화~토 06:47 → daily
+  #   - cron: "13 22 * * 0"     # 한국 시간 월 07:13 → weekly
+permissions:
+  contents: write
+concurrency: { group: refresh, cancel-in-progress: false }
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with: { path: src, fetch-depth: 1 }
+      - uses: actions/checkout@v4
+        with: { repository: chanist94/www.hoolzzeok.com, token: "${{ secrets.WWW_TOKEN }}", path: www, fetch-depth: 1 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: 준비
+        run: |
+          sudo mkdir -p /home/claude && sudo chown "$USER" /home/claude
+          ln -sfn "$GITHUB_WORKSPACE/www" /home/claude/www.hoolzzeok.com
+          npm i -g playwright@1.63.0 opencc-js@1.0.5 >/dev/null
+          npx -y playwright@1.63.0 install --with-deps chromium >/dev/null
+      - name: 갱신
+        env:
+          DATA_KEY: ${{ secrets.DATA_KEY }}
+          TOURAPI_KEY: ${{ secrets.TOURAPI_KEY }}
+          WWW: /home/claude/www.hoolzzeok.com
+          TZ: Asia/Seoul
+        run: |
+          export NODE_PATH="$(npm root -g)"
+          MODE="${{ inputs.mode }}"
+          [ "${{ github.event.schedule }}" = "13 22 * * 0" ] && MODE=weekly
+          [ -n "$MODE" ] || MODE=daily
+          DRY=""; [ "${{ inputs.dry }}" = "true" ] && DRY=--dry
+          bash "$GITHUB_WORKSPACE/src/refresh.sh" "$MODE" $DRY
