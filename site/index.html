@@ -231,7 +231,7 @@ header.top .wrap{padding-block:10px;display:flex;align-items:center;justify-cont
 .result .wrap{padding-block:26px 8px}
 .calc-head h2{font-size:clamp(22px,4.4vw,30px);font-weight:900;letter-spacing:-.045em}
 .planner{display:grid;gap:16px;margin-top:14px}
-@media (min-width:900px){.planner{grid-template-columns:minmax(0,1fr) minmax(0,440px);grid-template-areas:"form pass" "dest pass";grid-template-rows:auto 1fr;align-items:start}.planner .form{grid-area:form}.planner .pass{grid-area:pass}.planner .dest-card{grid-area:dest}}
+@media (min-width:840px){.planner{grid-template-columns:minmax(0,1fr) minmax(0,clamp(380px,42vw,440px));grid-template-areas:"form pass" "dest pass";grid-template-rows:auto 1fr;align-items:start}.planner .form{grid-area:form}.planner .pass{grid-area:pass}.planner .dest-card{grid-area:dest}}
 .form{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:18px;display:grid;gap:18px}
 .acts-pick{display:grid;gap:6px;max-height:240px;overflow:auto}
 .acts-pick .pick{display:flex;gap:10px;align-items:flex-start;border:0;border-radius:12px;padding:10px 12px;background:var(--surface-2);font-size:14px;cursor:pointer}
@@ -853,6 +853,19 @@ html.one-card #top .search>#form{display:grid;gap:12px;margin:0;padding:0;backgr
 html.one-card #top .search>#calc-go{margin-top:6px}
 @media (min-width:760px){html.one-card #top .search>#form{grid-column:1/3}html.one-card #top .search>#calc-go{grid-column:3;align-self:end;margin-top:0}}
 html.cg-vis .bar{transform:translateY(110%);visibility:hidden}
+/* v147 폴더블: 펼친 폴더블(갤럭시 폴드 840px 안팎·아이폰 듀오·트라이폴드)은 840px부터 두 칸(왼쪽 지역 소개, 오른쪽 경비표).
+   두 칸이면 지역 소개는 옆에 바로 보이므로 '어떤 곳일까요?' 버튼은 숨김 */
+@media (min-width:840px){#junior[data-stage="result"] #dig-open{display:none}}
+/* 반쯤 접어 세운 자세(책처럼 좌우 두 화면, Chrome 138+ Viewport Segments): 접힌 선 위에 내용이 걸치지 않게 두 화면에 나눠 놓음 */
+@media (horizontal-viewport-segments: 2){
+  #planner .wrap{max-width:none;padding-left:0;padding-right:0}
+  .planner{grid-template-columns:env(viewport-segment-width 0 0) env(viewport-segment-width 1 0);column-gap:calc(env(viewport-segment-left 1 0) - env(viewport-segment-right 0 0));grid-template-areas:"form pass" "dest pass";grid-template-rows:auto 1fr;align-items:start}
+  .planner>*{margin-left:16px;margin-right:16px;min-width:0}
+  .planner .pass{grid-area:pass}.planner .dest-card{grid-area:dest}
+  .bar{left:env(viewport-segment-left 1 0)}
+  #junior[data-stage="result"] #dig-open{display:none}
+}
+
 
 
 .rt-auto{margin:6px 0 10px;padding:10px 12px;border-radius:12px;background:var(--surface-2);color:var(--ink);font-size:14px;line-height:1.45}
