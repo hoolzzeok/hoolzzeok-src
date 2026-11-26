@@ -1,0 +1,9 @@
+﻿id,place_id,kind,name_ko,name_en,start_date,end_date,detail_ko,detail_en,source_id
+fest1,goheung,festival,고흥유자축제,Goheung Yuja (Citron) Festival,2026-11-12,2026-11-15,풍양면 한동리 일원 · 입장 무료,Pungyang-myeon · free entry,src_events
+fest2,pyeongchang,festival,평창 고랭지 김장축제,Pyeongchang Highland Kimjang Festival,2026-11-04,2026-11-16,진부면민체육공원,Jinbu-myeon Sports Park,src_events
+fest3,seogwipo,festival,제주감귤박람회,Jeju Citrus Expo,2026-11-19,2026-11-23,서귀포농업기술센터 일원,Seogwipo Agricultural Technology Center,src_events
+fest4,seogwipo,festival,최남단 방어축제,Southernmost Yellowtail Festival,2026-11-19,2026-11-22,모슬포항 일원 (한 곳에서만 확인),Moseulpo Port (one source only),src_events
+fest5,gwangju,festival,제16회 광주비엔날레,16th Gwangju Biennale,,2026-11-15,대한민국 구석구석 안내,VisitKorea listing,src_events
+fest6,pohang,festival,포항국제불빛축제,Pohang International Fireworks Festival,2026-11-19,2026-11-21,영일대해수욕장·해오름대교·송도 일원,"Yeongildae Beach, Haeoreum Bridge and Songdo",src_events
+fest7,jeonju,festival,전주김장문화축제,Jeonju Kimjang Festival,2026-11-27,2026-11-29,한 곳에서만 확인,one source only,src_events
+exp1,namhae,experience,11월 이달의 어촌 여행지 · 이어어촌체험휴양마을,November fishing-village pick · Ieo village,,,조개 캐기 체험,Shellfish digging,src_events

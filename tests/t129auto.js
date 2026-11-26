@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');const fs=require('fs');
+const html=fs.readFileSync('/home/claude/www.hoolzzeok.com/index.html','utf8');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR'});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.addInitScript(()=>{window.__ins=[];window.supabase={createClient(){return{auth:{getSession:async()=>({data:{session:{user:{id:'u9',email:'a@b.c'}}}}),onAuthStateChange(){}},rpc:async()=>({data:false}),from(t){const q={select(){return q},eq(){return q},order(){return q},limit(){return q},insert(v){window.__ins.push(v);return Promise.resolve({error:null})},then(r){r({data:[],error:null})}};return q}}}};});
+await c.route('https://www.hoolzzeok.com/**',r=>{const u=new URL(r.request().url());if(u.pathname==='/')return r.fulfill({body:html,contentType:'text/html'});return r.fulfill({status:404,body:''})});
+await c.route(/cdn\.jsdelivr|unpkg|fonts\./,r=>r.fulfill({body:''}));
+await p.goto('https://www.hoolzzeok.com/');
+await p.evaluate(()=>{localStorage.setItem('hz-sbtest','1');localStorage.setItem('hz-signup-ok','1');sessionStorage.setItem('hz-rv-open','5');sessionStorage.setItem('hz-rv-auto','1');
+ localStorage.setItem('hz-cm-draft',JSON.stringify({star:4,kw:['view'],pick:'less',tags:[],total:'150,000',text:'',parts:{},o:'seoul',d:'gangneung',n:'1',m:'transit',p:'2'}));});
+await p.goto('https://www.hoolzzeok.com/?code=abc');await p.waitForTimeout(2500);
+console.log('rv open',await p.$eval('#rv',e=>!e.hidden),'done',await p.$eval('#rw-done',e=>!e.hidden));
+console.log('ins',JSON.stringify(await p.evaluate(()=>window.__ins)));console.log('errs',errs);await b.close()})();

@@ -1,0 +1,15 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();
+const pg=await b.newPage({locale:'ko-KR',viewport:{width:390,height:844}});
+await pg.route(/fonts\.|cdn\.jsdelivr|unpkg/,r=>r.fulfill({body:''}));
+await pg.goto('file:///home/claude/hoolzzeok_site/index.html');await pg.waitForTimeout(800);
+const btns=async()=>pg.$$eval('#sr-body .sr-btn',a=>a.map(x=>x.innerText.replace(/\n/g,'/')));
+const pick=async(re)=>{const L=await btns();const i=L.findIndex(t=>re.test(t));if(i<0){console.log('NO',re,L.slice(0,12));throw 0;}await (await pg.$$('#sr-body .sr-btn'))[i].click();await pg.waitForTimeout(150);};
+await pick(/^서울/);await pick(/부산/);await pick(/추천/);await pg.$$('#sr-body .sr-btn').then(a=>a[0].click());await pg.waitForTimeout(150);
+await pick(/^2박/);await pick(/^둘/);await pick(/상관/);await pick(/기차|KTX/);await pick(/보통/);await pg.waitForTimeout(500);
+const info=await pg.evaluate(()=>{const body=document.querySelector('#sr-body');const top0=body.getBoundingClientRect().top+scrollY;
+ return [...body.children].map(e=>{const r=e.getBoundingClientRect();return {tag:e.tagName.toLowerCase()+(e.id?'#'+e.id:'')+'.'+[...e.classList].join('.'),h:Math.round(r.height),y:Math.round(r.top+scrollY-top0),t:e.innerText.replace(/\s+/g,' ').slice(0,90)}})});
+info.forEach(x=>console.log(x.y,x.h,x.tag,'|',x.t));
+console.log('total doc',await pg.evaluate(()=>document.documentElement.scrollHeight));
+await pg.screenshot({path:'shots/sr_full.png',fullPage:true});
+await b.close()})();

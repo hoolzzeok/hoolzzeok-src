@@ -1,0 +1,131 @@
+﻿province,item,price,source_id
+서울,냉면,12692,src_food
+서울,비빔밥,12000,src_food
+서울,김치찌개백반,8846,src_food
+서울,삼겹살 200g,21321,src_food
+서울,자장면,7808,src_food
+서울,삼계탕,18269,src_food
+서울,칼국수,10038,src_food
+서울,김밥,3923,src_food
+광주,냉면,10600,src_food
+광주,비빔밥,10800,src_food
+광주,김치찌개백반,9100,src_food
+광주,삼겹살 200g,16533,src_food
+광주,자장면,7400,src_food
+광주,삼계탕,16800,src_food
+광주,칼국수,9400,src_food
+광주,김밥,3860,src_food
+대구,냉면,11750,src_food
+대구,비빔밥,10467,src_food
+대구,김치찌개백반,8583,src_food
+대구,삼겹살 200g,18470,src_food
+대구,자장면,7167,src_food
+대구,삼계탕,17167,src_food
+대구,칼국수,7583,src_food
+대구,김밥,3250,src_food
+대전,냉면,11000,src_food
+대전,비빔밥,10700,src_food
+대전,김치찌개백반,10600,src_food
+대전,삼겹살 200g,18600,src_food
+대전,자장면,7600,src_food
+대전,삼계탕,16800,src_food
+대전,칼국수,8800,src_food
+대전,김밥,3300,src_food
+부산,냉면,12000,src_food
+부산,비빔밥,9686,src_food
+부산,김치찌개백반,8429,src_food
+부산,삼겹살 200g,18175,src_food
+부산,자장면,7000,src_food
+부산,삼계탕,17429,src_food
+부산,칼국수,8071,src_food
+부산,김밥,3571,src_food
+울산,냉면,10800,src_food
+울산,비빔밥,11200,src_food
+울산,김치찌개백반,9000,src_food
+울산,삼겹살 200g,17677,src_food
+울산,자장면,7000,src_food
+울산,삼계탕,15800,src_food
+울산,칼국수,9500,src_food
+울산,김밥,3700,src_food
+인천,냉면,11917,src_food
+인천,비빔밥,9167,src_food
+인천,김치찌개백반,8667,src_food
+인천,삼겹살 200g,17685,src_food
+인천,자장면,7083,src_food
+인천,삼계탕,17000,src_food
+인천,칼국수,9000,src_food
+인천,김밥,3667,src_food
+강원,냉면,10556,src_food
+강원,비빔밥,10444,src_food
+강원,김치찌개백반,9000,src_food
+강원,삼겹살 200g,15963,src_food
+강원,자장면,7167,src_food
+강원,삼계탕,16556,src_food
+강원,칼국수,9389,src_food
+강원,김밥,3389,src_food
+경기,냉면,10931,src_food
+경기,비빔밥,9945,src_food
+경기,김치찌개백반,8841,src_food
+경기,삼겹살 200g,18166,src_food
+경기,자장면,7586,src_food
+경기,삼계탕,17690,src_food
+경기,칼국수,9810,src_food
+경기,김밥,3786,src_food
+경남,냉면,10808,src_food
+경남,비빔밥,9231,src_food
+경남,김치찌개백반,8808,src_food
+경남,삼겹살 200g,20067,src_food
+경남,자장면,7000,src_food
+경남,삼계탕,17231,src_food
+경남,칼국수,8077,src_food
+경남,김밥,3731,src_food
+경북,냉면,10346,src_food
+경북,비빔밥,9908,src_food
+경북,김치찌개백반,8923,src_food
+경북,삼겹살 200g,17306,src_food
+경북,자장면,6846,src_food
+경북,삼계탕,16077,src_food
+경북,칼국수,8462,src_food
+경북,김밥,3462,src_food
+전남,냉면,9778,src_food
+전남,비빔밥,9556,src_food
+전남,김치찌개백반,8278,src_food
+전남,삼겹살 200g,19235,src_food
+전남,자장면,7167,src_food
+전남,삼계탕,16667,src_food
+전남,칼국수,9222,src_food
+전남,김밥,2944,src_food
+전북,냉면,10500,src_food
+전북,비빔밥,12100,src_food
+전북,김치찌개백반,9550,src_food
+전북,삼겹살 200g,16300,src_food
+전북,자장면,7200,src_food
+전북,삼계탕,17600,src_food
+전북,칼국수,9350,src_food
+전북,김밥,3400,src_food
+충남,냉면,10500,src_food
+충남,비빔밥,10150,src_food
+충남,김치찌개백반,9500,src_food
+충남,삼겹살 200g,17742,src_food
+충남,자장면,7100,src_food
+충남,삼계탕,16200,src_food
+충남,칼국수,9200,src_food
+충남,김밥,3280,src_food
+충북,냉면,9714,src_food
+충북,비빔밥,9429,src_food
+충북,김치찌개백반,9714,src_food
+충북,삼겹살 200g,15305,src_food
+충북,자장면,6857,src_food
+충북,삼계탕,15714,src_food
+충북,칼국수,8857,src_food
+충북,김밥,3286,src_food
+제주,냉면,9750,src_food
+제주,비빔밥,10500,src_food
+제주,김치찌개백반,9625,src_food
+제주,삼겹살 200g,17944,src_food
+제주,자장면,7750,src_food
+제주,삼계탕,17000,src_food
+제주,칼국수,10375,src_food
+제주,김밥,3625,src_food
+전국,아메리카노,3001,src_coffee
+전국,카페라떼,3978,src_coffee

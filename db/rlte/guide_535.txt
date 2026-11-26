@@ -1,0 +1,724 @@
+
+한국관광공사 관광지별 연관관광지 정보 서비스
+한국관광공사 연관관광지 정보 활용 매뉴얼
+문서버전 :Ver4.1
+24479257449185
+개정 이력
+버 전
+변경일
+변경 사유
+변경 내용
+작성자
+승인
+4.0
+2024-09-03
+최초작성
+최초작성
+최성훈
+홍사권
+4.1
+2025-05-23
+항목변경
+목록 오퍼레이션(지역기반, 키워드)
+응답항목(연관관광지기본주소) 삭제
+응답항목(관광지코드,연관관광지코드) 추가
+“
+“
+“
+“
+목 차
+I.서비스 개요 PAGEREF _Toc151998734 \h 4
+1)TourAPI 소개 PAGEREF _Toc151998735 \h 4
+2)활용 홈페이지4
+II.인증키 활용 및 API호출 방법4
+1)REST방식의 URL 요청 예시4
+2)서비스키(인증키) 인코딩 방법 PAGEREF _Toc151998740 \h 5
+3)요청 파라미터에 서비스명 기재 PAGEREF _Toc151998741 \h 5
+III.API 서비스 명세5
+1)서비스 명세 및 코드표5
+2)[지역기반 관광지별 연관 관광지 정보 조회] 오퍼레이션 명세8
+3)[키워드검색 관광지별 연관 관광지 정보 조회] 오퍼레이션 명세10
+서비스 개요
+TourAPI 소개
+한국관광공사는 국가정보자원의 개방 및 공유 정책에 부흥하여 아래와 같은 OpenAPI 서비스를 
+제공합니다.
+- 국문 및 다국어(영문,일문,중문간체,중문번체,독문,불문,서문,노문) 서비스 (9종)
+- 국문 무장애 여행 정보 서비스
+- 생태관광정보 서비스
+- 관광사진갤러리 서비스
+- 고캠핑정보 서비스
+- 관광지 오디오 가이드정보 서비스
+- 관광 빅데이터 정보 서비스
+- 두루누비 정보 서비스
+- 외래객 관광 정보 서비스
+- 관광 채용 정보 서비스
+- 관광지 집중률 방문자 추이 예측 정보
+- 기초지자체 중심 관광지 정보
+- 관광지별 연관 관광지 정보
+- 반려동물 동반여행 서비스
+활용 홈페이지
+전체적인 관광정보 서비스 기획 및 개발 흐름의 이해를 돕고자 Guide 사이트를 운영하고 있습니다.
+추가적인 정보를 원하시면 아래 사이트를 방문하시기 바랍니다.
+※ TourAPI4.0 활용 사이트 : https://data.go.kr/
+인증키 활용 및 API호출 방법
+- 개발계정은 일 1,000건의 트래픽을 제공합니다.
+- 개발계정은 자동승인으로 활용 신청 후, 약 30분 이후에 사용이 가능합니다.
+(공공데이터포털과 한국관광공사 동기화)
+REST방식의 URL 요청 예시
+응답 표준은 XML 이며, JSON을 요청할 경우“&amp;_type=json”을 추가하여 요청합니다.
+- Json 요청 :
+http://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1? serviceKey=ServiceKey&amp;numOfRows=10&amp;pageNo=1&amp;MobileOS=ETC&amp;MobileApp=TestApp&amp;_type=json
+서비스키(인증키) 인코딩 방법
+- 2015년 1월 이전에 공공데이터포털에서 받은 인증키 경우,
+String myKey = “발급 받은 인증키”;
+String serviceKey= URLEncoder.encode(myKey, "UTF-8");
+(TourAPI의 모든 Character Set은 UTF-8 설정)
+- 2015년 1월 이후에 공공데이터포털에서 받은 인증키 경우, 인코딩 불필요
+요청 파라미터에 서비스명 기재
+MobileApp 파라미터는 서비스(웹,앱 등)별로 활용 통계를 산출하기 위한 항목입니다.
+URL요청 시 반드시 기재 부탁드립니다.
+http://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1?serviceKey=ServiceKey&amp;numOfRows=10&amp;pageNo=1&amp;MobileOS=AND&amp;MobileApp=appName
+API 서비스 명세
+서비스 명세 및 코드표
+서비스 개요
+서비스 정보
+서비스ID
+TarRlteTarService1
+서비스명(국문)
+한국관광공사 관광지별 연관 관광지 정보 서비스
+서비스명(영문)
+TarRlteTarService1
+서비스 설명
+선택한 관광지와 높은 연결성을 가지는 연관관광지를 전체, 관광지, 음식, 숙박 유형별 최대 각 50위까지 목록을 조회하는 서비스입니다.
+서비스 보안
+서비스 인증/권한
+[O]서비스 Key    [ ]인증서(GPKI)
+[ ]Basic(ID/PW)  [ ]없음
+[ ]WS-Security
+메시지 레벨 암호화
+[ ]전자서명  [ ]암호화   [O]없음
+전송 레벨 암호화
+[ O ]HTTPS  [O]HTTP
+적용 기술 수준
+인터페이스 표준
+[ ]SOAP 1.2
+(PRC-Encoded, Document Literal, Document Literal Wrapped)
+[O]REST (GET)
+[ ]RSS 1.0  [ ]RSS 2.0  [ ]Atom 1.0  [ ]기타
+교환 데이터 표준
+[O]XML   [O]JSON   [ ]MIME   []MTOM
+서비스 URL
+개발환경
+http://apis.data.go.kr/B551011/TarRlteTarService1
+운영환경
+http://apis.data.go.kr/B551011/TarRlteTarService1
+서비스 WADL
+개발환경
+http://apis.data.go.kr/B551011/TarRlteTarService1 
+운영환경
+http://apis.data.go.kr/B551011/TarRlteTarService1 
+서비스 배포정보
+서비스 버전
+4.0
+서비스 시작일
+2024-09-03
+배포 일자
+N/A
+서비스 이력
+N/A
+메시지 교환 유형
+[O]Request-ResPonse   [ ]Publish-Subscribe
+[ ]Fire-and-Forgot    [ ]Notification
+메시지 로깅 수준
+성공
+[O]Header  [ ]Body
+실패
+[O]Header [O]Body
+사용 제약 사항
+(비고)
+N/A
+서비스 제공자
+개방데이터운영팀 / 디지털콘텐츠팀 / 070-4287-3219 / tourapi@knto.or.kr
+데이터 갱신주기
+월 1회 ( 매월 8일 )
+서비스 명세
+번호
+서비스명(국문)
+오퍼레이션
+오퍼레이션명
+1
+관광지별 연관 관광지 정보서비스
+AreaBasedList1
+지역기반 관광지별 연관관광지 
+정보 조회
+2
+관광지별 연관 관광지 정보서비스
+SearchKeyword1
+키워드검색 관광지별 연관관광지
+정보 조회
+공공데이터포털 에러코드
+에러코드
+에러메세지
+설명
+01
+APPLICATION_ERROR
+어플리케이션에러
+04
+HTTP_ERROR
+HTTP 에러
+12
+NO_OPENAPI_SERVICE_ERROR
+해당오픈API서비스가없거나폐기됨
+20
+SERVICE_ACCESS_DENIED_ERROR
+서비스접근거부
+22
+LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR
+서비스요청제한횟수초과에러
+30
+SERVICE_KEY_IS_NOT_REGISTERED_ERROR
+등록되지않은서비스키
+31
+DEADLINE_HAS_EXPIRED_ERROR
+활용기간만료
+32
+UNREGISTERED_IP_ERROR
+등록되지않은 IP
+99
+UNKNOWN_ERROR
+기타에러
+공공데이터포털에서 출력되는 오류메세지는 XML로만 출력되며, 형태는 아래와 같습니다.
+&lt;OpenAPI_ServiceResponse&gt;
+&lt;cmmMsgHeader&gt;
+&lt;errMsg&gt;SERVICE ERROR&lt;/errMsg&gt;
+&lt;returnAuthMsg&gt;SERVICE_KEY_IS_NOT_REGISTERED_ERROR&lt;/returnAuthMsg&gt;
+&lt;returnReasonCode&gt;30&lt;/returnReasonCode&gt;
+&lt;/cmmMsgHeader&gt;
+&lt;/OpenAPI_ServiceResponse&gt;
+ 제공기관 에러 코드
+에러코드
+에러메세지
+설명
+00
+NORMAL_CODE
+정상
+01
+APPLICATION_ERROR
+어플리케이션 에러
+02
+DB_ERROR
+데이터베이스 에러
+03
+NODATA_ERROR
+데이터없음 에러
+04
+HTTP_ERROR
+HTTP 에러
+05
+SERVICETIMEOUT_ERROR
+서비스 연결실패 에러
+10
+INVALID_REQUEST_PARAMETER_ERROR
+잘못된 요청 파라메터 에러
+11
+NO_MANDATORY_REQUEST_PARAMETERS_ERROR
+필수요청 파라메터가 없음
+12
+NO_OPENAPI_SERVICE_ERROR
+해당 오픈API서비스가 없거나 폐기됨
+20
+SERVICE_ACCESS_DENIED_ERROR
+서비스 접근거부
+21
+TEMPORARILY_DISABLE_THE_SERVICEKEY_ERROR
+일시적으로 사용할 수 없는 서비스 키
+22
+LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR
+서비스 요청제한횟수 초과에러
+30
+SERVICE_KEY_IS_NOT_REGISTERED_ERROR
+등록되지 않은 서비스키
+31
+DEADLINE_HAS_EXPIRED_ERROR
+활용기간만료
+32
+UNREGISTERED_IP_ERROR
+등록되지 않은 IP
+33
+UNSIGNED_CALL_ERROR
+서명되지 않은 호출
+99
+UNKNOWN_ERROR
+기타에러
+[지역기반 관광지별 연관 관광지 정보 조회] 오퍼레이션 명세
+오퍼레이션 내용
+오퍼레이션 번호
+1
+오퍼레이션 유형
+조회 (목록)
+오퍼레이션명(국문)
+지역기반 관광지별 연관 관광지 정보 조회
+오퍼레이션 설명
+시군구를 기반으로 관광지별 연관 관광지정보 목록을 조회하는 기능입니다.
+Call Back URL
+http://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1
+요청 메시지 (Request Parameter)
+항목명(영문)
+항목명(국문)
+항목구분
+샘플데이터
+항목 설명
+numOfRows
+한 페이지 결과 수
+0
+10
+한 페이지 결과 수
+pageNo
+페이지 번호
+0
+1
+현재 페이지 번호
+MobileOS
+OS 구분
+1
+ETC
+IOS (아이폰), AND (안드로이드), 
+WEB (웹사이트), ETC(키오스크등)
+MobileApp
+서비스명
+1
+AppTest
+서비스명=어플명
+serviceKey
+인증키 (서비스키)
+1
+인증키
+(URL- Encode)
+공공데이터포털에서 
+발급받은 인증키
+_type
+응답메세지 형식
+0
+json
+REST방식의 URL호출시
+json값추가
+(디폴트 응답메세지 형식은XML)
+baseYm
+기준연월
+1
+202504
+조회기준연월(형식:YYYYMM)
+areaCd
+지역코드
+1
+51
+지역코드
+(지역/시군구 코드파일 참고)
+signguCd
+시군구코드
+1
+51130
+시군구 코드
+(지역/시군구 코드파일 참고)
+항목구분 :필수(1), 옵션(0)
+응답 메시지 (Response Message)– XML,Json에서“item”노드부터는 알파벳 순서로 정렬됨
+항목명
+항목 설명
+항목구분
+샘플데이터
+항목 설명
+resultCode
+결과코드
+1
+0000
+응답 결과코드
+resultMsg
+결과메시지
+1
+OK
+응답 결과메시지
+numOfRows
+한 페이지 결과 수
+1
+10
+한 페이지 결과 수
+pageNo
+페이지 번호
+1
+1
+현재 페이지 번호
+totalCount
+전체 결과 수
+1
+800
+전체 결과 수
+baseYm
+기준연월
+1
+202504
+기준연월
+tAtsNm
+관광지명
+1
+간현관광지
+관광지명
+areaCd
+관광지지역코드
+1
+51
+관광지지역코드
+areaNm
+관광지지역명
+0
+강원특별자치도
+관광지지역명
+signguCd
+관광지시군구코드
+1
+51130
+관광지시군구코드
+signguNm
+관광지시군구명
+0
+원주시
+관광지시군구명
+rlteTatsCd
+연관관광지코드
+1
+0bfeca2105aa7bf8d83e4622e5da19ec
+연관관광지코드
+rlteTatsNm
+연관관광지명
+1
+고척스카이돔
+연관관광지명
+rlteRegnCd
+연관관광지지역코드
+1
+51
+연관관광지시도코드
+rlteRegnNm
+연관관광지지역명
+0
+강원특별자치도
+연관관광지시도명
+rlteSignguCd
+연관관광지시군구코드
+1
+51130
+연관관광지시군구코드
+rlteSignguNm
+연관관광지시군구명
+0
+원주시
+연관관광지시군구명
+rlteCtgryLclsNm
+연관카테고리대분류명
+0
+관광지
+연관카테고리대분류명
+rlteCtgryMclsNm
+연관카테고리중분류명
+0
+문화관광
+연관카테고리중분류명
+rlteCtgrySclsNm
+연관카테고리소분류명
+0
+전시시설
+연관카테고리소분류명
+rlteRank
+연관순위
+1
+1
+연관순위
+항목구분 :필수(1), 옵션(0)
+요청/응답 예제
+REST (URI)
+http://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1?serviceKey=서비스인증키&amp;numOfRows=10&amp;pageNo=1&amp;MobileOS=ETC&amp;MobileApp=AppTest&amp;baseYm=202504&amp;areaCd=51&amp;signguCd=51130
+응답 메시지
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;response&gt;
+    &lt;header&gt;
+        &lt;resultCode&gt;0000&lt;/resultCode&gt;
+        &lt;resultMsg&gt;OK&lt;/resultMsg&gt;
+    &lt;/header&gt;
+    &lt;body&gt;
+        &lt;items&gt;
+            &lt;item&gt;
+                &lt;baseYm&gt;202504&lt;/baseYm&gt;
+                &lt;tAtsCd&gt;3dbadaccd57c18ae536e552040025fa8&lt;/tAtsCd&gt;
+                &lt;tAtsNm&gt;간현관광지&lt;/tAtsNm&gt;
+                &lt;areaCd&gt;51&lt;/areaCd&gt;
+                &lt;areaNm&gt;강원특별자치도&lt;/areaNm&gt;
+                &lt;signguCd&gt;51130&lt;/signguCd&gt;
+                &lt;signguNm&gt;원주시&lt;/signguNm&gt;
+                &lt;rlteTatsCd&gt;0bfeca2105aa7bf8d83e4622e5da19ec&lt;/rlteTatsCd&gt;
+                &lt;rlteTatsNm&gt;뮤지엄산&lt;/rlteTatsNm&gt;
+                &lt;rlteRegnCd&gt;51&lt;/rlteRegnCd&gt;
+                &lt;rlteRegnNm&gt;강원특별자치도&lt;/rlteRegnNm&gt;
+                &lt;rlteSignguCd&gt;51130&lt;/rlteSignguCd&gt;
+                &lt;rlteSignguNm&gt;원주시&lt;/rlteSignguNm&gt;
+                &lt;rlteCtgryLclsNm&gt;관광지&lt;/rlteCtgryLclsNm&gt;
+                &lt;rlteCtgryMclsNm&gt;문화관광&lt;/rlteCtgryMclsNm&gt;
+                &lt;rlteCtgrySclsNm&gt;전시시설&lt;/rlteCtgrySclsNm&gt;
+                &lt;rlteRank&gt;1&lt;/rlteRank&gt;
+            &lt;/item&gt;
+…
+&lt;/items&gt;
+        &lt;numOfRows&gt;10&lt;/numOfRows&gt;
+        &lt;pageNo&gt;1&lt;/pageNo&gt;
+        &lt;totalCount&gt;800&lt;/totalCount&gt;
+    &lt;/body&gt;
+&lt;/response&gt;
+[키워드검색 관광지별 연관 관광지 정보 조회] 오퍼레이션 명세
+오퍼레이션 내용
+오퍼레이션 번호
+2
+오퍼레이션 유형
+조회 (목록)
+오퍼레이션명(국문)
+키워드검색 관광지별 연관 관광지 정보 조회
+오퍼레이션 설명
+키워드로 검색을 하여 관광지별 연관 관광지정보를 조회하는 기능입니다.
+Call Back URL
+http://apis.data.go.kr/B551011/TarRlteTarService1/searchKeyword1
+요청 메시지 (Request Parameter)
+항목명(영문)
+항목명(국문)
+항목구분
+샘플데이터
+항목 설명
+numOfRows
+한 페이지 결과 수
+0
+10
+한 페이지 결과 수
+pageNo
+페이지 번호
+0
+1
+현재 페이지 번호
+MobileOS
+OS 구분
+1
+ETC
+IOS (아이폰), AND (안드로이드), 
+WEB (웹사이트), ETC(키오스크등)
+MobileApp
+서비스명
+1
+AppTest
+서비스명=어플명
+serviceKey
+인증키 (서비스키)
+1
+인증키
+(URL- Encode)
+공공데이터포털에서 
+발급받은 인증키
+_type
+응답메세지 형식
+0
+json
+REST방식의 URL호출시
+json값추가
+(디폴트 응답메세지 형식은XML)
+baseYm
+기준연월
+1
+202504
+조회기준연월(형식:YYYYMM)
+areaCd
+지역코드
+1
+51
+지역코드
+(지역/시군구 코드파일 참고)
+signguCd
+시군구코드
+1
+51130
+시군구 코드
+(지역/시군구 코드파일 참고)
+keyword
+요청 키워드
+1
+뮤지엄산
+검색 요청할 관광지명칭
+항목구분 :필수(1), 옵션(0)
+응답 메시지 (Response Message)– XML,Json에서“item”노드부터는 알파벳 순서로 정렬됨
+항목명
+항목 설명
+항목구분
+샘플데이터
+항목 설명
+resultCode
+결과코드
+1
+0000
+응답 결과코드
+resultMsg
+결과메시지
+1
+OK
+응답 결과메시지
+numOfRows
+한 페이지 결과 수
+1
+10
+한 페이지 결과 수
+pageNo
+페이지 번호
+1
+1
+현재 페이지 번호
+totalCount
+전체 결과 수
+1
+50
+전체 결과 수
+baseYm
+기준연월
+1
+202504
+기준연월
+tAtsCd
+관광지코드
+1
+0bfeca2105aa7bf8d83e4622e5da19ec
+관광지코드
+tAtsNm
+관광지명
+1
+뮤지엄산
+관광지명
+areaCd
+관광지지역코드
+1
+51
+관광지지역코드
+areaNm
+관광지지역명
+0
+강원특별자치도
+관광지지역명
+signguCd
+관광지시군구코드
+1
+11530
+관광지시군구코드
+signguNm
+관광지시군구명
+0
+원주시
+관광지시군구명
+rlteTatsCd
+연관관광지코드
+1
+31c13fce36918d9c6bab361f0fd20cc7
+연관관광지코드
+rlteTatsNm
+연관관광지명
+1
+황금들밥/오크밸리월송점
+연관관광지명
+rlteRegnCd
+연관관광지지역코드
+1
+51
+연관관광지시도코드
+rlteRegnNm
+연관관광지지역명
+0
+강원특별자치도
+연관관광지시도명
+rlteSignguCd
+연관관광지시군구코드
+1
+51130
+연관관광지시군구코드
+rlteSignguNm
+연관관광지시군구명
+0
+원주시
+연관관광지시군구명
+rlteCtgryLclsNm
+연관카테고리대분류명
+0
+음식
+연관카테고리대분류명
+rlteCtgryMclsNm
+연관카테고리중분류명
+0
+음식
+연관카테고리중분류명
+rlteCtgrySclsNm
+연관카테고리소분류명
+0
+한식
+연관카테고리소분류명
+rlteRank
+연관순위
+1
+1
+연관순위
+항목구분 :필수(1), 옵션(0)
+요청/응답 예제
+REST (URI)
+http://apis.data.go.kr/B551011/TarRlteTarService/searchKeyword?serviceKey=서비스인증키&amp;numOfRows=10&amp;pageNo=1&amp;MobileOS=ETC&amp;MobileApp=AppTest&amp;baseYm= 202504&amp;areaCd=51
+&amp;signguCd=51130&amp;keyword=뮤지엄산
+응답 메시지
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;response&gt;
+    &lt;header&gt;
+        &lt;resultCode&gt;0000&lt;/resultCode&gt;
+        &lt;resultMsg&gt;OK&lt;/resultMsg&gt;
+    &lt;/header&gt;
+    &lt;body&gt;
+        &lt;items&gt;
+            &lt;item&gt;
+                &lt;baseYm&gt;202504&lt;/baseYm&gt;
+                &lt;tAtsCd&gt;0bfeca2105aa7bf8d83e4622e5da19ec&lt;/tAtsCd&gt;
+                &lt;tAtsNm&gt;뮤지엄산&lt;/tAtsNm&gt;
+                &lt;areaCd&gt;51&lt;/areaCd&gt;
+                &lt;areaNm&gt;강원특별자치도&lt;/areaNm&gt;
+                &lt;signguCd&gt;51130&lt;/signguCd&gt;
+                &lt;signguNm&gt;원주시&lt;/signguNm&gt;
+                &lt;rlteTatsCd&gt;31c13fce36918d9c6bab361f0fd20cc7&lt;/rlteTatsCd&gt;
+                &lt;rlteTatsNm&gt;황금들밥/오크밸리월송점&lt;/rlteTatsNm&gt;
+                &lt;rlteRegnCd&gt;51&lt;/rlteRegnCd&gt;
+                &lt;rlteRegnNm&gt;강원특별자치도&lt;/rlteRegnNm&gt;
+                &lt;rlteSignguCd&gt;51130&lt;/rlteSignguCd&gt;
+                &lt;rlteSignguNm&gt;원주시&lt;/rlteSignguNm&gt;
+                &lt;rlteCtgryLclsNm&gt;음식&lt;/rlteCtgryLclsNm&gt;
+                &lt;rlteCtgryMclsNm&gt;음식&lt;/rlteCtgryMclsNm&gt;
+                &lt;rlteCtgrySclsNm&gt;한식&lt;/rlteCtgrySclsNm&gt;
+                &lt;rlteRank&gt;1&lt;/rlteRank&gt;
+            &lt;/item&gt;
+            &lt;item&gt;
+                &lt;baseYm&gt;202504&lt;/baseYm&gt;
+                &lt;tAtsCd&gt;0bfeca2105aa7bf8d83e4622e5da19ec&lt;/tAtsCd&gt;
+                &lt;tAtsNm&gt;뮤지엄산&lt;/tAtsNm&gt;
+                &lt;areaCd&gt;51&lt;/areaCd&gt;
+                &lt;areaNm&gt;강원특별자치도&lt;/areaNm&gt;
+                &lt;signguCd&gt;51130&lt;/signguCd&gt;
+                &lt;signguNm&gt;원주시&lt;/signguNm&gt;
+                &lt;rlteTatsCd&gt;488af5b2e04bba94e29498c4f9a5686d&lt;/rlteTatsCd&gt;
+                &lt;rlteTatsNm&gt;원주소금산출렁다리&lt;/rlteTatsNm&gt;
+                &lt;rlteRegnCd&gt;51&lt;/rlteRegnCd&gt;
+                &lt;rlteRegnNm&gt;강원특별자치도&lt;/rlteRegnNm&gt;
+                &lt;rlteSignguCd&gt;51130&lt;/rlteSignguCd&gt;
+                &lt;rlteSignguNm&gt;원주시&lt;/rlteSignguNm&gt;
+                &lt;rlteCtgryLclsNm&gt;관광지&lt;/rlteCtgryLclsNm&gt;
+                &lt;rlteCtgryMclsNm&gt;기타관광&lt;/rlteCtgryMclsNm&gt;
+                &lt;rlteCtgrySclsNm&gt;기타관광&lt;/rlteCtgrySclsNm&gt;
+                &lt;rlteRank&gt;2&lt;/rlteRank&gt;
+            &lt;/item&gt;
+…
+&lt;/items&gt;
+        &lt;numOfRows&gt;10&lt;/numOfRows&gt;
+        &lt;pageNo&gt;1&lt;/pageNo&gt;
+        &lt;totalCount&gt;50&lt;/totalCount&gt;
+    &lt;/body&gt;
+&lt;/response&gt;

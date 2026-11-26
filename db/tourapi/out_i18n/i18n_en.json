@@ -1,0 +1,1210 @@
+{
+"seoul": {
+"경복궁": [
+"Gyeongbokgung Palace",
+"Gyeongbokgung Palace was built in 1395 as the official palace of the Joseon dynasty by Yi Seong-gye, the future King Taejo and founder of t…",
+"264337",
+0.0,
+"name"
+],
+"북촌한옥마을": [
+"Bukchon Hanok Village",
+"Surrounded by Gyeongbokgung Palace, Changdeokgung Palace and Jongmyo Shrine, Bukchon Hanok Village is home to hundreds of traditional house…",
+"561382",
+0.0,
+"name"
+],
+"광장시장": [
+"Gwangjang Market",
+"Gwangjang Market was the first permanent market in Korea and continues to thrive as a popular tourist destination today.",
+"273761",
+0.01,
+"name"
+]
+},
+"busan": {
+"해운대해수욕장": [
+"Haeundae Beach",
+"Haeundae Beach is the most famous beach in Busan.",
+"264155",
+0.0,
+"name"
+],
+"광안리 (광안대교 야경)": [
+"Gwangalli Beach",
+"Located to the west of Haeundae Beach, Gwangalli Beach is 1.4 kilometers long and 25~110 meters wide, and is famous for its fine sand.",
+"264250",
+0.08,
+"name"
+],
+"자갈치시장": [
+"Jagalchi Market",
+"Jagalchi Market, located on the seaside road in Busan's Jung-gu, is one of the largest seafood markets in Korea, selling both live and drie…",
+"2382544",
+0.0,
+"name"
+]
+},
+"daegu": {
+"서문시장 (야시장)": [
+"Daegu Seomun Market & Seomun Night Market",
+"Seomun Market opened in its current location in the 1920s after reclaiming the Cheonhwangdangji Reservoir, but it has a much longer history.",
+"1271098",
+0.0,
+"near"
+],
+"김광석다시그리기길": [
+"Kim Kwangseok-gil Street )",
+"Kim Kwangseok-gil Street is a mural street near Bangcheon Market in the neighborhood where musician Kim Kwang-seok used to live prior to hi…",
+"1948555",
+0.0,
+"name"
+],
+"근대골목 (청라언덕)": [
+"Daegu Modern History Streets (Tour of Modern Streets) )",
+"Daegu Modern History Streets is an experiential tour that brings the participants across Daegu’s alleyways and living history.",
+"2475980",
+0.69,
+"name"
+],
+"수성못": [
+"Suseongmot Lake Resort",
+"Suseongmot Lake Resort is located at the foot of the northwest side of Yongjibong Peak (altitude 629 meters) in Beommul-dong and offers out…",
+"2398453",
+0.45,
+"name"
+]
+},
+"incheon": {
+"차이나타운 · 개항장 거리": [
+"Incheon Chinatown",
+"Incheon's Chinatown came into being with the opening of Incheon Port in 1883 and Incheon's designation as an extraterritoriality of the Chi…",
+"264513",
+0.23,
+"name"
+],
+"월미도": [
+"Wolmido Island",
+"Wolmido Island has very few historical records, despite being the location of a temporary palace, built in 1653 during the reign of King Hy…",
+"264305",
+0.42,
+"name"
+],
+"송도 센트럴파크": [
+"Songdo Central Park",
+"Songdo is a man-made island that presents a futuristic image with buildings that can be considered works of art.",
+"2629535",
+0.55,
+"name"
+],
+"소래포구": [
+"Sorae Port",
+"Sorae Port is located in Namdong-gu, Incheon, and is one of the most accessible places to feel the sea in the metropolitan area.",
+"2948205",
+0.0,
+"name"
+]
+},
+"gwangju": {
+"국립아시아문화전당": [
+"National Asian Culture Center",
+"The National Asian Culture Center (ACC) is an international arts and cultural exchange organization aimed to promote Gwangju as Asia's cent…",
+"2011428",
+0.0,
+"name"
+],
+"1913송정역시장": [
+"1913 Songjeong Station Market",
+"Songjeong Station Market was opened in 1913 in connection with the opening of Gwangju-Songjeong Station.",
+"2494513",
+0.0,
+"name"
+]
+},
+"daejeon": {
+"엑스포과학공원 · 한빛탑": [
+"Daejeon Expo Park",
+"Daejeon Expo Park was established following the closing of the Daejeon Expo in 1993.",
+"789741",
+0.46,
+"name"
+],
+"장태산자연휴양림": [
+"Jangtaesan Recreational Forest",
+"Jangtaesan Recreational Forest consists of a dense forest of ginkgo trees and bald cypress.",
+"616253",
+0.0,
+"name"
+],
+"유성온천": [
+"Yuseongoncheon Hot Springs",
+"Yuseongoncheon Hot Springs is located in Yuseong-gu, Daejeon.",
+"264230",
+0.01,
+"name"
+]
+},
+"ulsan": {
+"태화강 국가정원": [
+"Taehwagang National Garden",
+"The Taehwagang River cuts across the heart of Ulsan and flows into Ulsan Bay, which is connected to the East Sea.",
+"1764857",
+0.47,
+"name"
+],
+"대왕암공원": [
+"Daewangam Park",
+"Daewangam Park is a seaside park located on the east coast.",
+"2014195",
+0.0,
+"name"
+],
+"간절곶": [
+"Ganjeolgot Lighthouse",
+"The sunrise along the East Coast can be viewed earliest at Cape Ganjeolgot in Daesong-ri, Uljin-gun.",
+"264558",
+0.0,
+"name"
+],
+"장생포 고래문화마을": [
+"Jangsaengpo Whale Culture Village",
+"Opened in 2015, Jangsaengpo Whale Culture Village reproduces the scene of an old whaling village through areas like Whale Plaza, Jangsaengp…",
+"2391751",
+0.0,
+"name"
+]
+},
+"sejong": {
+"세종호수공원": [
+"Sejong Lake Park",
+"Sejong Lake Park is a large scale man-made park and is one of the major tourism destinations in Sejong.",
+"1951197",
+0.0,
+"name"
+],
+"국립세종수목원": [
+"Sejong National Arboretum",
+"The Sejong National Arboretum, designed as the first urban arboretum in Korea, was built adjacent to the Sejong Government Complex, where s…",
+"2944982",
+0.0,
+"name"
+]
+},
+"suwon": {
+"화성행궁": [
+"Temporary Palace at Hwaseong Fortress (Hwaseong Haenggung Palace)",
+"A haenggung is a temporary palace where the king and royal family retreated to during a war.",
+"264410",
+0.0,
+"name"
+],
+"행리단길": [
+"Haengnidan Street",
+"Haengnidan Street is a stretch of approximately 612 meters from Hwahongmun Gate of Hwaseong Fortress to Hwaseo Park.",
+"3442151",
+0.0,
+"name"
+],
+"통닭거리": [
+"Suwon Chicken Street",
+"Suwon Chicken Street, located in a small 100 m-long alley on Paldal-ro, Paldal-gu, Suwon, is where about 11 stores, ranging from the origin…",
+"3010849",
+0.0,
+"name"
+]
+},
+"seongnam": {
+"율동공원": [
+"Yuldong Park",
+"Yuldong Park in Seongnam is a natural lakeside park designed to preserve its original landscape as much as possible, offering beautiful sce…",
+"1342122",
+0.0,
+"name"
+]
+},
+"uijeongbu": {
+"의정부 부대찌개거리": [
+"Uijeongbu Budaejjigae Street",
+"The word “budaejjigae” has two parts: “budae”, or military unit, and “jjigae,” a dish made by boiling ingredients and stock in a pot.",
+"822969",
+0.0,
+"name"
+]
+},
+"anyang": {
+"안양예술공원": [
+"Anyang Art Park",
+"Anyang Art Park, formerly known as Anyang Recreational Park, is an easily accessible, well-maintained cultural space.",
+"819919",
+0.02,
+"name"
+]
+},
+"bucheon": {
+"한국만화박물관": [
+"Korea Manhwa Museum",
+"This museum collects and stores Korean cartoons and related materials, which are the basis for the creation of K-Webtoons.",
+"3401934",
+0.02,
+"name"
+]
+},
+"gwangmyeong": {
+"광명동굴": [
+"Gwangmyeong Cave",
+"Gwangmyeong Cave was developed in 1912 during the Japanese colonial period to exploit resources, including gold mines, and continued to be…",
+"3113166",
+0.14,
+"name"
+],
+"광명전통시장": [
+"Gwangmyeong Traditional Market",
+"Gwangmyeong Market can trace its origins back to the early 1970s as a small five-day market, meaning it opened once every five days.",
+"1924988",
+0.0,
+"name"
+]
+},
+"dongducheon": {
+"소요산": [
+"Soyosan Tourist Site",
+"Soyosan Mountain (altitude 587.5 meters) features exquisite rock formations and artistic valleys and forests.",
+"819577",
+0.0,
+"name"
+]
+},
+"ansan": {
+"대부도": [
+"Daebudo Island",
+"Daebudo Island, connected to the mainland by the Sihwa Seawall, is named ‘daebu’ due to its resemblance to a \"great hill.\" A notable featur…",
+"1751677",
+0.01,
+"name"
+]
+},
+"goyang": {
+"일산호수공원": [
+"Ilsan Lake Park",
+"Ilsan Lake Park is an artificial lake park built as part of the city development project.",
+"1949711",
+0.0,
+"name"
+],
+"행주산성": [
+"Haengjusanseong Fortress",
+"Haengjusanseong Fortress, sitting atop Deogyangsan Mountain, was the site of one of the three major Korean victories against the enemy duri…",
+"816246",
+0.0,
+"name"
+]
+},
+"gwacheon": {
+"서울대공원": [
+"Seoul Grand Park",
+"Seoul Grand Park is a comprehensive theme park located in Gwacheon, Gyeonggi-do.",
+"264199",
+0.0,
+"name"
+],
+"서울랜드": [
+"Seoulland",
+"Seoulland was the first theme park in Korea, built at the foot of Cheonggyesan Mountain.",
+"264201",
+0.0,
+"name"
+],
+"국립과천과학관": [
+"Gwacheon National Science Museum",
+"As a landmark facility representing Korea’s advanced science and technology capabilities, Gwacheon National Science Museum strives to encou…",
+"1215685",
+0.31,
+"name"
+]
+},
+"namyangju": {
+"수종사": [
+"Sujongsa Temple",
+"Sujongsa Temple is a branch temple of Bongseonsa Temple, located near the top of Ungilsan Mountain.",
+"2043712",
+0.28,
+"name"
+]
+},
+"osan": {
+"물향기수목원": [
+"Mulhyanggi Arboretum",
+"Mulhyanggi Arboretum is located in Sucheong-dong of Osan, Gyeonggi-do, known since the past to have clear flowing water.",
+"822897",
+0.25,
+"name"
+]
+},
+"siheung": {
+"오이도": [
+"Oido Island",
+"Located off the western coast of the city of Siheung, Oido Island was originally an island and then connected to the mainland during the Ja…",
+"819651",
+0.05,
+"name"
+]
+},
+"gunpo": {
+"수리산": [
+"Surisan Provincial Park",
+"Surisan Mountain, a provincial park of Gyeonggi-do, surrounds Gunpo and is also easily accessible from Anyang and Ansan.",
+"816558",
+0.01,
+"name"
+]
+},
+"hanam": {
+"검단산": [
+"Geomdansan Mountain",
+"Located east of Hanam City Hall, Geomdansan Mountain is a representative landmark of Hanseong.",
+"1752071",
+0.0,
+"name"
+]
+},
+"yongin": {
+"에버랜드": [
+"Everland",
+"Everland is an amusement park that entertains visitors through attractions in the five themed areas of Global Fair, American Adventure, Mag…",
+"264235",
+1.25,
+"name"
+],
+"한국민속촌": [
+"Korean Folk Village",
+"Korean Folk Village introduces traditional culture from the late Joseon period to both local and international visitors through cultural cl…",
+"264121",
+0.0,
+"name"
+]
+},
+"paju": {
+"헤이리 예술마을": [
+"Heyri Art Valley",
+"Heyri Art Valley is a neighborhood of inspiration, creative workshops, exhibitions, festivals, and education of all things creative arts.",
+"264537",
+0.0,
+"name"
+]
+},
+"icheon": {
+"이천도자예술마을 (예스파크)": [
+"Icheon Ye's Park )",
+"Icheon Ye's Park, located in Icheon-si, Gyeonggi-do, has various ceramic workshops gathered in this village.",
+"3080426",
+0.0,
+"name"
+],
+"설봉공원": [
+"Seolbong Park",
+"Nestled at the foot of Seolbongsan Mountain in Icheon, Seolbong Park is the venue for the Gyeonggi International Ceramic Biennale, Icheon C…",
+"1852746",
+0.17,
+"name"
+]
+},
+"anseong": {
+"안성맞춤랜드 (남사당 공연)": [
+"Anseong Machum Land",
+"Anseong Machum Land is a resting place in the forest for Anseong citizens, and at the same time, it is a place for culture and arts.",
+"3074320",
+0.12,
+"name"
+],
+"안성팜랜드": [
+"Anseong Farmland",
+"Anseong Farmland is a learning center that spreads information about the importance of agriculture and livestock farming and a theme park w…",
+"3076393",
+0.01,
+"name"
+],
+"미리내성지": [
+"Mirinae Holy Site",
+"Mirinae Holy Site in Anseong is the final resting place of Saint Andreas Kim Daegeon, Korea’s first Catholic saint, along with his mother U…",
+"819709",
+0.25,
+"name"
+]
+},
+"gimpo": {
+"대명항": [
+"Gimpo Daemyeong Port",
+"The piercing smell of salt, the energy of freshly caught fish, fishing boats returning from far out at sea, and people walking in and out o…",
+"2946805",
+0.01,
+"name"
+]
+},
+"hwaseong": {
+"제부도": [
+"Jebudo Island",
+"Jebudo Island is a small island located off the shores of Seosin-myeon, Hwaseong.",
+"823350",
+0.0,
+"name"
+],
+"전곡항": [
+"Jeongok Port",
+"Jeongok Port is a port facing Jebudo Island and Nueseom Island.",
+"3113067",
+0.1,
+"name"
+],
+"궁평항": [
+"Gungpyeong Port",
+"Spectacular sunset spot This is the place where Choi Ung appeared while reminiscing on his most memorable trip, and you can see the wonderf…",
+"3098318",
+0.07,
+"name"
+]
+},
+"gwangju-gg": {
+"화담숲": [
+"Hwadam Botanic Garden",
+"Hwadam Botanic Garden is an eco-friendly arboretum located within Konjiam Resort in Gwangju, Gyeonggi-do.",
+"2525539",
+0.0,
+"name"
+]
+},
+"pocheon": {
+"국립수목원 (광릉숲)": [
+"Korea National Arboretum and Forest Museum (Gwangneung Forest) )",
+"The Korea National Arboretum (KNA) is situated in Gwangneung Experimental Forest and contains the Forest Museum where all the information o…",
+"264580",
+0.79,
+"name"
+],
+"허브아일랜드": [
+"Herb Island",
+"Herb Island is an arboretum themed after the Mediterranean.",
+"1051901",
+0.21,
+"name"
+]
+},
+"yeoju": {
+"신륵사": [
+"Yeoju Silleuksa Temple )",
+"Silleuksa Temple is located along the upper section of the Namhangang River as it flows from Bongmisan Mountain in Yeoju.",
+"264636",
+0.01,
+"name"
+]
+},
+"chuncheon": {
+"남이섬": [
+"Nami Island",
+"Nami Island, with the concept of \"Fairy Tale Village and Song Village,\" provides various cultural events, concerts, exhibitions, and more t…",
+"264244",
+0.0,
+"name"
+],
+"소양강 스카이워크": [
+"Soyanggang Skywalk",
+"The Soyanggang Skywalk, extending over the river, spans 174 meters in length, with a transparent glass floor covering 156 meters of its sec…",
+"2398114",
+0.05,
+"name"
+],
+"김유정문학촌": [
+"The Literary Village of Kim You Jeong",
+"The Literary Village of Kim You Jeong was established on the site of the birth home of Kim, in order to commemorate Kim You-jeong who left…",
+"628291",
+0.0,
+"name"
+],
+"레고랜드": [
+"LEGOLAND Korea Resort",
+"LEGOLAND® Korea Resort is the first global theme park of its kind in Korea, located on Jungdo Island in Chuncheon, Gangwon State, and the t…",
+"4064318",
+0.32,
+"name"
+]
+},
+"wonju": {
+"소금산 그랜드밸리 (출렁다리)": [
+"Sogeumsan Mountain Grand Valley",
+"Home to beautiful rivers, majestic cliffs, and stunning old trees, Sogeum Mountain Grand Valley offers an impressive view.",
+"3403428",
+0.0,
+"name"
+]
+},
+"gangneung": {
+"경포대 · 경포해변": [
+"Gyeongpodae Pavilion",
+"Gyeongpodae Pavilion, located on a small hill north of Gyeongpoho Lake, is one of the eight scenic sites of Gwangdong (northeastern coast).",
+"264365",
+0.0,
+"name"
+],
+"안목해변 커피거리": [
+"Anmokhaebyeon Beach",
+"Anmokhaebyeon Beach spans over 500 meters in length and covers an area of 20,000 square meters.",
+"1891502",
+0.09,
+"name"
+],
+"정동진": [
+"Jeongdongjinhaebyeon Beach",
+"Jeongdongjinhaebyeon Beach is a nice, sandy beach with three major swimming spots: in front of Jeongdongjin Station, by Sandglass Park, and…",
+"264165",
+0.01,
+"name"
+]
+},
+"donghae": {
+"무릉계곡": [
+"Mureunggyegok Valley",
+"Mureunggyegok Valley, between Dutasan Mountain and Cheongoksan Mountain, refers to a four-kilometer stretch from Hoamso Pond to Yongchupokp…",
+"789870",
+0.33,
+"name"
+],
+"추암 촛대바위": [
+"Chuam Chotdaebawi Rock",
+"Chuam Chotdaebawi Rock in Donghae-si, Gangwon-do is one of Korea’s most famous tourist attractions.",
+"860373",
+0.01,
+"name"
+]
+},
+"taebaek": {
+"황지연못 (낙동강 발원지)": [
+"Hwangji Pond",
+"Hwangji Pond, located in downtown Taebaek, is a source of the Nakdonggang River, flowing all the way to the Yeongnam Plain.",
+"1756327",
+0.0,
+"name"
+]
+},
+"sokcho": {
+"설악산 국립공원": [
+"Seoraksan National Park (Outer Seorak) )",
+"Seoraksan Mountain is renowed for its natural splendors and breathtaking views.",
+"264211",
+2.03,
+"name"
+],
+"아바이마을": [
+"Abai Village Ferry",
+"Gaetbae (boat without engine) is an exotic means of transportation to cross the Abai Village at the mouth of Cheongchoho Lake.",
+"2366892",
+0.34,
+"name"
+],
+"영금정": [
+"Yeonggeumjeong",
+"Yeonggeumjeong refers to the area covering the shore by the Sokcho Lighthouse in Sokcho-si City.",
+"1758206",
+0.03,
+"name"
+]
+},
+"samcheok": {
+"환선굴": [
+"Hwanseongul Cave (Daei-ri Cave System) )",
+"Hwanseongul Cave is the largest limestone cave in Asia, formed estimated 530 million years ago.",
+"264551",
+0.02,
+"name"
+]
+},
+"pyeongchang": {
+"대관령 양떼목장": [
+"Daegwallyeong Yangtte Ranch",
+"Daegwallyeong Yangtte Ranch is situated at an elevation of 920 meters, sprawling across 205,000 square meters of open grassland.",
+"264615",
+0.0,
+"name"
+]
+},
+"cheongju": {
+"청남대": [
+"Cheongnamdae Presidential Villa",
+"Cheongnamdae, which means \"Cheong Wa Dae in a warm southern land,\" was once a private villa used by former presidents of Korea.",
+"795179",
+0.0,
+"name"
+],
+"국립현대미술관 청주": [
+"Museum of Modern and Contemporary Art Cheongju [MMCA Cheongju] )",
+"The Museum of Modern and Contemporary Art Cheongju presents the country's first-ever open storage-formed museum, based on artworks owned by…",
+"2948291",
+0.01,
+"name"
+]
+},
+"chungju": {
+"탄금대": [
+"Chungju Tangeumdae Height & Park",
+"Tangeumdae Height was originally a mountain named Daemunsan Mountain.",
+"1883397",
+0.0,
+"name"
+]
+},
+"jecheon": {
+"청풍호반케이블카": [
+"Cheongpung Cable Car",
+"Cheongpung Cable Car takes passengers back and forth between Multae-ri in Cheongpung-myeon and Bibongsan Mountain along a 2.3-kilometer rop…",
+"2812925",
+0.0,
+"name"
+]
+},
+"cheonan": {
+"독립기념관": [
+"The Independence Hall of Korea",
+"The Independence Hall of Korea collects, preserves, displays, and researches Korean historical documents and relics from the past to the pr…",
+"268181",
+0.78,
+"name"
+],
+"각원사": [
+"Gakwonsa Temple",
+"Gakwonsa Temple, nestled midway up Taejosan Mountain in Cheonan, stands as a beacon of hope for the peaceful reunification of Korea.",
+"264605",
+0.04,
+"name"
+]
+},
+"gongju": {
+"무령왕릉 (송산리 고분군)": [
+"Gongju Tomb of King Muryeong and Royal Tombs [UNESCO World Heritage]",
+"The Songsan-ri Tombs and Royal Tomb of King Muryeong (r.",
+"264322",
+0.33,
+"name"
+]
+},
+"boryeong": {
+"대천해수욕장": [
+"Daecheon Beach",
+"The area around Haesuyokjang 4-gil in Chungcheongnam-do is Daecheon Beach.",
+"264510",
+0.5,
+"name"
+]
+},
+"asan": {
+"현충사": [
+"Hyeonchungsa Shrine",
+"Hyeonchungsa Shrine, located in Asan-si, is the shrine of General Lee Sun-Shin (1545-1598).",
+"264127",
+0.19,
+"name"
+],
+"외암민속마을": [
+"Oeam Folk Village",
+"Oeam Folk Village, located in Asan, boasts a history spanning over 500 years.",
+"264269",
+0.0,
+"name"
+],
+"온양온천": [
+"Onyang Hot Springs",
+"Onyang Hot Springs is the oldest hot springs complex in Korea, a place where the kings of Joseon (1392-1897) recuperated and bathed, thanks…",
+"264270",
+0.0,
+"name"
+],
+"지중해마을": [
+"Asan Mediterranean Village",
+"Asan Mediterranean Village, also called Blue Crystal Village, is made up of buildings reminiscent of those found in a Mediterranean village.",
+"3104086",
+0.0,
+"name"
+]
+},
+"seosan": {
+"해미읍성": [
+"Haemieupseong Walled Town",
+"Haemieupseong Walled Town is a representative fortress from the Joseon period.",
+"800144",
+0.0,
+"name"
+],
+"간월암": [
+"Seosan Ganworam Hermitage )",
+"Ganworam is a small hermitage located in Ganwoldo-ri in Seosan-si, Chungcheongnam-do.",
+"1784975",
+0.02,
+"name"
+]
+},
+"nonsan": {
+"관촉사 (은진미륵)": [
+"Nonsan Gwanchoksa Temple )",
+"Gwancheoksa Temple is a historic Buddhist temple on the eastern foothills of Banyasan Mountain in southern Nonsan.",
+"799844",
+0.0,
+"name"
+],
+"탑정호 출렁다리": [
+"Nonsan Tapjeongho Suspension Bridge",
+"Tapjeongho Suspension Bridge is located in the second biggest lake in Chungcheongnam-do.",
+"2815564",
+0.29,
+"name"
+],
+"선샤인랜드": [
+"Sunshine Land",
+"Sunshine Land is a cultural complex located in Nonsan, Chungcheongnam-do.",
+"3304652",
+0.15,
+"name"
+]
+},
+"dangjin": {
+"솔뫼성지": [
+"Solmoe Martyrs Shrine",
+"Located in Chungcheong-do,\"Solmoe\" gets its name from a small cluster of pine trees.",
+"264565",
+0.01,
+"name"
+],
+"아미미술관": [
+"AMI Art Museum",
+"AMI Art Museum is a private art museum opened in the previous Yudong Elementary School building.",
+"2991402",
+0.0,
+"name"
+]
+},
+"jeonju": {
+"전동성당": [
+"Jeonju Jeondong Catholic Cathedral",
+"Jeondong Catholic Cathedral in Jeonju was built in honor of Roman Catholic martyrs of the Joseon dynasty on the very same spot the martyrs…",
+"264421",
+0.06,
+"name"
+],
+"남부시장 야시장": [
+"Jeonju Nambu Market",
+"The history of Nambu Market dates back to the early Joseon dynasty, starting out as the Nammunbakk Market.",
+"1945427",
+0.0,
+"name"
+]
+},
+"gunsan": {
+"경암동 철길마을": [
+"Gyeongam-dong Railroad Village",
+"Gyeongam-dong Railroad Village is a retro-themed attraction built around a 2.5-kilometer railway in Gyeongam-dong, Gunsan, originally const…",
+"4016963",
+0.0,
+"name"
+],
+"선유도 (고군산군도)": [
+"Seonyudo Beach",
+"Seonyudo Beach, is a natural coastal sand dune beach with a vast white sand area as transparent and beautiful as glass beads, which is why…",
+"2944955",
+0.67,
+"name"
+],
+"초원사진관": [
+"Chowon Photo Studio",
+"Chowon Photo Studio in Gunsan is famous as the filming location of the movie, \"Christmas in August (1998)\" starring actors Han Suk-kyu and…",
+"2944321",
+0.0,
+"name"
+]
+},
+"jeongeup": {
+"내장산 국립공원": [
+"Naejangsan National Park",
+"Naejangsan National Park boasts beautiful scenery throughout all four seasons.",
+"264295",
+0.0,
+"name"
+]
+},
+"namwon": {
+"광한루원": [
+"Gwanghalluwon Garden",
+"Originally known as Gwangtongnu, Gwanghalluwon Garden was built by Hwang Hui Jeongseung in 1419 during the reign of Joseon dynasty’s King S…",
+"264601",
+0.05,
+"name"
+]
+},
+"gimje": {
+"금산사": [
+"Gimje Geumsansa Temple )",
+"Geumsansa Temple, which stands tall at the entrance to Moaksan Provincial Park, was founded in the first year of King Beop of Baekje (599).",
+"824869",
+0.0,
+"name"
+]
+},
+"mokpo": {
+"유달산": [
+"Yudalsan Mountain",
+"In the past, Yudalsan Mountain was known as Yeongdalsan Mountain, because it was a place where the soul passes.",
+"815411",
+0.45,
+"name"
+]
+},
+"yeosu": {
+"향일암": [
+"Yeosu Hyangiram Hermitage )",
+"Hyangiram Hermitage in Yeosu is a popular tourist attraction visited by approximately one million people annually, as well as a sanctuary f…",
+"264598",
+0.0,
+"name"
+],
+"이순신광장": [
+"Yi Sunsin Square",
+"Yi Sunsin Square is located in Jungang-dong, Yeosu-si and contains the history and achievements of General Yi Sunsin.",
+"2818912",
+0.0,
+"name"
+]
+},
+"suncheon": {
+"순천만습지": [
+"Suncheonman Bay",
+"Suncheonman Bay stretches along a 3-kilometer waterway with expansive mudflats and reed beds.",
+"681459",
+0.0,
+"name"
+],
+"순천만국가정원": [
+"Suncheonman National Garden",
+"Suncheonman National Garden is South Korea's first national garden.",
+"2015269",
+0.0,
+"name"
+]
+},
+"gwangyang": {
+"광양 매화마을": [
+"Gwangyang Maehwa Village",
+"Following the Seomjingang River flowing down the outskirts of Jirisan Mountain is a village filled with plum trees.",
+"814113",
+0.51,
+"name"
+]
+},
+"goheung": {
+"나로우주센터 우주과학관": [
+"Naro Space Center Space Science Museum",
+"The Naro Space Center Space Science Museum is a space science experience and education facility located on Oenarodo Island.",
+"813942",
+0.0,
+"name"
+]
+},
+"pohang": {
+"호미곶 (상생의 손)": [
+"Homigot Lighthouse",
+"Homigot Lighthouse is located at Homigot Cape, listed as one of the 10 most scenic sites during the Joseon dynasty.",
+"1767741",
+0.12,
+"name"
+],
+"영일대해수욕장": [
+"Yeongildae Beach",
+"With an area of 406,613.4 m² and a length of 1,750 meters, Yeongildae Beach is the largest beach on Korea's eastern coast.",
+"1047722",
+0.25,
+"name"
+]
+},
+"gyeongju": {
+"불국사 · 석굴암 (유네스코 세계유산)": [
+"Gyeongju Bulguksa Temple [UNESCO World Heritage]",
+"Bulguksa Temple is a representative relic of Buddhist culture from the Silla kingdom.",
+"264261",
+0.34,
+"name"
+],
+"대릉원": [
+"Cheonmachong Tomb (Daereungwon Ancient Tombs) )",
+"Daereungwon Ancient Tombs are one of the most well-known sights in Gyeongju, a history park home to 23 small and large ancient tombs.",
+"264117",
+0.0,
+"name"
+],
+"동궁과 월지 (야경)": [
+"Donggung Palace and Wolji Pond",
+"Donggung Palace and Wolji Pond in Gyeongju are secondary palace sites of Silla.",
+"264367",
+0.0,
+"name"
+]
+},
+"gimcheon": {
+"직지사": [
+"Jikjisa Temple",
+"Jikjisa Temple, located at the foot of Hwangaksan Mountain in Gimcheon, Gyeongsangbuk-do, was constructed in 418, during the second year of…",
+"804966",
+0.0,
+"name"
+]
+},
+"andong": {
+"도산서원": [
+"Dosanseowon Confucian Academy [UNESCO World Heritage]",
+"In terms of architecture, Dosanseowon Confucian Academy complex can largely be divided into Dosanseodang compound and Dosanseowon compound.",
+"264141",
+0.21,
+"name"
+],
+"병산서원": [
+"Byeongsanseowon Confucian Academy [UNESCO World Heritage]",
+"Before it became a Confucian academy, Byeongsanseowon Confucian Academy was originally located in Pungsang-hyeon under the name Pungakseoda…",
+"264458",
+0.02,
+"name"
+],
+"월영교": [
+"Woryeonggyo Bridge",
+"Woryeonggyo Bridge was named in reference to the submerged Woryeongdae Observatory and the names of nearby areas Wolgok-myeon and Eumdamgol.",
+"1767851",
+0.07,
+"name"
+]
+},
+"yeongju": {
+"소수서원 (유네스코 서원)": [
+"Sosuseowon Confucian Academy",
+"Sosuseowon Confucian Academy is situated at the foothills of Sobaeksan Mountain.",
+"264147",
+0.09,
+"name"
+],
+"무섬마을": [
+"Yeongju Museom Village",
+"Located in Sudo-ri in Yeongju, Gyeongsangbuk-do, Museom Village is a charming hanok village surrounded by water.",
+"1039958",
+0.11,
+"name"
+]
+},
+"yeongcheon": {
+"보현산 천문대": [
+"Bohyunsan Optical Astronomy Observatory",
+"Positioned atop Bohyeonsan Mountain, Bohyunsan Optical Astronomy Observatory stands as a prominent hub for optical astronomy observation in…",
+"3098053",
+0.12,
+"name"
+],
+"은해사": [
+"Yeongcheon Eunhaesa Temple )",
+"Eunhaesa Temple, located on Palgongsan Mountain in Yeongcheon city, Gyeongsangbuk-do, is one of two major temples on the mountain along wit…",
+"1121518",
+0.42,
+"name"
+]
+},
+"sangju": {
+"경천섬": [
+"Gyeongcheonseom Island (Gyeongcheonseom Park) )",
+"◎ Travel information to meet Hallyu’s charm – TV series \"Castaway Diva\" Gyeongcheonseom Island served as the backdrop for the fictional Pil…",
+"3410513",
+2.47,
+"name"
+]
+},
+"mungyeong": {
+"문경새재 도립공원": [
+"Mungyeongsaejae Provincial Park",
+"Mungyeongsaejae Pass, which crosses Joryeongsan Mountain, has always been the highest and most dangerous mountain pass in Korea, being repu…",
+"264143",
+0.0,
+"name"
+]
+},
+"gyeongsan": {
+"갓바위 (팔공산 관봉)": [
+"Palgongsan National Park (Gatbawi Section) )",
+"Located east of Daegu downtown, Palgongsan Mountain (altitude 1,192.3 meters) was called both Jungaksan and Buaksan Mountain during the Sil…",
+"804130",
+2.39,
+"name"
+]
+},
+"changwon": {
+"마산어시장": [
+"Masan Fish Market",
+"Masan Fish Market has about 200 raw fish restaurants and aquariums, where you can find all kinds of fresh fish from premium species to mack…",
+"3401811",
+0.0,
+"name"
+],
+"창동예술촌": [
+"Chang-dong Art Village",
+"Chang-dong Art Village is an urban regeneration initiative aimed at revitalizing the once-thriving commercial heart of old Masan’s downtown…",
+"2026745",
+0.0,
+"name"
+]
+},
+"jinju": {
+"진주성 · 촉석루": [
+"Jinjuseong Fortress",
+"Jinjuseong Fortress, initially erected in ancient times, was expanded in 1379 to fend off pirate invasions.",
+"264596",
+0.0,
+"name"
+]
+},
+"tongyeong": {
+"동피랑 벽화마을": [
+"Dongpirang Village",
+"The name Dongpirang is a combination of the Korean words \"dong,\" meaning east, and \"birang,\" meaning hill in the Tongyeong dialect.",
+"1885777",
+0.0,
+"name"
+],
+"통영케이블카 (미륵산)": [
+"Tongyeong Cable Car",
+"Tongyeong Cable Car installed on Mireuksan Mountain in Tongyeong is 1,975 meters long, and a bi-cable automatic circulation gondola system…",
+"1875170",
+0.0,
+"name"
+],
+"디피랑": [
+"DPIRANG",
+"DPIRANG, a digital theme park, is situated at Nammangsan Park in Tongyeong.",
+"2823587",
+0.09,
+"name"
+]
+},
+"gimhae": {
+"국립김해박물관": [
+"Gimhae National Museum",
+"The Gimhae National Museum was opened on July 29, 1998, in order to research and preserve the cultural heritage of the ancient kingdom of G…",
+"708793",
+0.0,
+"name"
+],
+"가야테마파크": [
+"Gimhae Gaya History Park",
+"Gimhae Gaya History Park is a resting area that provides comfortable relaxation in the daily lives of the busy people and also a cultural c…",
+"2944407",
+0.17,
+"name"
+]
+},
+"geoje": {
+"바람의 언덕": [
+"Windy Hill",
+"The Windy Hill refers to a hill at the end of the fishing village of Dojangpo, located at the entrance to the Haegeumgang Islets, upon whic…",
+"1875200",
+0.0,
+"name"
+],
+"외도 보타니아": [
+"Oedo-Botania",
+"“Botania” is a portmanteau of \"botani-\" (plants) and \"utopia\" (paradise), and Oedo-Botania represents a paradise for plants on the sea.",
+"264203",
+0.0,
+"name"
+]
+},
+"yangsan": {
+"통도사 (유네스코 산사)": [
+"Tongdosa Temple [UNESCO World Heritage]",
+"Tongdosa Temple, esteemed for its establishment in 643, is a revered site recognized as a UNESCO World Heritage.",
+"264216",
+0.05,
+"name"
+]
+},
+"namhae": {
+"다랭이마을": [
+"Gacheon Daraengi Village",
+"Daraengi Village in Namhae is famous for terraced rice paddies on a steep hill on the outskirts of Seolheulsan Mountain.",
+"1051940",
+0.31,
+"name"
+],
+"보리암 (금산)": [
+"Namhae Geumsan Boriam Hermitage )",
+"Boriam Hermitage sits atop Geumsan Mountain (alt.",
+"1942196",
+0.0,
+"name"
+],
+"상주은모래비치": [
+"Sangju Silver Sand Beach",
+"Sangju Silver Sand Beach is busy all year long, with professional athletes coming for physical training in the winter, students camping in…",
+"264621",
+0.16,
+"name"
+]
+},
+"jeju": {
+"한라산 (성판악·관음사 코스)": [
+"Hallasan Mountain",
+"Hallasan Mountain means \"a mountain high enough to pull down the Milky Way.\" Since ancient times, it was also called Yeongjusan because it…",
+"264172",
+0.0,
+"name"
+],
+"협재해수욕장": [
+"Hyeopjae Beach",
+"Hyeopjae Beach, encircled by lush pine forests, seamlessly extends into Geumneung Beach.",
+"264170",
+0.0,
+"name"
+],
+"용두암": [
+"Yongduam Rock",
+"Situated on the northern coast in downtown Jeju, Yongduam Rock is an estimated 10-meter-tall stone that has been worn down over time by str…",
+"264184",
+0.12,
+"name"
+]
+},
+"seogwipo": {
+"천지연폭포": [
+"Cheonjiyeonpokpo Falls [UNESCO Global Geopark] )",
+"The water of Cheonjiyeonpokpo Falls appears to fall from the heavens, giving it its name, meaning \"sky connected with land.\" The wooded are…",
+"264588",
+0.03,
+"name"
+],
+"중문관광단지": [
+"Jungmun Tourist Complex",
+"Jungmun Tourist Complex is a comprehensive resort area spanning across Jungmun-dong, Saekdal-dong, and Daepo-dong in Seogwipo-si.",
+"264178",
+0.69,
+"name"
+],
+"쇠소깍": [
+"Soesokkak Estuary",
+"Soesokkak Estuary is a valley-like gorge formed by solidified flowing lava, creating an interesting and unique landscape.",
+"778966",
+0.0,
+"name"
+]
+},
+"ulleung": {
+"봉래폭포": [
+"Bongnaepokpo Falls [Ullengdo & Dokdo National Geopark] )",
+"Nestled within the picturesque mountains of eastern Ulleungdo Island, Bongnaepokpo Falls stands as a majestic 30-meter high waterfall.",
+"264501",
+0.08,
+"name"
+],
+"관음도": [
+"Gwaneumdo Island",
+"Gwaneumdo Island is the third largest island among the islands around Ulleungdo Island.",
+"3019034",
+0.07,
+"name"
+]
+}
+}

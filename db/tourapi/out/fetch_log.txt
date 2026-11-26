@@ -1,0 +1,343 @@
+OK seoul 경복궁 -> 경복궁
+OK seoul 북촌한옥마을 -> 북촌한옥마을
+OK seoul 광장시장 -> 광장시장
+NOMATCH seoul N서울타워 (남산) (2 results)
+OK busan 해운대해수욕장 -> 해운대해수욕장
+OK busan 광안리 (광안대교 야경) -> 광안리해수욕장
+OK busan 감천문화마을 -> 감천문화마을 어린왕자 전시관
+OK busan 자갈치시장 -> 부산 자갈치시장
+OK daegu 서문시장 (야시장) -> 대구 서문시장 & 서문시장 야시장
+OK daegu 김광석다시그리기길 -> 김광석다시그리기길
+OK daegu 근대골목 (청라언덕) -> 대구 근대골목(근대로의 여행)
+OK daegu 수성못 -> 수성못 유원지
+OK incheon 차이나타운 · 개항장 거리 -> 인천 차이나타운
+OK incheon 월미도 -> 월미도
+OK incheon 송도 센트럴파크 -> 송도 센트럴파크
+OK incheon 소래포구 -> 소래포구
+OK gwangju 국립아시아문화전당 -> 국립아시아문화전당
+NOMATCH gwangju 양림동 역사문화마을 (0 results)
+NOMATCH gwangju 무등산 국립공원 (0 results)
+OK gwangju 1913송정역시장 -> 1913송정역시장
+OK daejeon 엑스포과학공원 · 한빛탑 -> 대전엑스포과학공원
+NOMATCH daejeon 대청호 오백리길 (0 results)
+OK daejeon 장태산자연휴양림 -> 장태산자연휴양림
+OK daejeon 유성온천 -> 유성온천지구
+OK ulsan 태화강 국가정원 -> 태화강 국가정원
+OK ulsan 대왕암공원 -> 대왕암공원
+OK ulsan 간절곶 -> 간절곶
+OK ulsan 장생포 고래문화마을 -> 장생포 고래문화마을
+OK sejong 세종호수공원 -> 세종호수공원
+OK sejong 국립세종수목원 -> 국립세종수목원
+NOMATCH sejong 정부세종청사 옥상정원 (0 results)
+OK suwon 수원화성 (유네스코 세계유산) -> 수원화성 성곽길
+OK suwon 화성행궁 -> 화성행궁
+OK suwon 행리단길 -> 행리단길
+OK suwon 통닭거리 -> 수원통닭거리
+OK seongnam 모란시장 (5일장) -> 올리브영 모란시장점
+OK seongnam 율동공원 -> 율동공원
+NOMATCH seongnam 판교 (20 results)
+OK uijeongbu 의정부 부대찌개거리 -> 의정부 부대찌개거리
+OK anyang 안양예술공원 -> 안양예술공원
+OK bucheon 한국만화박물관 -> 한국만화박물관
+OK gwangmyeong 광명동굴 -> 광명동굴
+OK gwangmyeong 광명전통시장 -> 광명전통시장
+OK pyeongtaek 평택호관광단지 -> 평택호관광단지
+OK dongducheon 소요산 -> 소요산국민관광지
+OK ansan 대부도 -> 대부도
+NOMATCH ansan 원곡동 다문화음식거리 (0 results)
+OK goyang 일산호수공원 -> 일산호수공원
+OK goyang 행주산성 -> 행주산성
+NOMATCH goyang 킨텍스 (20 results)
+OK gwacheon 서울대공원 -> 서울대공원
+OK gwacheon 서울랜드 -> 서울랜드
+OK gwacheon 국립과천과학관 -> 국립과천과학관
+NOMATCH gwacheon 국립현대미술관 과천관 (0 results)
+OK guri 동구릉 (유네스코 조선왕릉) -> 구리 동구릉 [유네스코 세계유산]
+OK guri 구리한강시민공원 -> 구리한강시민공원(코스모스공원)
+NOMATCH namyangju 다산 정약용 유적지 (0 results)
+OK namyangju 수종사 -> 수종사
+NOMATCH namyangju 물의정원 (0 results)
+OK osan 물향기수목원 -> 물향기수목원
+OK osan 독산성 -> 독산성산림욕장
+NOMATCH siheung 시흥갯골생태공원 (0 results)
+OK siheung 오이도 -> 오이도
+OK gunpo 철쭉동산 -> 철쭉동산
+OK gunpo 수리산 -> 수리산도립공원
+OK uiwang 철도박물관 -> 의왕철도박물관
+OK uiwang 왕송호수 (레일바이크) -> 왕송호수캠핑장
+NOMATCH hanam 미사 조정경기장 (0 results)
+OK hanam 검단산 -> 검단산
+NOMATCH hanam 스타필드 하남 (20 results)
+OK yongin 에버랜드 -> 에버랜드
+OK yongin 한국민속촌 -> 한국민속촌
+OK paju 임진각 · 평화누리 -> 임진각 수풀누리
+OK paju 헤이리 예술마을 -> 헤이리 예술마을
+NOMATCH paju 파주출판도시 (0 results)
+OK icheon 이천도자예술마을 (예스파크) -> 이천도자예술마을 (이천 예스파크)
+OK icheon 설봉공원 -> 설봉공원
+OK anseong 안성맞춤랜드 (남사당 공연) -> 안성맞춤랜드
+OK anseong 안성팜랜드 -> 안성팜랜드
+OK anseong 미리내성지 -> 미리내성지
+NOMATCH gimpo 애기봉 평화생태공원 (0 results)
+OK gimpo 대명항 -> 김포 대명항
+OK gimpo 김포 장릉 -> 김포 장릉(원종·인헌왕후) [유네스코 세계유산]
+OK hwaseong 융릉 · 건릉 (유네스코 조선왕릉) -> 화성 융릉(장조·헌경황후)과 건릉(정조·효의황후) [유네스코 세계유산]
+OK hwaseong 제부도 -> 제부도
+OK hwaseong 전곡항 -> 전곡항
+OK hwaseong 궁평항 -> 궁평항
+OK gwangju-gg 남한산성 (유네스코 세계유산) -> 남한산성행궁
+OK gwangju-gg 화담숲 -> 화담숲
+OK yangju 나리공원 -> 역삼개나리공원
+OK yangju 양주 회암사지 -> 양주 회암사지
+OK pocheon 산정호수 -> 산정호수 조각공원
+OK pocheon 포천아트밸리 -> 포천아트밸리 천문과학관
+OK pocheon 국립수목원 (광릉숲) -> 국립수목원
+OK pocheon 허브아일랜드 -> 허브아일랜드
+NOMATCH yeoju 세종대왕릉 (영릉) (0 results)
+OK yeoju 신륵사 -> 신륵사(여주)
+NOMATCH yeoju 여주 프리미엄 아울렛 (1 results)
+OK chuncheon 남이섬 -> 남이섬
+NOMATCH chuncheon 소양강 스카이워크 (0 results)
+OK chuncheon 김유정문학촌 -> 김유정문학촌
+OK chuncheon 레고랜드 -> 레고랜드 코리아 리조트
+NOMATCH wonju 소금산 그랜드밸리 (출렁다리) (0 results)
+NOMATCH wonju 뮤지엄 산 (0 results)
+OK wonju 치악산 -> 치악산 바람길숲
+OK gangneung 경포대 · 경포해변 -> 강릉 경포대
+NOMATCH gangneung 안목해변 커피거리 (0 results)
+OK gangneung 오죽헌 -> 오죽헌 전통뱃놀이 체험시설
+OK gangneung 정동진 -> 정동진
+OK donghae 무릉계곡 -> 무릉계곡
+OK donghae 추암 촛대바위 -> 추암 촛대바위
+OK donghae 묵호등대 · 논골담길 -> 묵호등대
+OK taebaek 태백산 국립공원 -> 태백산 국립공원
+OK taebaek 황지연못 (낙동강 발원지) -> 황지연못
+OK taebaek 검룡소 (한강 발원지) -> 검룡소
+OK taebaek 바람의 언덕 (매봉산) -> 매봉산 바람의 언덕
+OK sokcho 설악산 국립공원 -> 설악산 국립공원(외설악)
+OK sokcho 속초관광수산시장 -> 속초관광수산시장
+OK sokcho 아바이마을 -> 아바이마을
+OK sokcho 영금정 -> 영금정
+OK samcheok 환선굴 -> 환선굴
+NOMATCH samcheok 삼척해양레일바이크 (0 results)
+OK samcheok 장호항 -> 장호해변·장호항
+OK samcheok 삼척해상케이블카 -> 삼척해상케이블카
+NOMATCH pyeongchang 월정사 · 오대산 전나무숲 (7 results)
+NOMATCH pyeongchang 대관령 양떼목장 (0 results)
+NOMATCH pyeongchang 봉평 이효석문학관 (0 results)
+NEAR yeongwol 3
+NEAR hoengseong 0
+OK cheongju 청남대 -> 청남대
+OK cheongju 수암골 -> 수암골전망대
+OK cheongju 상당산성 -> 상당산성 자연휴양림
+OK cheongju 국립현대미술관 청주 -> 국립현대미술관 청주
+OK chungju 충주호 -> 충주호
+OK chungju 탄금대 -> 충주 탄금대
+NOMATCH chungju 활옥동굴 (0 results)
+OK chungju 수안보온천 -> 수안보온천 족욕길
+OK jecheon 의림지 -> 의림지 파크 랜드
+OK jecheon 청풍호반케이블카 -> 청풍호반케이블카
+NOMATCH jecheon 청풍문화재단지 (0 results)
+OK jecheon 배론성지 -> 배론성지
+OK cheonan 독립기념관 -> 독립기념관
+OK cheonan 각원사 -> 각원사
+OK gongju 공산성 (유네스코 백제역사유적지구) -> 공산성연지
+OK gongju 무령왕릉 (송산리 고분군) -> 공주 무령왕릉과 왕릉원[유네스코 세계유산]
+OK boryeong 대천해수욕장 -> 대천해수욕장
+NOMATCH boryeong 죽도 상화원 (0 results)
+OK asan 현충사 -> 현충사
+OK asan 외암민속마을 -> 외암민속마을
+OK asan 온양온천 -> 온양온천지구
+OK asan 지중해마을 -> 지중해마을
+OK seosan 해미읍성 -> 서산 해미읍성
+OK seosan 서산 용현리 마애여래삼존상 -> 서산 용현리 마애여래삼존상
+OK seosan 간월암 -> 간월암(서산)
+OK nonsan 관촉사 (은진미륵) -> 관촉사(논산)
+OK nonsan 탑정호 출렁다리 -> 논산 탑정호 출렁다리
+OK nonsan 선샤인랜드 -> 선샤인랜드
+NEAR gyeryong 5
+OK dangjin 솔뫼성지 -> 솔뫼성지
+OK dangjin 왜목마을 -> 왜목마을
+NOMATCH dangjin 삽교호관광지 (0 results)
+OK dangjin 아미미술관 -> 아미미술관
+OK jeonju 전주한옥마을 -> 전주한옥마을 도서관
+OK jeonju 경기전 -> 전주 경기전
+OK jeonju 전동성당 -> 전주전동성당
+NOMATCH jeonju 남부시장 야시장 (0 results)
+NOMATCH gunsan 근대역사거리 (0 results)
+OK gunsan 경암동 철길마을 -> 경암동 철길마을
+OK gunsan 선유도 (고군산군도) -> 선유도
+OK gunsan 초원사진관 -> 초원사진관
+OK iksan 미륵사지 (유네스코 백제역사유적지구) -> 미륵사지 석등하대석
+NOMATCH iksan 왕궁리 유적 (0 results)
+NOMATCH jeongeup 내장산 국립공원 (0 results)
+OK namwon 광한루원 -> 광한루원
+NOMATCH namwon 지리산 뱀사골 (0 results)
+OK gimje 벽골제 -> 벽골제농경문화박물관
+OK gimje 금산사 -> 금산사(김제)
+NEAR gochang 8
+OK mokpo 유달산 -> 유달산
+NOMATCH mokpo 목포해상케이블카 (0 results)
+NOMATCH mokpo 목포 근대역사거리 (0 results)
+OK mokpo 갓바위 -> 갓바위 문화타운
+OK yeosu 오동도 -> 오동도 등대
+NOMATCH yeosu 여수해상케이블카 (0 results)
+OK yeosu 향일암 -> 향일암(여수)
+OK yeosu 이순신광장 -> 이순신광장
+OK suncheon 순천만습지 -> 순천만습지
+OK suncheon 순천만국가정원 -> 순천만국가정원
+OK suncheon 낙안읍성 -> 낙안읍성 벚꽃길
+OK suncheon 선암사 (유네스코 산사) -> 선암사계곡
+OK naju 나주읍성 (금성관) -> 남고문(나주읍성 남문)
+OK naju 영산포 홍어거리 -> 영산포 홍어거리
+OK gwangyang 광양 매화마을 -> 광양 매화마을
+NOMATCH gwangyang 구봉산 전망대 (1 results)
+NEAR gangjin 2
+NEAR yeonggwang 8
+NEAR haenam 3
+OK goheung 나로우주센터 우주과학관 -> 나로우주센터 우주과학관
+OK goheung 소록도 -> 소록도
+OK goheung 팔영산 -> 팔영산자연휴양림
+NEAR wando 6
+NEAR yeongam 8
+OK pohang 호미곶 (상생의 손) -> 호미곶 등대
+OK pohang 영일대해수욕장 -> 영일대해수욕장
+OK pohang 스페이스워크 -> 환호공원 스페이스워크
+NOMATCH pohang 구룡포 일본인가옥거리 (0 results)
+OK gyeongju 불국사 · 석굴암 (유네스코 세계유산) -> 경주 불국사 [유네스코 세계유산]
+OK gyeongju 대릉원 -> 천마총(대릉원)
+OK gyeongju 동궁과 월지 (야경) -> 경주 동궁과 월지
+OK gyeongju 황리단길 -> 황리단길 생활문화센터
+OK gimcheon 직지사 -> 직지사
+OK gimcheon 부항댐 출렁다리 -> 부항댐 출렁다리
+OK andong 하회마을 (유네스코 세계유산) -> 안동 하회마을 겸암정사
+OK andong 도산서원 -> 도산서원 [유네스코 세계유산]
+OK andong 병산서원 -> 병산서원 [유네스코 세계유산]
+OK andong 월영교 -> 월영교
+NOMATCH gumi 금오산 도립공원 (0 results)
+OK gumi 구미에코랜드 -> 구미에코랜드
+OK yeongju 부석사 (유네스코 산사) -> 부석사 [유네스코 세계유산]
+OK yeongju 소수서원 (유네스코 서원) -> 영주 소수서원
+OK yeongju 무섬마을 -> 무섬마을
+OK yeongcheon 보현산 천문대 -> 보현산 천문대
+OK yeongcheon 은해사 -> 은해사(영천)
+OK sangju 경천섬 -> 경천섬(경천섬공원)
+NOMATCH sangju 상주자전거박물관 (0 results)
+NOMATCH mungyeong 문경새재 도립공원 (0 results)
+NOMATCH mungyeong 문경석탄박물관 (0 results)
+OK gyeongsan 갓바위 (팔공산 관봉) -> 팔공산국립공원(갓바위지구)
+OK gyeongsan 반곡지 -> 반곡지
+NOMATCH changwon 진해 여좌천 · 경화역 (0 results)
+OK changwon 마산어시장 -> 마산어시장
+OK changwon 창동예술촌 -> 창동예술촌
+OK jinju 진주성 · 촉석루 -> 진주성
+NOMATCH tongyeong 동피랑 벽화마을 (0 results)
+OK tongyeong 통영케이블카 (미륵산) -> 통영케이블카
+NOMATCH tongyeong 한산도 제승당 (0 results)
+OK tongyeong 디피랑 -> 디피랑(DPIRANG)
+NOMATCH sacheon 사천바다케이블카 (0 results)
+OK sacheon 삼천포항 -> 삼천포항
+NOMATCH sacheon 실안 낙조 (0 results)
+OK gimhae 수로왕릉 -> 김해수로왕릉
+OK gimhae 국립김해박물관 -> 국립김해박물관
+OK gimhae 가야테마파크 -> 김해가야테마파크
+OK miryang 영남루 -> 영남루 별빛정원
+OK miryang 표충사 -> 표충사 계곡
+OK miryang 얼음골 -> 얼음골사람들
+OK miryang 위양지 -> 위양지(위양지 이팝나무)
+OK geoje 바람의 언덕 -> 바람의 언덕
+OK geoje 외도 보타니아 -> 외도 보타니아
+NOMATCH geoje 학동 흑진주몽돌해변 (0 results)
+NOMATCH geoje 거제 포로수용소 유적공원 (0 results)
+OK yangsan 통도사 (유네스코 산사) -> 통도사(양산)
+OK yangsan 배내골 -> 배내골
+NEAR hadong 8
+NEAR hapcheon 8
+NEAR geochang 0
+OK namhae 독일마을 -> 남해독일마을
+OK namhae 다랭이마을 -> 다랭이마을
+OK namhae 보리암 (금산) -> 금산 보리암(남해)
+OK namhae 상주은모래비치 -> 상주은모래비치
+OK jeju 한라산 (성판악·관음사 코스) -> 한라산
+OK jeju 협재해수욕장 -> 협재해수욕장
+OK jeju 동문시장 -> 와인창고 동문시장점
+OK jeju 용두암 -> 용두암
+NOMATCH seogwipo 성산일출봉 (유네스코 세계유산) (2 results)
+OK seogwipo 천지연폭포 -> 천지연폭포
+OK seogwipo 중문관광단지 -> 중문관광단지
+OK seogwipo 쇠소깍 -> 쇠소깍
+NEAR ganghwa 2
+NEAR gijang 5
+NEAR dalseong 8
+NEAR gunwi 5
+NEAR ulju 8
+NEAR yangpyeong 6
+NEAR gapyeong 7
+NEAR yeoncheon 7
+NEAR hongcheon 0
+NEAR jeongseon 4
+NEAR cheorwon 4
+NEAR hwacheon 8
+NEAR yanggu 8
+NEAR inje 4
+NEAR goseong-gw 8
+NEAR yangyang 7
+NEAR boeun 5
+NEAR okcheon 8
+NEAR yeongdong 8
+NEAR jeungpyeong 5
+NEAR jincheon 8
+NEAR goesan 0
+NEAR eumseong 8
+NEAR danyang 8
+NEAR geumsan 4
+NEAR buyeo 6
+NEAR seocheon 4
+NEAR cheongyang 7
+NEAR hongseong 6
+NEAR yesan 1
+NEAR taean 3
+NEAR wanju 8
+NEAR jinan 8
+NEAR muju 8
+NEAR jangsu 8
+NEAR imsil 8
+NEAR sunchang 8
+NEAR buan 8
+NEAR damyang 3
+NEAR gokseong 8
+NEAR gurye 8
+NEAR boseong 4
+NEAR hwasun 8
+NEAR jangheung 5
+NEAR muan 6
+NEAR hampyeong 6
+NEAR jangseong 8
+NEAR jindo 8
+NEAR sinan 8
+NEAR uiseong 6
+NEAR cheongsong 8
+NEAR yeongyang 2
+NEAR yeongdeok 8
+NEAR cheongdo 7
+NEAR goryeong 8
+NEAR seongju 6
+NEAR chilgok 8
+NEAR yecheon 8
+NEAR bonghwa 8
+NEAR uljin 7
+OK ulleung 나리분지 -> 나리분지
+OK ulleung 봉래폭포 -> 봉래폭포 (울릉도, 독도 국가지질공원)
+NOMATCH ulleung 내수전 일출전망대 (0 results)
+NOMATCH ulleung 태하 향목전망대 (0 results)
+NOMATCH ulleung 독도전망대 케이블카 (도동) (0 results)
+OK ulleung 관음도 -> 관음도 (울릉도, 독도 국가지질공원)
+NOMATCH dokdo 동도 선착장 (0 results)
+NOMATCH dokdo 독도박물관 (울릉 도동) (1 results)
+NOMATCH dokdo 독도전망대 케이블카 (울릉 도동) (0 results)
+NEAR uiryeong 6
+NEAR haman 8
+NEAR changnyeong 5
+NEAR goseong-gn 6
+NEAR sancheong 8
+NEAR hamyang 8

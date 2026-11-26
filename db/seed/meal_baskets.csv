@@ -1,0 +1,13 @@
+﻿style,item,qty,source_id
+budget,자장면,1,src_assume
+budget,칼국수,1,src_assume
+budget,김치찌개백반,1,src_assume
+budget,아메리카노,1,src_assume
+standard,김치찌개백반,1,src_assume
+standard,냉면,1,src_assume
+standard,삼겹살 200g,1,src_assume
+standard,아메리카노,2,src_assume
+comfort,냉면,1,src_assume
+comfort,삼겹살 200g,1.5,src_assume
+comfort,삼계탕,1,src_assume
+comfort,카페라떼,2,src_assume

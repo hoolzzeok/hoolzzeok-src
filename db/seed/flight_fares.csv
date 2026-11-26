@@ -1,0 +1,10 @@
+﻿from_place,to_place,fare,basis,source_id
+seoul,jeju,99300,공시 운임,src_flight
+incheon,jeju,100300,공시 운임,src_flight
+busan,jeju,94300,공시 운임,src_flight
+cheongju,jeju,94300,공시 운임,src_flight
+daegu,jeju,96300,공시 운임,src_flight
+gwangju,jeju,79800,공시 운임,src_flight
+busan,seoul,95300,공시 운임,src_flight
+seoul,ulsan,53700,공시 운임,src_flight
+seoul,yeosu,48000,공시 운임,src_flight

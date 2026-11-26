@@ -1,0 +1,74 @@
+﻿id,place_id,kind,type_ko,type_en,name_ko,price_text,duration_text,note,source_url,source_as_of,rep_price
+1,seoul,traditional,국악 공연,Gugak show,국립국악원 토요명품공연,"A석 30,000원 / B석 20,000원",매주 토 15:00 공연(러닝타임 미기재),"2026 가을 시즌 9.5~10.31 종료, 다음 시즌 확인 필요",https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=73703,2026,30000
+2,yongin,traditional,민속마을,Folk village,한국민속촌 자유이용권,"정가 19,000원 (예약사이트 18,620원)","미기재 (운영 10:00~19:00, 주말 ~22:00)",,https://www.waug.com/ko/activities/116667,2026-11,19000
+3,jeju,traditional,해녀문화,Haenyeo,제주해녀박물관 관람,"어른 1,100원",미기재,,https://www.ktriptips.com/kor/culture/130857,2026-06-10,1100
+4,seoul,traditional,음식,Food,뮤지엄김치간 관람,"성인 5,000원 (김치 만들기 체험 별도 요금)",미기재,,https://www.ktriptips.com/kor/tourspot/2469939,2026-03-19,5000
+5,jeju,traditional,해녀문화,Haenyeo,도시해녀 해녀체험,미표기,약 3시간,장비·사진·샤워·해물라면 포함,https://www.trazy.com/experience/detail/haenyeo-experience-in-jeju-island,2026-11,
+6,danyang,activity,패러글라이딩,Paragliding,단양 패러 명가,"노멀 90,000원(영상 +20,000) / 익스트림 120,000원 / 스페셜 150,000원 / VIP 200,000원","비행 5~8분 (스페셜 15분+, VIP 20분+)",연중무휴 08:00~19:00,https://www.ktriptips.com/kor/leisure/3074954,2026-04-07,90000
+7,danyang,activity,패러글라이딩,Paragliding,단양패러마을,"정가 129,000원 / 판매가 90,000원~",미기재,"고프로 영상 3분 11,000원·8분 22,000원 별도",https://www.waug.com/ko/activities/102343,2026-11,129000
+8,tongyeong,activity,케이블카,Cable car,통영 미륵산 케이블카,"왕복 11,000원 / 편도 7,500원",상행 약 20분,"루지 이용 시 1,000원 할인",https://travelmapjourney.com/tongyeong-summer-1night2days-course/,2026-10-13,11000
+9,inje,activity,래프팅,Rafting,내린천 래프팅,"40,000원",2~3시간,,https://www.ktriptips.com/kor/leisure/131776,2026-03-12,40000
+10,yangyang,activity,서핑,Surfing,서프팩토리 양양설악점,"기초강습 50,000원 / 라인업강습 80,000원 / 원포인트 4회 250,000원",미기재,"보드 대여 20,000~30,000원, 슈트 10,000원",https://www.ktriptips.com/kor/leisure/3072010,2026-04-06,50000
+11,mungyeong,activity,짚라인,Zipline,짚라인 문경,"55,000원",미기재 (코스 82~360m),,https://www.ktriptips.com/eng/leisure/1059823,2026-09-09,55000
+12,hoengseong,activity,루지,Luge,횡성 루지체험장,"비수기 1회 12,000원·2회 21,000원 / 성수기 1회 15,000원·2회 21,000원",미기재,,https://ktriptips.com/eng/leisure/2995180,2026-05-06,12000
+13,inje,activity,번지점프,Bungee,엑스게임리조트 (내린천 번지점프 63m),"번지점프 다리 80,000원 / 허리 60,000원",미기재,"래스팅·짚트랙·아르고 각 35,000원",https://www.ktriptips.com/kor/leisure/131806,2026-05-21,80000
+14,jeongseon,activity,레일바이크,Rail bike,정선레일바이크,"2인승 30,000원 / 4인승 40,000원 (1대 기준)",30~40분 (7.2km),"1인당으로는 2인승 15,000원 꼴",https://www.ktriptips.com/kor/leisure/1936389,2025-07-04,15000
+15,jeju,activity,승마,Horse riding,제주탑승마클럽,"트레킹 30,000원 / 체험외승 80,000원 / 근교외승 120,000원 / 1:1레슨 90,000원",체험외승 45분 / 근교외승 90분 / 레슨 45분,,https://www.ktriptips.com/kor/leisure/1755350,2026-09-10,30000
+16,gijang,activity,루지,Luge,스카이라인 루지 부산,"정가 39,000원 (예약사이트 대표가, 회차 옵션 미표시)",미기재,트랙 2.4km,https://www.waug.com/ko/activities/120453,2026-11,39000
+17,seogwipo,activity,스쿠버다이빙,Scuba,서귀포 타크라 체험다이빙,"정가 55,000원 (판매 53,900원)",미기재,,https://www.waug.com/ko/activities/116209,2026-11,55000
+18,yangyang,activity,서핑,Surfing,인구서프 서핑강습+자유서핑,"정가 47,500원 (판매 46,550원)",강습 2시간 (1시간 옵션 있음),,https://www.waug.com/ko/activities/115957,2026-11,47500
+19,inje,activity,래프팅,Rafting,곰레포츠 내린천 래프팅/ATV,"정가 40,000원 (판매 30,000원~)",미기재,,https://www.waug.com/ko/activities/121338,2026-11,40000
+20,cheorwon,activity,래프팅,Rafting,한탄강 래프팅 (당일 패키지),"A 47,000원 / C 58,000원 / B 77,000원 / D 88,000원",A·C 2시간 30분 / B 2시간 / D 5시간,패키지 구성은 출처 확인,https://www.ktriptips.com/kor/leisure/131773,2025-03-31,47000
+21,seogwipo,activity,카누·배,Boat,쇠소깍 전통 조각배,"성인 2인 20,000원 (1척 기준)",약 20~25분,투명카약 요금은 미확인,https://travelmapjourney.com/jeju-soesokkak-transparent-kayak-guide/,2026-10-09,10000
+22,yeosu,activity,케이블카,Cable car,여수 해상케이블카,"일반캐빈 왕복 17,000원·편도 14,000원 / 크리스탈캐빈 왕복 24,000원·편도 19,000원",편도 약 13분(기사 기준),길이 1.5km,https://www.ktriptips.com/kor/tourspot/1997202,2026-06-30,17000
+23,hadong,activity,짚라인,Zipline,하동 코리아 짚와이어,"성인 45,000원","미기재 (코스 3,420m)",,https://www.ktriptips.com/kor/leisure/2656585,2026-04-27,45000
+24,yangpyeong,activity,패러글라이딩,Paragliding,양평 미래항공스포츠,"기본힐링 140,000원 / 다이나믹촬영 160,000원 / 커플 180,000원",미기재,요금표가 여러 개라 현장 확인 필요,https://www.ktriptips.com/kor/leisure/2585388,2025-06-24,140000
+25,jeonju,traditional,한복,Hanbok,한복남 전주한옥마을점 한복 대여,"정가 7,000원~ (옵션별 상이)",이용 09:30~20:00 (반납 19:30),,https://www.waug.com/ko/activities/104603,2026-11,7000
+26,jeonju,traditional,공예,Craft,전주목판서화체험관,"목판화체험 3,000원 / 엽서봉투 세트 7,000원 / 한지벽걸이 10,000원 / 옛책 만들기 50,000원",미기재,,https://www.ktriptips.com/kor/tourspot/1594500,2026-10-22,3000
+27,icheon,traditional,도자기,Pottery,길상요 도자기체험,"물레성형+그림 35,000원 / 핸드빌딩 50,000원",약 30분,정보 수정일이 오래됨,https://www.ktriptips.com/eng/tourspot/3080435,2024-01-11,35000
+28,gimcheon,traditional,전통주,Korean liquor,김천 배금도가 전통주 만들기,"정가 28,750원 (판매 25,000원)",약 90분,,https://www.waug.com/ko/activities/119217,2026-11,28750
+29,seoul,traditional,전통주,Korean liquor,춘풍양조장 투어,"양조장 투어 80,000원 / 투어A 110,000원 / 150,000원 과정",미기재,,https://www.ktriptips.com/kor/tourspot/3463600,2026-07-24,80000
+30,gongju,traditional,템플스테이,Templestay,마곡사 템플스테이,"휴식형 1박2일 80,000원 / 체험형(싱잉볼·요가 명상) 90,000원",1박2일 (첫날 13:40 입실~다음날 점심 후),블로그가 공식 페이지 인용(2026.11.5 확인),https://www.make2t.kr/2026/11/magoksa-templestay-booking-price.html,2026-11-05,80000
+31,andong,traditional,템플스테이,Templestay,봉정사 템플스테이,"휴식형 1박 80,000원 / 체험형 2박3일 160,000원 / 당일형 40,000원(5명 이상 단체)",휴식형 1박2일 / 당일형 약 4시간,블로그가 공식 페이지 인용,https://www.make2t.kr/2026/11/bongjeongsa-templestay-booking-price.html,2026-11-05,80000
+32,seoul,traditional,템플스테이,Templestay,금선사 템플스테이,"주중 휴식형 80,000원 / 금·토 체험형 80,000원 / 단체 당일형 40,000원(7명 이상)",1박2일 (14:30 입실~다음날 10:30) / 당일형 약 3시간,블로그가 공식 페이지 인용,https://www.make2t.kr/2026/11/geumsunsa-templestay-2026-reservation-price-refund.html,2026-11-05,80000
+33,andong,traditional,민속마을,Folk village,안동 하회마을,"일반 5,000원",관람 09:00~17:00(동절기) / 18:00(하절기),하회별신굿탈놀이 상설공연 있음,https://www.ktriptips.com/kor/tourspot/894027,2026-06-19,5000
+34,muju,traditional,무예,Taekwondo,국립태권도원,"입장 무료 / 태권도 체험권 4,000원 / 통합권 8,000원 / 모노레일 4,000원",미기재,,https://www.ktriptips.com/kor/culture/1904335,2026-07-21,4000
+35,seoul,traditional,한복,Hanbok,지지배배 경복궁 한복 대여(헤어 포함),"정가 13,361원~ (판매 13,094원)",2시간 / 4시간 / 종일 선택,옵션별 가격 상이,https://www.waug.com/ko/activities/161308,2026-11,13361
+36,suncheon,traditional,민속마을,Folk village,순천 낙안읍성,"개인 4,000원",미기재,가야금·대장간·서각 체험 (요금 미기재),https://www.ktriptips.com/kor/tourspot/127931,2026-11-11,4000
+37,jeju,activity,카트·레이싱,Karting,9.81파크 제주,"1인승 레이싱 42,500원 / 2인승 29,500원 / 풀패키지 52,500원",미기재,,https://www.ktriptips.com/kor/leisure/2609373,2025-11-19,42500
+38,busan,activity,케이블카,Cable car,부산 송도해상케이블카,"에어크루즈 왕복 17,000~19,000원 / 크리스탈 왕복 22,000~24,000원",미기재,"출처에 요금표 2개(금액 다름), 현장 확인 필요",https://www.ktriptips.com/kor/tourspot/2504464,2026-08-14,19000
+39,danyang,activity,스카이워크,Skywalk,단양 만천하 스카이워크,"어른 4,000원 (스카이워크 입장)",미기재,짚와이어·알파인코스터 별도 요금 미확인,https://www.ktriptips.com/kor/leisure/2519536,2026-09-20,4000
+40,busan,activity,요트,Yacht,요트탈래 해운대 요트투어,"퍼블릭 주간 15,000~30,000원 / 야간 30,000~40,000원 / 프라이빗 150,000원~",미기재,출처에 요금표 2개(금액 다름),https://www.ktriptips.com/kor/leisure/2825115,2026-09-04,30000
+41,yeongwol,activity,래프팅,Rafting,태용래프팅 동강,"D코스 30,000원 / A코스 35,000원 / B코스 40,000원 / C코스 60,000원",D 2시간 / A 2~3시간 / B 4시간 / C 6~8시간,,https://www.ktriptips.com/kor/leisure/131929,2026-09-30,30000
+42,seogwipo,activity,잠수함,Submarine,서귀포잠수함,"대인 65,000원",미기재,,https://www.ktriptips.com/kor/tourspot/126665,2026-03-30,65000
+43,sokcho,activity,케이블카,Cable car,설악산 케이블카,"16,000원 (다른 표기 15,000원)",약 10분,"요금 표기 2개, 현장 확인 필요",https://www.ktriptips.com/kor/tourspot/128788,2025-12-03,16000
+44,chuncheon,activity,레일바이크,Rail bike,강촌레일파크 김유정레일바이크,"2인승 40,000원 / 4인승 56,000원 (1대 기준)",미기재 (8.5km),"1인당으로는 2인승 20,000원 꼴",https://www.ktriptips.com/kor/leisure/1947118,2025-10-31,20000
+45,jecheon,activity,케이블카,Cable car,청풍호반케이블카,"일반캐빈 대인 18,000원 / 크리스탈 23,000원",약 10분 (2.3km),,https://www.ktriptips.com/kor/tourspot/2606296,2025-07-11,18000
+46,gapyeong,activity,수상레저,Water sports,리버포인트 수상레저,"당일 놀이기구 30,000~90,000원 / 초보강습 65,000~145,000원",미기재,종목별 요금 미구분,https://www.ktriptips.com/kor/leisure/2773872,2026-09-30,90000
+47,suwon,traditional,궁궐·성곽,Fortress,수원화성 화성어차,"성인 6,000원",미기재 (운행 09:40~17:00),,https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-02/sw-visitsuwon-02-04/sw-visitsuwon-02-04-01.jsp,2026-11,6000
+48,yeongju,traditional,민속마을,Folk village,영주 선비촌,"어른 3,000원 (공사 할인 시 2,000원)",미기재,전통문화 체험 별도 요금,https://www.ktriptips.com/kor/tourspot/129430,2026-10-08,3000
+49,tongyeong,traditional,공예,Craft,통영 옻칠미술관,"일반 3,000원",미기재,,https://www.ktriptips.com/kor/culture/130848,2026-10-16,3000
+50,seogwipo,traditional,민속마을,Folk village,제주 성읍민속마을,무료,상시 개방,제주민요·오메기술·고소리술·천연염색 체험 (요금 미기재),https://www.ktriptips.com/kor/tourspot/126471,2026-10-22,
+51,boseong,traditional,다도,Tea,보성 다향아트밸리,입장 무료 (녹차족욕·녹차김치 체험료 미기재),트레킹 왕복 2시간,,https://www.ktriptips.com/kor/tourspot/3060624,2026-06-30,
+52,seoul,traditional,음식,Food,오응고(O'ngo) 북촌 한식 쿠킹클래스,미표기,2시간 (평일 10:30~12:30),"요일별 비빔밥·불고기·잡채 등, 영어 진행",https://www.trazy.com/experience/detail/korean-cooking-class-in-bukchon-hanok-village,2026-11,
+53,mokpo,activity,케이블카,Cable car,목포 해상케이블카,"일반 왕복 24,000원 / 크리스탈 왕복 29,000원",미기재 (3.23km),,https://www.ktriptips.com/kor/tourspot/2606207,2026-06-30,24000
+54,busan,activity,해변열차,Beach train,해운대 블루라인파크 해변열차·스카이캡슐,"해변열차 1회 8,000~10,000원 / 스카이캡슐 2인 40,000~50,000원",미기재,"출처에 요금표 2개(금액 다름), 현장 확인 필요",https://www.ktriptips.com/kor/tourspot/2672393,2026-06-23,10000
+55,mungyeong,activity,레일바이크,Rail bike,문경 철로자전거,"2인승 15,000원 / 4인승 25,000원 (1대 기준)",왕복 약 50분~1시간,,https://www.ktriptips.com/kor/leisure/1945729,2025-10-23,7500
+56,gunsan,activity,짚라인,Zipline,선유 스카이썬라인,"일반 20,000원",미기재 (700m),바다 위 하강 체험,https://www.ktriptips.com/kor/leisure/2606125,2026-02-24,20000
+57,daegu,activity,케이블카,Cable car,대구 앞산 케이블카,"대인 왕복 14,000원",미기재 (기사: 약 5분),,https://www.ktriptips.com/kor/tourspot/2366916,2026-06-11,14000
+58,busan,traditional,템플스테이,Templestay,내원정사 템플스테이,"1박2일 70,000원 (1인실 +20,000원) / 당일형 35,000원 / 위빳사나 하루수행 30,000원",1박2일 (13:30 입실~다음날 10:30),블로그가 공식 페이지 인용,https://www.make2t.kr/2026/11/naewonjeongsa-templestay-2026-reservation-price.html,2026-11,70000
+59,gurye,traditional,템플스테이,Templestay,구례 천은사 템플스테이,"체험형 1박2일 100,000원 (1인실 +20,000원)",1박2일 (15:00 입소~다음날 11:00),블로그가 공식 페이지 인용,https://www.make2t.kr/2026/11/cheoneunsa-templestay-booking-price-refund.html,2026-11,100000
+60,ganghwa,activity,루지,Luge,강화 루지 (강화씨사이드리조트),"정가 18,050원 (판매 17,050원, 루지+케이블카)",미기재,2·3회권 별도,https://www.waug.com/ko/activities/110286,2026-11,18050
+61,ulju,activity,수상레저,Water sports,울주해양레포츠센터 (공공),"카누·카약·SUP 10,000원 / 모터보트 15,000원 / 딩기요트·윈드서핑 25,000원 / 제트스키 30,000원",미기재,공공시설이라 저렴,https://www.ktriptips.com/kor/leisure/3043550,2026-08-31,10000
+62,sejong,traditional,종합 체험관,Culture center,세종전통문화체험관,미기재 (프로그램별),미기재,사물놀이·탈춤·민화·서예·사찰음식·다도,https://ktriptips.com/eng/tourspot/3459140,2026-11-11,
+63,gwangju,traditional,공예,Craft,빛고을공예창작촌,체험별 상이 (전화 문의),미기재,한지공예·도예,https://www.ktriptips.com/kor/tourspot/3025220,2026-07-01,
+64,seoul,traditional,궁궐,Palace,경복궁 관람,"성인 3,000원 (한복 착용 시 무료입장 제도 운영 중, 존폐 검토 중)",미기재,2027년 관람료 인상 검토 중(시기·금액 미확정),https://www.heraldk.com/article/2026092514212434543,2026-09-25,3000
+65,boryeong,activity,짚라인,Zipline,대천 짚트랙,"18,000원",미기재 (복귀 카트 약 10분),,https://www.ktriptips.com/eng/leisure/3403790,2025-10-27,18000
+66,suncheon,activity,케이블카,Cable car,순천만 스카이큐브,"왕복 8,000원",미기재 (4.6km),,https://www.ktriptips.com/kor/tourspot/2612804,2026-10-19,8000
+67,jeju,activity,카트·썰매,Karting,제주 레포츠랜드,"정가 17,000원 (판매 13,500원~)",미기재,,https://www.waug.com/ko/activities/102618,2026-11,17000
+68,tongyeong,activity,요트,Yacht,통영마리나리조트 요트,"25인승 대인 30,000원 / 10인승 전세 2시간 290,000~310,000원",전세 2시간,,https://www.ktriptips.com/kor/leisure/719521,2025-12-15,30000
+69,jeju,activity,패러글라이딩,Paragliding,제주 바다하늘 패러글라이딩,"정가 85,000원 (판매 82,450원) / 프리미엄 +20,000원 / VIP +40,000원",힐링 6분 / 프리미엄 10분 / VIP 13~15분,활공장은 기상 따라 금오름·서우봉,https://www.waug.com/ko/activities/118959,2026-11,85000
+70,buyeo,traditional,역사 테마파크,History park,백제문화단지,"대인 6,000원","미기재 (09:00~18:00, 3~10월)",,https://www.ktriptips.com/kor/tourspot/1103949,2026-11-11,6000
+71,gangneung,traditional,고택,Historic house,강릉 오죽헌·시립박물관,"어른 3,000원",미기재 (09:00~18:00),,https://www.ktriptips.com/kor/culture/129784,2026-03-18,3000
+72,namwon,traditional,정원·고전,Garden,남원 광한루원,"어른 4,000원",미기재,,https://www.ktriptips.com/kor/tourspot/126397,2026-05-20,4000
+73,gyeongju,activity,패러글라이딩,Paragliding,경주 패러글라이딩 (KTX역 픽업),미표기,비행 기본 7분 / 스페셜 13분 / 익스트림 15분 / VIP 20분,이륙장 해발 450m,https://www.trazy.com/ko/experience/detail/tandem-paragliding-gyeongju,2026-11,

@@ -1,0 +1,9 @@
+﻿scope,scope_key,name,description,url,source_id
+province,전남,남도장터,전라남도 공식 쇼핑몰,https://www.jnmall.kr/,src_malls
+province,경북,사이소,경상북도 공식 쇼핑몰,https://www.cyso.co.kr/,src_malls
+province,강원,강원더몰,강원특별자치도 공식 쇼핑몰,https://gwdmall.kr/,src_malls
+province,전북,전북생생장터,전북특별자치도 공식 쇼핑몰,https://www.freshjb.com/,src_malls
+province,경남,e경남몰,경상남도 공식 쇼핑몰,https://www.egnmall.kr/,src_malls
+place,sangju,명실상주몰,상주시 공식 쇼핑몰,https://sjmall.cyso.co.kr/,src_malls
+place,cheongdo,청리브,청도군 농특산물 쇼핑몰,https://cdmall.cyso.co.kr/,src_malls
+place,yeongdeok,영덕장터,영덕군 공식 쇼핑몰,https://ydmall.cyso.co.kr/,src_malls

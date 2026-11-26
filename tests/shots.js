@@ -1,0 +1,25 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();
+const ctx=async loc=>{const c=await b.newContext({viewport:{width:390,height:844},locale:loc,deviceScaleFactor:2});await c.route(/fonts\.|unpkg|supabase/,r=>r.fulfill({body:''}));await c.route(/xlsx\.full\.min\.js/,r=>r.fulfill({path:'/tmp/xl/node_modules/xlsx/dist/xlsx.full.min.js',contentType:'application/javascript'}));return c};
+const F='file:///home/claude/hoolzzeok_site/index.html';
+let c=await ctx('en-US'),p=await c.newPage();
+await p.goto(F);await p.waitForTimeout(900);await p.screenshot({path:'shots/a1.png'});
+await p.click('#qt-go');await p.click('[data-v="5"]');await p.click('[data-v="nature"]');await p.waitForTimeout(200);await p.screenshot({path:'shots/a2.png'});
+await p.click('[data-v="food"]');await p.waitForTimeout(200);await p.screenshot({path:'shots/a3.png'});
+await p.click('[data-v="standard"]');await p.waitForTimeout(400);await p.screenshot({path:'shots/a4.png'});
+await p.evaluate(()=>document.getElementById('qt').scrollTo(0,560));await p.waitForTimeout(150);await p.screenshot({path:'shots/a5.png'});
+// 날짜·휴무 경고·가는 법·비 대안
+await p.goto(F+'?qt=3.history.standard..icn.20261130');await p.waitForTimeout(900);
+await p.evaluate(()=>{const e=document.querySelector('.qt-day:nth-of-type(2)')||[...document.querySelectorAll('.qt-day')][1];e.scrollIntoView();});await p.waitForTimeout(150);await p.screenshot({path:'shots/b1.png'});
+await p.goto(F+'?qt=6.history+food.standard.gyeongju');await p.waitForTimeout(900);
+await p.evaluate(()=>[...document.querySelectorAll('.qt-day')][3].scrollIntoView());await p.waitForTimeout(150);await p.screenshot({path:'shots/b2.png'});
+await p.goto(F+'?qt=4.nature+rest.standard..cju');await p.waitForTimeout(900);await p.screenshot({path:'shots/b3.png'});
+await p.evaluate(()=>[...document.querySelectorAll('.qt-day')][1].scrollIntoView());await p.waitForTimeout(150);await p.screenshot({path:'shots/b4.png'});
+await c.close();
+c=await ctx('ja-JP');p=await c.newPage();await p.goto(F+'?qt=5.food+shop.standard.busan.icn.20261203');await p.waitForTimeout(900);
+await p.evaluate(()=>document.getElementById('qt').scrollTo(0,520));await p.waitForTimeout(150);await p.screenshot({path:'shots/c1.png'});
+const txt=await p.evaluate(()=>{let t='';const o=navigator.clipboard.writeText;navigator.clipboard.writeText=async s=>{window.__t=s};document.querySelector('[data-send="copy"]').click();return new Promise(r=>setTimeout(()=>r(window.__t||''),300));});
+require('fs').writeFileSync('shots/msg.txt',txt);
+const [dl]=await Promise.all([p.waitForEvent('download'),p.click('#qt-xl')]);await dl.saveAs('shots/plan.xlsx');await c.close();
+c=await ctx('zh-TW');p=await c.newPage();await p.goto('file:///home/claude/www.hoolzzeok.com/zh-tw/korea-itinerary/5-days-seoul-jeju/index.html');await p.waitForTimeout(300);await p.screenshot({path:'shots/d1.png'});await c.close();
+await b.close()})();

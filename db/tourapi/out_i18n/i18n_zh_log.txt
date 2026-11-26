@@ -1,0 +1,199 @@
+OK seoul 경복궁 -> 景福宫(경복궁) (0.31km, name)
+OK seoul 북촌한옥마을 -> 北村韩屋村(북촌한옥마을) (0.03km, name)
+NOMATCH seoul 광장시장
+OK busan 해운대해수욕장 -> 海云台海水浴场(해운대해수욕장) (0.01km, name)
+OK busan 광안리 (광안대교 야경) -> 广安里海水浴场광안리해수욕장 (0.08km, name)
+OK busan 자갈치시장 -> 釜山札嘎其市场부산 자갈치시장 (0.01km, name)
+NOMATCH daegu 서문시장 (야시장)
+OK daegu 김광석다시그리기길 -> 金光石街(重现金光石街)(김광석 길(김광석다시그리기길)) (0.00km, name)
+OK daegu 근대골목 (청라언덕) -> 大邱近代街区(近代时空旅行)(대구 근대골목)(근대로의 여행) (0.70km, name)
+OK daegu 수성못 -> 寿城池游园地(수성못 유원지) (0.45km, name)
+OK incheon 차이나타운 · 개항장 거리 -> 仁川中国城인천 차이나타운 (0.22km, name)
+OK incheon 월미도 -> 月尾岛(월미도) (0.42km, name)
+OK incheon 송도 센트럴파크 -> 松岛中央公园송도 센트럴파크 (0.54km, name)
+OK incheon 소래포구 -> 苏莱浦口(소래포구) (0.01km, name)
+OK gwangju 국립아시아문화전당 -> 国立亚洲文化殿堂(국립아시아문화전당) (0.22km, name)
+OK gwangju 무등산 국립공원 -> 无等山国立公园(무등산국립공원) (0.08km, name)
+NOMATCH gwangju 1913송정역시장
+OK daejeon 엑스포과학공원 · 한빛탑 -> 大田EXPO科学公园(대전엑스포과학공원) (0.46km, name)
+NOMATCH daejeon 대청호 오백리길
+OK daejeon 장태산자연휴양림 -> 壮泰山自然休养林(장태산자연휴양림) (0.00km, name)
+OK daejeon 유성온천 -> 儒城温泉地区（유성온천지구） (0.00km, name)
+OK ulsan 태화강 국가정원 -> 太和江国家园林十里竹林（银河道）태화강 국가정원 십리대숲 (은하수길) (0.27km, name)
+OK ulsan 대왕암공원 -> 大王岩公园(대왕암공원) (0.00km, name)
+OK ulsan 간절곶 -> 艮绝岬(간절곶) (0.00km, name)
+OK ulsan 장생포 고래문화마을 -> 长生浦鲸鱼文化村(장생포 고래문화마을) (0.01km, name)
+OK sejong 세종호수공원 -> 世宗湖水公园세종호수공원 (0.50km, name)
+OK sejong 국립세종수목원 -> 国立世宗树木园（국립세종수목원） (0.06km, name)
+NOMATCH suwon 수원화성 (유네스코 세계유산)
+NOMATCH suwon 화성행궁
+OK suwon 행리단길 -> 行理团路（행리단길） (0.01km, name)
+OK suwon 통닭거리 -> 水原炸鸡一条街（수원통닭거리） (0.01km, name)
+NOMATCH seongnam 율동공원
+OK uijeongbu 의정부 부대찌개거리 -> 议政府部队锅一条街(의정부 부대찌개거리) (0.01km, name)
+OK anyang 안양예술공원 -> 安养艺术公园（안양예술공원） (0.02km, name)
+OK bucheon 한국만화박물관 -> 韩国漫画博物馆(한국만화박물관) (0.02km, name)
+OK gwangmyeong 광명동굴 -> 光明洞窟(광명동굴) (0.14km, name)
+OK gwangmyeong 광명전통시장 -> 光明传统市场（광명전통시장） (0.01km, name)
+NOMATCH pyeongtaek 평택호관광단지
+NOMATCH dongducheon 소요산
+OK ansan 대부도 -> 大阜岛（대부도） (0.01km, name)
+OK goyang 일산호수공원 -> 一山湖水公园(일산호수공원) (0.56km, name)
+OK goyang 행주산성 -> 幸州山城(행주산성) (0.00km, name)
+OK gwacheon 서울대공원 -> 首尔大公园<br />서울대공원 (0.99km, name)
+OK gwacheon 서울랜드 -> 首尔乐园(서울랜드) (0.48km, name)
+OK gwacheon 국립과천과학관 -> 国立果川科学馆(국립과천과학관) (0.04km, name)
+NOMATCH gwacheon 국립현대미술관 과천관
+NOMATCH guri 동구릉 (유네스코 조선왕릉)
+NOMATCH guri 구리한강시민공원
+OK namyangju 수종사 -> 水钟寺(수종사) (0.28km, name)
+OK osan 물향기수목원 -> 水香树木园(물향기수목원) (0.24km, name)
+OK siheung 오이도 -> 乌耳岛（오이도） (0.05km, name)
+NOMATCH gunpo 철쭉동산
+NOMATCH gunpo 수리산
+NOMATCH uiwang 철도박물관
+NOMATCH hanam 검단산
+OK yongin 에버랜드 -> 爱宝乐园 에버랜드 (0.11km, name)
+OK yongin 한국민속촌 -> 韩国民俗村(한국민속촌) (0.34km, name)
+OK paju 헤이리 예술마을 -> Heyri艺术村(헤이리 예술마을) (0.01km, name)
+NOMATCH icheon 이천도자예술마을 (예스파크)
+OK icheon 설봉공원 -> 雪峰公园(설봉공원) (0.16km, name)
+OK anseong 안성맞춤랜드 (남사당 공연) -> 安城乐园(안성맞춤랜드) (0.11km, name)
+OK anseong 안성팜랜드 -> 安城牧场(안성팜랜드) (0.01km, name)
+OK anseong 미리내성지 -> 美里川圣地（미리내 성지） (0.25km, name)
+NOMATCH gimpo 애기봉 평화생태공원
+OK gimpo 대명항 -> 金浦大明港(김포 대명항) (0.01km, name)
+NOMATCH gimpo 김포 장릉
+NOMATCH hwaseong 융릉 · 건릉 (유네스코 조선왕릉)
+OK hwaseong 제부도 -> 济扶岛（제부도） (1.05km, name)
+OK hwaseong 전곡항 -> 前谷港(전곡항) (0.10km, name)
+OK hwaseong 궁평항 -> 宫坪港（궁평항） (0.07km, name)
+OK gwangju-gg 남한산성 (유네스코 세계유산) -> 南汉山城行宫（남한산성행궁） (0.01km, name)
+OK gwangju-gg 화담숲 -> 和谈林(화담숲) (0.00km, name)
+NOMATCH yangju 양주 회암사지
+OK pocheon 국립수목원 (광릉숲) -> 国立树木园(光陵林)국립수목원(광릉숲) (0.78km, name)
+OK pocheon 허브아일랜드 -> 香草岛乐园(허브아일랜드) (0.20km, name)
+OK yeoju 신륵사 -> 神勒寺(骊州)신륵사(여주) (0.15km, name)
+OK chuncheon 남이섬 -> 南怡岛(남이섬) (0.69km, name)
+OK chuncheon 소양강 스카이워크 -> 昭阳江天空步道 (소양강스카이워크) (0.06km, name)
+OK chuncheon 김유정문학촌 -> 金裕贞文学村(김유정 문학촌) (0.01km, name)
+OK chuncheon 레고랜드 -> 韩国乐高乐园度假村（레고랜드 코리아 리조트） (0.32km, name)
+OK wonju 소금산 그랜드밸리 (출렁다리) -> 小金山大峡谷(소금산그랜드밸리) (0.26km, name)
+OK wonju 뮤지엄 산 -> Museum SAN(뮤지엄산) (0.03km, name)
+OK gangneung 경포대 · 경포해변 -> 江陵镜浦台(강릉 경포대) (0.01km, name)
+OK gangneung 안목해변 커피거리 -> 安木海边안목해변 (0.09km, name)
+OK gangneung 정동진 -> 正东津海边정동진해변 (0.01km, name)
+OK donghae 무릉계곡 -> 武陵溪谷무릉계곡 (무릉계곡명승지) (0.33km, name)
+OK donghae 추암 촛대바위 -> 湫岩烛台岩石(추암 촛대바위) (0.14km, name)
+NOMATCH donghae 묵호등대 · 논골담길
+NOMATCH taebaek 태백산 국립공원
+NOMATCH taebaek 황지연못 (낙동강 발원지)
+NOMATCH taebaek 검룡소 (한강 발원지)
+NOMATCH taebaek 바람의 언덕 (매봉산)
+OK sokcho 설악산 국립공원 -> 雪岳山国立公园（外雪岳）（설악산 국립공원(외설악)） (2.03km, name)
+NOMATCH sokcho 속초관광수산시장
+OK sokcho 아바이마을 -> 阿爸村人力渡船(아바이마을 갯배) (0.34km, name)
+OK sokcho 영금정 -> 灵琴亭영금정 (0.03km, name)
+OK samcheok 환선굴 -> 幻仙窟-大耳里洞窟区(환선굴 (대이리 동굴지대)) (0.01km, name)
+NOMATCH samcheok 장호항
+NOMATCH samcheok 삼척해상케이블카
+OK pyeongchang 대관령 양떼목장 -> 大关岭羊群牧场（대관령양떼목장） (0.01km, name)
+OK cheongju 청남대 -> 青南台(청남대) (0.17km, name)
+OK cheongju 국립현대미술관 청주 -> 国立现代美术馆（清州馆）（국립현대미술관（청주관）） (0.01km, name)
+NOMATCH chungju 충주호
+OK chungju 탄금대 -> 忠州弹琴台和弹琴台公园(충주 탄금대와 탄금대공원) (0.00km, name)
+OK jecheon 청풍호반케이블카 -> 清风湖畔缆车청풍호반케이블카 (0.01km, name)
+NOMATCH jecheon 배론성지
+OK cheonan 독립기념관 -> 独立纪念馆(독립기념관) (0.78km, name)
+OK cheonan 각원사 -> 觉愿寺（각원사） (0.05km, name)
+OK gongju 무령왕릉 (송산리 고분군) -> 公州武宁王陵和王陵园[联合国教科文组织世界遗产]（공주 무령왕릉과 왕릉원[유네스코 세계유산]） (0.08km, name)
+OK boryeong 대천해수욕장 -> 大川海水浴场（대천해수욕장） (0.50km, name)
+NOMATCH boryeong 죽도 상화원
+NOMATCH asan 현충사
+OK asan 외암민속마을 -> 外岩民俗村（외암민속마을） (0.00km, name)
+OK asan 온양온천 -> 温阳温泉区（온양온천지구） (0.01km, name)
+OK asan 지중해마을 -> 地中海村（지중해마을） (0.01km, name)
+NOMATCH seosan 해미읍성
+NOMATCH seosan 서산 용현리 마애여래삼존상
+OK seosan 간월암 -> 看月庵（瑞山）간월암(서산) (0.02km, name)
+OK nonsan 관촉사 (은진미륵) -> 灌烛寺관촉사 (0.01km, name)
+OK nonsan 탑정호 출렁다리 -> 论山塔亭湖吊桥논산 탑정호 출렁다리 (1.24km, name)
+OK nonsan 선샤인랜드 -> 阳光乐园(선샤인랜드) (0.01km, name)
+OK dangjin 솔뫼성지 -> 松山圣地(솔뫼성지) (0.07km, name)
+NOMATCH dangjin 왜목마을
+OK dangjin 아미미술관 -> 峨嵋美术馆(아미미술관) (0.05km, name)
+NOMATCH jeonju 경기전
+NOMATCH jeonju 전동성당
+NOMATCH jeonju 남부시장 야시장
+OK gunsan 경암동 철길마을 -> 庆岩洞铁路村(경암동 철길마을) (0.00km, name)
+OK gunsan 선유도 (고군산군도) -> 仙游岛(선유도) (0.01km, name)
+OK gunsan 초원사진관 -> 草原照相馆（초원사진관） (0.02km, name)
+NOMATCH iksan 왕궁리 유적
+NOMATCH jeongeup 내장산 국립공원
+OK namwon 광한루원 -> 广寒楼苑(광한루원) (0.05km, name)
+NOMATCH gimje 벽골제
+OK gimje 금산사 -> 金山寺(金堤)(금산사(김제)) (0.00km, name)
+OK mokpo 유달산 -> 儒达山（유달산） (0.45km, name)
+NOMATCH mokpo 갓바위
+OK yeosu 향일암 -> 向日庵（丽水）(향일암(여수)) (0.03km, name)
+OK yeosu 이순신광장 -> 李舜臣广场（이순신광장） (0.01km, name)
+OK suncheon 순천만습지 -> 顺天湾湿地（순천만습지） (0.04km, name)
+OK suncheon 순천만국가정원 -> 顺天湾国家庭园 (순천만국가정원) (0.79km, name)
+NOMATCH naju 영산포 홍어거리
+OK gwangyang 광양 매화마을 -> 光阳梅花村(광양 매화마을) (0.51km, name)
+NOMATCH goheung 나로우주센터 우주과학관
+NOMATCH goheung 소록도
+NOMATCH pohang 호미곶 (상생의 손)
+NOMATCH pohang 영일대해수욕장
+NOMATCH pohang 스페이스워크
+OK gyeongju 불국사 · 석굴암 (유네스코 세계유산) -> 庆州佛国寺[联合国教科文组织世界遗产]경주 불국사 [유네스코 세계유산]) (0.34km, name)
+OK gyeongju 대릉원 -> 天马冢(大陵苑)(천마총(대릉원)) (0.00km, name)
+OK gyeongju 동궁과 월지 (야경) -> 庆州东宫与月池（경주 동궁과 월지） (0.00km, name)
+NOMATCH gimcheon 직지사
+NOMATCH gimcheon 부항댐 출렁다리
+NOMATCH andong 도산서원
+NOMATCH andong 병산서원
+OK andong 월영교 -> 月映桥 (월영교) (0.07km, name)
+NOMATCH gumi 금오산 도립공원
+NOMATCH gumi 구미에코랜드
+NOMATCH yeongju 부석사 (유네스코 산사)
+NOMATCH yeongju 소수서원 (유네스코 서원)
+OK yeongju 무섬마을 -> 荣州水岛村(영주 무섬마을) (0.10km, name)
+OK yeongcheon 보현산 천문대 -> 普贤山天文台（보현산 천문대） (0.12km, name)
+NOMATCH yeongcheon 은해사
+OK sangju 경천섬 -> 擎天岛（擎天岛公园）(경천섬(경천섬공원)) (2.47km, name)
+OK mungyeong 문경새재 도립공원 -> 闻庆鸟岭道立公园(문경새재도립공원) (0.01km, name)
+NOMATCH gyeongsan 갓바위 (팔공산 관봉)
+NOMATCH gyeongsan 반곡지
+OK changwon 마산어시장 -> 马山鱼市场(마산어시장) (0.00km, name)
+OK changwon 창동예술촌 -> 仓洞艺术村(창동예술촌) (0.00km, name)
+OK jinju 진주성 · 촉석루 -> 晋州城（진주성） (0.00km, name)
+NOMATCH tongyeong 동피랑 벽화마을
+OK tongyeong 통영케이블카 (미륵산) -> 统营缆车(통영케이블카) (0.00km, name)
+OK tongyeong 한산도 제승당 -> 统营闲山岛李忠武公遗址（통영 한산도 이충무공 유적） (2.24km, name)
+OK tongyeong 디피랑 -> DIPIRANG（디피랑） (0.04km, name)
+NOMATCH sacheon 삼천포항
+NOMATCH sacheon 실안 낙조
+OK gimhae 수로왕릉 -> 首露王陵（수로왕릉） (0.11km, name)
+OK gimhae 국립김해박물관 -> 国立金海博物馆국립김해박물관 (0.01km, name)
+OK gimhae 가야테마파크 -> 金海伽倻主题公园 (김해가야테마파크) (0.17km, name)
+NOMATCH miryang 위양지
+OK geoje 바람의 언덕 -> 风之丘（바람의 언덕） (0.00km, name)
+OK geoje 외도 보타니아 -> 外岛Botania(외도 보타니아) (0.00km, name)
+OK yangsan 통도사 (유네스코 산사) -> 通度寺[联合国教科文组织世界文化遗产](통도사[유네스코세계문화유산]) (0.05km, name)
+NOMATCH yangsan 배내골
+OK namhae 독일마을 -> 德国村(독일마을) (0.09km, name)
+NOMATCH namhae 다랭이마을
+OK namhae 보리암 (금산) -> 锦山菩提庵（南海）(금산 보리암(남해)) (0.00km, name)
+OK namhae 상주은모래비치 -> 尚州银沙滩海边(상주은모래비치) (0.16km, name)
+NOMATCH jeju 한라산 (성판악·관음사 코스)
+OK jeju 협재해수욕장 -> 挟才海水浴场(협재해수욕장) (0.00km, name)
+OK jeju 용두암 -> 龙头岩용두암 (0.13km, name)
+OK seogwipo 성산일출봉 (유네스코 세계유산) -> 城山日出峰[联合国教科文组织世界自然遗产]성산일출봉 [유네스코 세계자연유산] (0.00km, name)
+OK seogwipo 천지연폭포 -> 天地渊瀑布천지연폭포 (0.02km, name)
+OK seogwipo 중문관광단지 -> 中文旅游园区（중문관광단지） (0.70km, name)
+OK seogwipo 쇠소깍 -> 牛沼河口（쇠소깍） (0.10km, name)
+NOMATCH ulleung 나리분지
+OK ulleung 봉래폭포 -> 蓬莱瀑布[郁陵岛、独岛国家地质公园]（봉래폭포 (울릉도, 독도 국가지질공원)） (0.08km, name)
+NOMATCH ulleung 내수전 일출전망대
+OK ulleung 관음도 -> 观音岛（관음도） (0.07km, name)

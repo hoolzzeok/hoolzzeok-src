@@ -1,0 +1,1251 @@
+{
+"seoul": {
+"exp": [
+"NAEK010",
+"NAEK020",
+"NAEK021",
+"NAEK030",
+"NAEK031",
+"NAEK032",
+"NAEK035"
+],
+"sub": [
+"NAI0511601",
+"NAI0671801"
+]
+},
+"busan": {
+"exp": [
+"NAEK700",
+"NAEK703"
+],
+"sub": [
+"NAI4620401",
+"NAI4696901"
+]
+},
+"daegu": {
+"exp": [
+"NAEK800",
+"NAEK801",
+"NAEK802",
+"NAEK803",
+"NAEK804",
+"NAEK806",
+"NAEK808",
+"NAEK805"
+],
+"sub": [
+"NAI4124601",
+"NAI4149901"
+]
+},
+"incheon": {
+"exp": [
+"NAEK100"
+],
+"sub": [
+"NAI2224201"
+]
+},
+"gwangju": {
+"exp": [
+"NAEK500"
+],
+"sub": [
+"NAI6193701"
+]
+},
+"daejeon": {
+"exp": [
+"NAEK300",
+"NAEK301",
+"NAEK305"
+],
+"sub": [
+"NAI3455101"
+]
+},
+"ulsan": {
+"exp": [
+"NAEK715",
+"NAEK714"
+],
+"sub": [
+"NAI4472001"
+]
+},
+"sejong": {
+"exp": [
+"NAEK348",
+"NAEK352"
+],
+"sub": [
+"NAI3010701",
+"NAI3015401"
+]
+},
+"suwon": {
+"exp": [
+"NAEK110"
+],
+"sub": [
+"NAI1658501"
+]
+},
+"seongnam": {
+"exp": [
+"NAEK120",
+"NAEK121"
+],
+"sub": [
+"NAI1349701"
+]
+},
+"uijeongbu": {
+"exp": [
+"NAEK170",
+"NAEK173"
+],
+"sub": [
+"NAI1174901"
+]
+},
+"anyang": {
+"exp": [
+"NAEK135",
+"NAEK482"
+],
+"sub": [
+"NAI5933804"
+]
+},
+"bucheon": {
+"exp": [
+"NAEK101"
+],
+"sub": [
+"NAI1454501"
+]
+},
+"gwangmyeong": {
+"exp": [
+"NAEK125"
+],
+"sub": [
+"NAI1424801"
+]
+},
+"pyeongtaek": {
+"exp": [
+"NAEK180",
+"NAEK178"
+],
+"sub": [
+"NAI1791901"
+]
+},
+"dongducheon": {
+"exp": [],
+"sub": [
+"NAI1136601"
+]
+},
+"ansan": {
+"exp": [
+"NAEK190"
+],
+"sub": [
+"NAI1529901"
+]
+},
+"goyang": {
+"exp": [
+"NAEK115",
+"NAEK116"
+],
+"sub": [
+"NAI1045001"
+]
+},
+"gwacheon": {
+"exp": [],
+"sub": [
+"NAI1382401"
+]
+},
+"guri": {
+"exp": [
+"NAEK169"
+],
+"sub": [
+"NAI1192901"
+]
+},
+"namyangju": {
+"exp": [],
+"sub": []
+},
+"osan": {
+"exp": [
+"NAEK127"
+],
+"sub": [
+"NAI1813701"
+]
+},
+"siheung": {
+"exp": [
+"NAEK195"
+],
+"sub": [
+"NAI1506601"
+]
+},
+"gunpo": {
+"exp": [],
+"sub": [
+"NAI5890706"
+]
+},
+"uiwang": {
+"exp": [],
+"sub": [
+"NAI1603401"
+]
+},
+"hanam": {
+"exp": [],
+"sub": [
+"NAI5921604"
+]
+},
+"yongin": {
+"exp": [
+"NAEK150"
+],
+"sub": [
+"NAI1706301"
+]
+},
+"paju": {
+"exp": [
+"NAEK045",
+"NAEK046"
+],
+"sub": []
+},
+"icheon": {
+"exp": [
+"NAEK160",
+"NAEK143"
+],
+"sub": [
+"NAI1737301"
+]
+},
+"anseong": {
+"exp": [
+"NAEK130"
+],
+"sub": [
+"NAI1758501"
+]
+},
+"gimpo": {
+"exp": [
+"NAEK103"
+],
+"sub": [
+"NAI0750501",
+"NAI0750503"
+]
+},
+"hwaseong": {
+"exp": [],
+"sub": [
+"NAI1829802",
+"NAI1852701",
+"NAI3331201"
+]
+},
+"yangju": {
+"exp": [],
+"sub": [
+"NAI1141901",
+"NAI1150101"
+]
+},
+"pocheon": {
+"exp": [
+"NAEK146"
+],
+"sub": []
+},
+"yeoju": {
+"exp": [
+"NAEK140"
+],
+"sub": [
+"NAI1263101"
+]
+},
+"chuncheon": {
+"exp": [
+"NAEK250"
+],
+"sub": [
+"NAI2443501"
+]
+},
+"wonju": {
+"exp": [
+"NAEK240"
+],
+"sub": [
+"NAI2638201"
+]
+},
+"gangneung": {
+"exp": [
+"NAEK200"
+],
+"sub": [
+"NAI2551901",
+"NAI2551902"
+]
+},
+"donghae": {
+"exp": [
+"NAEK210"
+],
+"sub": []
+},
+"taebaek": {
+"exp": [
+"NAEK274"
+],
+"sub": [
+"NAI2600701"
+]
+},
+"sokcho": {
+"exp": [
+"NAEK230"
+],
+"sub": [
+"NAI2482701"
+]
+},
+"samcheok": {
+"exp": [
+"NAEK220"
+],
+"sub": [
+"NAI2592901"
+]
+},
+"pyeongchang": {
+"exp": [],
+"sub": [
+"NAI2537601"
+]
+},
+"yeongwol": {
+"exp": [
+"NAEK272"
+],
+"sub": [
+"NAI2623601"
+]
+},
+"hoengseong": {
+"exp": [
+"NAEK238",
+"NAEK239",
+"NAEK241"
+],
+"sub": [
+"NAI2526803"
+]
+},
+"cheongju": {
+"exp": [
+"NAEK400",
+"NAEK401",
+"NAEK403",
+"NAEK405",
+"NAEK406",
+"NAEK407"
+],
+"sub": [
+"NAI2839701"
+]
+},
+"chungju": {
+"exp": [
+"NAEK420"
+],
+"sub": [
+"NAI2736001"
+]
+},
+"jecheon": {
+"exp": [
+"NAEK450"
+],
+"sub": [
+"NAI2716501"
+]
+},
+"cheonan": {
+"exp": [
+"NAEK310"
+],
+"sub": [
+"NAI3112001"
+]
+},
+"gongju": {
+"exp": [
+"NAEK320"
+],
+"sub": [
+"NAI3258501"
+]
+},
+"boryeong": {
+"exp": [
+"NAEK395"
+],
+"sub": [
+"NAI3345801"
+]
+},
+"asan": {
+"exp": [
+"NAEK345",
+"NAEK336"
+],
+"sub": [
+"NAI3144201",
+"NAI3151704",
+"NAI3151705",
+"NAI3640801",
+"NAI5844904"
+]
+},
+"seosan": {
+"exp": [
+"NAEK313",
+"NAEK393"
+],
+"sub": [
+"NAI3198101"
+]
+},
+"nonsan": {
+"exp": [
+"NAEK370"
+],
+"sub": [
+"NAI3295401"
+]
+},
+"gyeryong": {
+"exp": [],
+"sub": [
+"NAI1361501",
+"NAI3282601"
+]
+},
+"dangjin": {
+"exp": [
+"NAEK312"
+],
+"sub": [
+"NAI3177101"
+]
+},
+"jeonju": {
+"exp": [
+"NAEK600",
+"NAEK601",
+"NAEK602",
+"NAEK603",
+"NAEK604",
+"NAEK609"
+],
+"sub": [
+"NAI5493303"
+]
+},
+"gunsan": {
+"exp": [
+"NAEK610"
+],
+"sub": [
+"NAI5403701",
+"NAI5403703"
+]
+},
+"iksan": {
+"exp": [
+"NAEK615"
+],
+"sub": [
+"NAI5467401"
+]
+},
+"jeongeup": {
+"exp": [
+"NAEK630",
+"NAEK631"
+],
+"sub": [
+"NAI5615801"
+]
+},
+"namwon": {
+"exp": [
+"NAEK625"
+],
+"sub": [
+"NAI5576001"
+]
+},
+"gimje": {
+"exp": [
+"NAEK620"
+],
+"sub": [
+"NAI5437901"
+]
+},
+"gochang": {
+"exp": [
+"NAEK635"
+],
+"sub": [
+"NAI5643301"
+]
+},
+"mokpo": {
+"exp": [
+"NAEK505"
+],
+"sub": [
+"NAI5864201"
+]
+},
+"yeosu": {
+"exp": [
+"NAEK510"
+],
+"sub": [
+"NAI5971501"
+]
+},
+"suncheon": {
+"exp": [
+"NAEK515",
+"NAEK516"
+],
+"sub": [
+"NAI5796001"
+]
+},
+"naju": {
+"exp": [
+"NAEK530"
+],
+"sub": [
+"NAI5825501"
+]
+},
+"gwangyang": {
+"exp": [
+"NAEK520"
+],
+"sub": [
+"NAI5775801"
+]
+},
+"gangjin": {
+"exp": [
+"NAEK535"
+],
+"sub": [
+"NAI5923401"
+]
+},
+"yeonggwang": {
+"exp": [
+"NAEK560"
+],
+"sub": [
+"NAI5704301"
+]
+},
+"haenam": {
+"exp": [
+"NAEK595"
+],
+"sub": [
+"NAI3334604",
+"NAI5903801"
+]
+},
+"goheung": {
+"exp": [
+"NAEK540"
+],
+"sub": [
+"NAI5954001"
+]
+},
+"wando": {
+"exp": [
+"NAEK575"
+],
+"sub": [
+"NAI5911401"
+]
+},
+"yeongam": {
+"exp": [
+"NAEK570"
+],
+"sub": [
+"NAI5841101"
+]
+},
+"pohang": {
+"exp": [
+"NAEK830",
+"NAEK831"
+],
+"sub": [
+"NAI3776001"
+]
+},
+"gyeongju": {
+"exp": [
+"NAEK815",
+"NAEK894"
+],
+"sub": [
+"NAI3815701",
+"NAI3815702"
+]
+},
+"gimcheon": {
+"exp": [
+"NAEK820",
+"NAEK931"
+],
+"sub": [
+"NAI3958601"
+]
+},
+"andong": {
+"exp": [
+"NAEK840"
+],
+"sub": [
+"NAI3663601"
+]
+},
+"gumi": {
+"exp": [
+"NAEK810",
+"NAEK933"
+],
+"sub": [
+"NAI3923301"
+]
+},
+"yeongju": {
+"exp": [
+"NAEK835"
+],
+"sub": [
+"NAI3607801"
+]
+},
+"yeongcheon": {
+"exp": [
+"NAEK845",
+"NAEK896"
+],
+"sub": [
+"NAI3888501"
+]
+},
+"sangju": {
+"exp": [
+"NAEK825"
+],
+"sub": [
+"NAI3718101"
+]
+},
+"mungyeong": {
+"exp": [],
+"sub": [
+"NAI2732902",
+"NAI3691701"
+]
+},
+"gyeongsan": {
+"exp": [],
+"sub": [
+"NAI3861901"
+]
+},
+"changwon": {
+"exp": [
+"NAEK710"
+],
+"sub": [
+"NAI5139301"
+]
+},
+"jinju": {
+"exp": [
+"NAEK720",
+"NAEK722",
+"NAEK721"
+],
+"sub": [
+"NAI5275901",
+"NAI5275907"
+]
+},
+"tongyeong": {
+"exp": [
+"NAEK730"
+],
+"sub": [
+"NAI5302001"
+]
+},
+"sacheon": {
+"exp": [],
+"sub": [
+"NAI5251801"
+]
+},
+"gimhae": {
+"exp": [
+"NAEK735"
+],
+"sub": [
+"NAI5093801",
+"NAI5093802"
+]
+},
+"miryang": {
+"exp": [
+"NAEK750"
+],
+"sub": [
+"NAI5042301"
+]
+},
+"geoje": {
+"exp": [],
+"sub": [
+"NAI5291503"
+]
+},
+"yangsan": {
+"exp": [
+"NAEK745",
+"NAEK888"
+],
+"sub": [
+"NAI5062901"
+]
+},
+"hadong": {
+"exp": [],
+"sub": [
+"NAI5232501"
+]
+},
+"hapcheon": {
+"exp": [],
+"sub": [
+"NAI5023301"
+]
+},
+"geochang": {
+"exp": [],
+"sub": [
+"NAI5282201"
+]
+},
+"namhae": {
+"exp": [],
+"sub": [
+"NAI5235211",
+"NAI5241401"
+]
+},
+"jeju": {
+"exp": [],
+"sub": [
+"NAI6314601"
+]
+},
+"seogwipo": {
+"exp": [],
+"sub": []
+},
+"ganghwa": {
+"exp": [],
+"sub": []
+},
+"gijang": {
+"exp": [],
+"sub": []
+},
+"dalseong": {
+"exp": [],
+"sub": []
+},
+"gunwi": {
+"exp": [],
+"sub": [
+"NAI3901801"
+]
+},
+"ulju": {
+"exp": [],
+"sub": []
+},
+"yangpyeong": {
+"exp": [],
+"sub": [
+"NAI1255901"
+]
+},
+"gapyeong": {
+"exp": [
+"NAEK255"
+],
+"sub": [
+"NAI1246102"
+]
+},
+"yeoncheon": {
+"exp": [],
+"sub": [
+"NAI1100001",
+"NAI3684203"
+]
+},
+"hongcheon": {
+"exp": [
+"NAEK242"
+],
+"sub": [
+"NAI2513501"
+]
+},
+"jeongseon": {
+"exp": [
+"NAEK222"
+],
+"sub": [
+"NAI2613201"
+]
+},
+"cheorwon": {
+"exp": [
+"NAEK148"
+],
+"sub": []
+},
+"hwacheon": {
+"exp": [
+"NAEK260"
+],
+"sub": [
+"NAI2413001",
+"NAI3642301"
+]
+},
+"yanggu": {
+"exp": [],
+"sub": [
+"NAI2452401"
+]
+},
+"inje": {
+"exp": [],
+"sub": [
+"NAI2463501"
+]
+},
+"yangyang": {
+"exp": [
+"NAEK270"
+],
+"sub": [
+"NAI2503101"
+]
+},
+"boeun": {
+"exp": [
+"NAEK409"
+],
+"sub": [
+"NAI2891101"
+]
+},
+"okcheon": {
+"exp": [
+"NAEK410",
+"NAEK921"
+],
+"sub": [
+"NAI2903301"
+]
+},
+"yeongdong": {
+"exp": [],
+"sub": [
+"NAI2914401"
+]
+},
+"jeungpyeong": {
+"exp": [
+"NAEK455"
+],
+"sub": [
+"NAI2793101"
+]
+},
+"jincheon": {
+"exp": [],
+"sub": [
+"NAI2783101"
+]
+},
+"goesan": {
+"exp": [
+"NAEK457"
+],
+"sub": [
+"NAI2803301"
+]
+},
+"eumseong": {
+"exp": [],
+"sub": [
+"NAI2769501"
+]
+},
+"danyang": {
+"exp": [
+"NAEK460"
+],
+"sub": [
+"NAI2701101"
+]
+},
+"geumsan": {
+"exp": [
+"NAEK330"
+],
+"sub": [
+"NAI3273501"
+]
+},
+"buyeo": {
+"exp": [
+"NAEK372"
+],
+"sub": [
+"NAI3315201"
+]
+},
+"seocheon": {
+"exp": [
+"NAEK384"
+],
+"sub": [
+"NAI3364501"
+]
+},
+"cheongyang": {
+"exp": [
+"NAEK391"
+],
+"sub": [
+"NAI3332601"
+]
+},
+"hongseong": {
+"exp": [
+"NAEK389"
+],
+"sub": [
+"NAI3222001"
+]
+},
+"yesan": {
+"exp": [
+"NAEK398"
+],
+"sub": [
+"NAI3242801"
+]
+},
+"taean": {
+"exp": [
+"NAEK394",
+"NAEK495"
+],
+"sub": [
+"NAI3214401"
+]
+},
+"wanju": {
+"exp": [
+"NAEK618"
+],
+"sub": []
+},
+"jinan": {
+"exp": [
+"NAEK650"
+],
+"sub": [
+"NAI5543202"
+]
+},
+"muju": {
+"exp": [
+"NAEK655"
+],
+"sub": [
+"NAI5551501"
+]
+},
+"jangsu": {
+"exp": [],
+"sub": [
+"NAI5563201"
+]
+},
+"imsil": {
+"exp": [],
+"sub": [
+"NAI5592801"
+]
+},
+"sunchang": {
+"exp": [
+"NAEK645"
+],
+"sub": [
+"NAI5603501"
+]
+},
+"buan": {
+"exp": [
+"NAEK640"
+],
+"sub": [
+"NAI5630801"
+]
+},
+"damyang": {
+"exp": [
+"NAEK582"
+],
+"sub": [
+"NAI5734401"
+]
+},
+"gokseong": {
+"exp": [
+"NAEK589"
+],
+"sub": []
+},
+"gurye": {
+"exp": [
+"NAEK519"
+],
+"sub": [
+"NAI5765401"
+]
+},
+"boseong": {
+"exp": [
+"NAEK554"
+],
+"sub": [
+"NAI5945801"
+]
+},
+"hwasun": {
+"exp": [
+"NAEK586"
+],
+"sub": [
+"NAI5812001"
+]
+},
+"jangheung": {
+"exp": [
+"NAEK580"
+],
+"sub": [
+"NAI5932401"
+]
+},
+"muan": {
+"exp": [
+"NAEK550"
+],
+"sub": [
+"NAI5852401"
+]
+},
+"hampyeong": {
+"exp": [
+"NAEK581"
+],
+"sub": [
+"NAI5715301"
+]
+},
+"jangseong": {
+"exp": [
+"NAEK583"
+],
+"sub": [
+"NAI2605001",
+"NAI3758301"
+]
+},
+"jindo": {
+"exp": [
+"NAEK590"
+],
+"sub": [
+"NAI5892201"
+]
+},
+"sinan": {
+"exp": [],
+"sub": []
+},
+"uiseong": {
+"exp": [],
+"sub": []
+},
+"cheongsong": {
+"exp": [],
+"sub": [
+"NAI3743101"
+]
+},
+"yeongyang": {
+"exp": [],
+"sub": [
+"NAI3653301"
+]
+},
+"yeongdeok": {
+"exp": [
+"NAEK843"
+],
+"sub": [
+"NAI3643101"
+]
+},
+"cheongdo": {
+"exp": [],
+"sub": []
+},
+"goryeong": {
+"exp": [],
+"sub": [
+"NAI4013501"
+]
+},
+"seongju": {
+"exp": [],
+"sub": [
+"NAI4002701"
+]
+},
+"chilgok": {
+"exp": [],
+"sub": []
+},
+"yecheon": {
+"exp": [
+"NAEK851"
+],
+"sub": [
+"NAI3682601"
+]
+},
+"bonghwa": {
+"exp": [
+"NAEK858"
+],
+"sub": []
+},
+"uljin": {
+"exp": [
+"NAEK853"
+],
+"sub": [
+"NAI3632601"
+]
+},
+"ulleung": {
+"exp": [],
+"sub": []
+},
+"dokdo": {
+"exp": [],
+"sub": []
+},
+"uiryeong": {
+"exp": [],
+"sub": [
+"NAI5213801"
+]
+},
+"haman": {
+"exp": [],
+"sub": [
+"NAI5201701"
+]
+},
+"changnyeong": {
+"exp": [],
+"sub": []
+},
+"sancheong": {
+"exp": [],
+"sub": [
+"NAI5221801"
+]
+},
+"hamyang": {
+"exp": [],
+"sub": [
+"NAI5003901"
+]
+}
+}

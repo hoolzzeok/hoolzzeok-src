@@ -1,0 +1,23 @@
+﻿key,value,unit,note,source_id
+bus_fixed,3000,원,고속·시외버스 요금 식의 고정분,src_bus
+bus_per_km,73,원/km,고속·시외버스 요금 식의 거리분,src_bus
+road_factor,1.2,배,직선거리 → 도로거리 환산,src_assume
+fuel_per_l,1855,원/L,휘발유 전국 평균,src_car
+km_per_l,11.88,km/L,평균 연비,src_car
+toll_base,900,원,고속도로 기본요금(1종),src_car
+toll_per_km,44.3,원/km,고속도로 주행요금(1종),src_car
+car_share,2,명,자차 비용을 나누는 인원,src_assume
+flight_jeju_default,94300,원,표에 없는 공항의 제주 노선 운임,src_assume
+half_cap_per_person,100000,원,반값여행 1인 환급 한도,src_halfprice
+taxi_ride_km,5,km,택시 한 번 타는 거리(2명 탑승),src_assume
+local_drive_km,40,km/일,자차 현지 주행,src_assume
+souvenir_default,12000,원,실가격 없는 지역의 기념품 값,src_assume
+bus_rides_budget,4,회/일,하루 버스 횟수,src_assume
+taxi_rides_budget,0,회/일,하루 택시 횟수,src_assume
+bus_rides_standard,4,회/일,하루 버스 횟수,src_assume
+taxi_rides_standard,1,회/일,하루 택시 횟수,src_assume
+bus_rides_comfort,2,회/일,하루 버스 횟수,src_assume
+taxi_rides_comfort,3,회/일,하루 택시 횟수,src_assume
+souvenir_qty_budget,1,개,여행 한 번 기념품 개수,src_assume
+souvenir_qty_standard,2,개,여행 한 번 기념품 개수,src_assume
+souvenir_qty_comfort,3,개,여행 한 번 기념품 개수,src_assume
