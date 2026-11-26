@@ -32,10 +32,12 @@ R1=$(timeout 1500 node qt4.js 2>&1 | grep -v '^    at' | grep 'checked' | tail -
 R2=$(timeout 400 node csp.js 2>&1 | grep 'VIOLATIONS' || true)
 echo "  $R1 / $R2"
 echo "$R1" | grep -q 'bad 0' && echo "$R2" | grep -q 'VIOLATIONS 0' || { echo "실패: 점검 통과 못 함 → 배포 안 함"; exit 3; }
+safe(){ # 커밋 직전: 인증키 값 자체가 섞였으면 중단
+  if git diff --cached -U0 | grep -qF -- "$DATA_KEY" || git diff --cached -U0 | grep -qF -- "$TOURAPI_KEY"; then echo "실패: 인증키가 파일에 섞임 → 커밋 안 함"; git reset -q; exit 4; fi; }
 [ "$DRY" = --dry ] && { echo "점검 통과(--dry라 배포 안 함)"; exit 0; }
-cd "$WWW"; git add -A
+cd "$WWW"; git add -A; safe
 if git diff --cached --quiet; then echo "바뀐 것 없음"; else
-  git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE): 공공데이터 $(TZ=Asia/Seoul date +%F)"; git push -q origin HEAD 2>&1 | grep -v 'moved\|new location' || true; log "배포함 $(git rev-parse --short HEAD)"; fi
-cd "$SRC"; git add -A
+  git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE): 공공데이터 $(TZ=Asia/Seoul date +%F)"; git -c push.negotiate=true push -q origin HEAD 2>&1 | grep -v 'moved\|new location' || true; log "배포함 $(git rev-parse --short HEAD)"; fi
+cd "$SRC"; git add -A; safe
 if ! git diff --cached --quiet; then git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE) 데이터 $(TZ=Asia/Seoul date +%F)"; git -c push.negotiate=true push -q origin HEAD 2>&1 | grep -v 'moved\|new location' || true; fi
 echo "완료"
