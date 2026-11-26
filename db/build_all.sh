@@ -3,6 +3,8 @@
 set -e
 OUT=${1:-/home/claude/www.hoolzzeok.com}
 cd /home/claude/hoolzzeok_db
+# 자동 갱신(GitHub Actions)이 받아 둔 최신 공공데이터가 있으면 먼저 가져옴 → 수동 빌드가 옛 날씨로 덮어쓰지 않게
+if [ -z "${SKIP_SYNC:-}" ] && [ -d "$OUT/.github/srcdata" ]; then cp -r "$OUT/.github/srcdata/." /home/claude/hoolzzeok_db/ && python3 crowd/build_qtdata.py >/dev/null; fi
 python3 tidy_data.py /home/claude/hoolzzeok_site/index.html   # v132 공공데이터 글 다듬기(멱등)
 NODE_PATH=$(npm root -g) node gen_zhtw.cjs /home/claude/hoolzzeok_site/index.html   # v133 번체 사전(멱등)
 python3 build_www.py "$OUT"
