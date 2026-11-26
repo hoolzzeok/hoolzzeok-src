@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',hasTouch:true,isMobile:true,deviceScaleFactor:1});const p=await c.newPage();
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html');await p.waitForTimeout(1200);
+await p.screenshot({path:'shots/ui_0.jpg',type:'jpeg',quality:55,fullPage:true});
+const h0=await p.evaluate(()=>document.documentElement.scrollHeight);
+await p.click('#ui-junior');await p.waitForTimeout(500);await p.screenshot({path:'shots/ui_1.jpg',type:'jpeg',quality:55,fullPage:true});
+const h1=await p.evaluate(()=>document.documentElement.scrollHeight);
+await p.tap('#calc-go');await p.waitForTimeout(2500);await p.screenshot({path:'shots/ui_2.jpg',type:'jpeg',quality:55,fullPage:true});
+const h2=await p.evaluate(()=>document.documentElement.scrollHeight);
+console.log(h0,h1,h2);await b.close()})();
