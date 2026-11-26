@@ -1588,7 +1588,7 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
         <div class="rw-stars" id="cm-stars" role="radiogroup" aria-labelledby="rw-star-h"></div>
         <p class="rw-star-t" id="cm-star-t" aria-live="polite">별을 눌러 주세요</p>
       </section>
-      <div class="rw-more" id="rw-more" hidden>
+      <div class="rw-more" id="rw-more">
         <section class="rw-q">
           <h3><span data-rw="moneyQ">한 사람이 쓴 돈은요?</span> <small data-rw="moneySub">대충이어도 돼요</small></h3>
           <p class="rw-sm" id="cm-est-txt"></p>
@@ -3221,7 +3221,7 @@ ko:{
   legend:{drama:"드라마 촬영지",kids:"아이와 함께",parents:"부모님과 함께",pick:"훌쩍요원 추천",fest:"이번 달 축제",food:"이번 달 제철",trad:"전통 체험",half:"반값여행 시범",con:"접수 중 공모전",act:"액티비티"},
   hSeason:"제철 특산품", seasonNow:"지금 제철", seasonPill:s=>`제철 ${s}`, mon:m=>`${m}월`, monRange:(a,b)=>`${a}~${b}월`,
   seasonNote:"제철 달은 월별 제철음식 표 기준이에요. 날씨와 작황에 따라 한두 주 달라질 수 있어요.",
-  acPopular:"자주 찾는 곳", acNone:"찾는 지역이 없어요. 시·군 이름으로 적어 주세요.",
+  acPopular:"자주 찾는 곳", acNone:"찾는 지역이 없어요. 시·군 이름으로 적어 주세요.", acKeep:n=>`못 찾아서 ${n} 그대로예요. 목록에서 눌러 골라 주세요`,
   destKicker:"도착지 소개, 도착지를 바꾸면 자동으로 바뀌어요",
   hStay:n=>`착한가격 숙소 ${n}곳`, stayFrom:v=>`1박 ${v}부터`, stayNote:"같은 착한가격업소 자료의 숙박업이에요. 방 하나 값인지 한 사람 값인지는 업소마다 달라요. 예약 전에 꼭 확인하세요.", srStay:"착한가격 숙소", nearEat:(how,n,m)=>`${how==="dong"?"같은 동네":"같은 길"} 착한가격 밥집 ${n}곳${m?`, 고깃집 ${m}곳`:""}`,
   srSayLodge:"숙소는 어떤 곳이 좋으세요?", srLodge:[["호텔","깔끔하고 편하게. 호텔 지역 평균 가격으로 계산해요"],["펜션","고기 구워 먹을 수 있는 곳도 있어요. 바비큐는 숙소마다 다르니 예약 전에 확인하세요"],["상관없어요","다음 질문(씀씀이)에 맞춰 게스트하우스·모텔·호텔 중에서 계산해요"]],
@@ -3325,7 +3325,7 @@ en:{
   legend:{drama:"K-drama spots",kids:"With kids",parents:"With parents",pick:"Popular with visitors",fest:"Festivals this month",food:"In season now",trad:"Korean culture",half:"Half-price pilot",con:"Open contests",act:"Activities"},
   hSeason:"Seasonal specialties", seasonNow:"in season now", seasonPill:s=>`In season: ${s}`, mon:m=>["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1], monRange:(a,b)=>{const M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return `${M[a-1]}–${M[b-1]}`;},
   seasonNote:"Months follow a common Korean seasonal food chart; harvests can shift by a week or two.",
-  acPopular:"Popular", acNone:"No match. Try a city or county name.",
+  acPopular:"Popular", acNone:"No match. Try a city or county name.", acKeep:n=>`Couldn't find that, so it's still ${n}. Tap one in the list.`,
   destKicker:"About your destination, updates when you change it",
   hStay:n=>`${n} good-price stays`, stayFrom:v=>`from ${v}/night`, stayNote:"Lodgings from the same good-price list. Some prices are per room and some per person, so check before booking.", srStay:"Good-price stays", shopTitle:"Before you go", shopDisc:"Some links here are affiliate links. We may earn a commission at no extra cost to you.", shopPlain:"Links open Klook. Search there for the item named.", srShop:"Good to have", essTitle:"Korea essentials, sorted before you land", essSub:"eSIM for maps and taxis, T-money for buses and subways.", essEsim:"Get an eSIM", essTmoney:"Get T-money", srShopTap:n=>`Tap to see ${n} items`, promoHouse:"From Hoolzzeok", promoAd:by=>`Ad, ${by}`, promoSlot:"Space for local government and regional promotions. Inquiries coming soon.",
   house:{season:()=>["","",""], senior:["Bigger text, one step at a time","Our agent asks nine questions and works out your costs.","Turn on Easy mode"], half:["Half-price travel regions refund half your costs",`Up to ${T_FXW(100000)} per person as local vouchers.`,"How the refund works"], cons:n=>["Win prizes on your trip",`${n} local photo and video contests open now.`,"See contests"], good:["9,366 good-price eateries and 143 stays","Government-listed budget places, grouped by destination.","See destination guide"], junior:["Compare prices on the map","See estimated costs for every city and county at once.","Go to the map"]}, goodLow:v=>`meals from ${v}, tap to see`, stayNearShort:n=>`near ${n}`, hStayNear:"Good-price stays nearby", stayNearTxt:s=>`None listed here, so these are from nearby places: ${s}`, stayNone:"No good-price stays within 80 km.",
@@ -3412,7 +3412,7 @@ T.ja = Object.setPrototypeOf({
   zoom:{all:"全国",metro:"ソウル周辺",gangwon:"江原",chung:"忠清",jeolla:"全羅",gyeong:"慶尚",jeju:"済州",ulleung:"鬱陵・独島"},
   legend:{drama:"韓国ドラマのロケ地",kids:"子ども連れ",parents:"親と一緒に",pick:"外国人に人気",fest:"今月のお祭り",food:"今月の旬",trad:"伝統文化",half:"",con:"",act:"アクティビティ"},
   agentTitle:"外国人旅行者に人気", recOrigin:n=>`。${n}出発で行きやすい順`, agentSub:d=>"2025〜2026年の外国人訪問データから選びました",
-  acPopular:"人気", acNone:"見つかりません。市や郡の名前で探してください。", findLabel:"都市を探す", county:"郡", city:"市", islet:"島（鬱陵郡）",
+  acPopular:"人気", acNone:"見つかりません。市や郡の名前で探してください。", acKeep:n=>`見つからないため${n}のままです。リストから選んでください`, findLabel:"都市を探す", county:"郡", city:"市", islet:"島（鬱陵郡）",
   calcTitle:"いくらかかる？", barGo:"内訳を見る", metaPerson:"1人あたり", totalLabel:"1人あたりの目安",
   lnTrans:"往復の交通", lnLodge:"宿泊", lnFood:"食費", lnLocal:"現地の交通", lnLocalCar:"現地の燃料費", lnAct:"体験・入場料", lnMisc:"おみやげ・特産品",
   calcBus:km=>`一般高速・市外バス・片道 約${km}km（実運賃243区間に合わせた目安）`, calcBusReal:km=>`確認できた最安バス実運賃×往復（国土交通部TAGO、2026年11月確認）・片道 約${km}km`, calcCar:km=>`${CAR_EV ? "充電費＋高速料金（EV割引）" : "燃料＋高速料金"} ${DV("ja")}・片道 約${km}km`, calcFlightVia:(a,km)=>`${a}空港まで約${km}kmのバス往復`, airport:{seoul:"金浦",incheon:"仁川",busan:"金海",daegu:"大邱",gwangju:"光州",cheongju:"清州",ulsan:"蔚山",pohang:"浦項慶州",yeosu:"麗水",sacheon:"泗川",gunsan:"群山",wonju:"原州"}, calcFlight:"平日割引運賃・往復（燃油・空港使用料込み）", calcFlightEst:"往復・この空港の運賃は未確認のため釜山・清州と同じと仮定",
@@ -3500,7 +3500,7 @@ T.zh = Object.setPrototypeOf({
   zoom:{all:"全国",metro:"首尔周边",gangwon:"江原",chung:"忠清",jeolla:"全罗",gyeong:"庆尚",jeju:"济州",ulleung:"郁陵·独岛"},
   legend:{drama:"韩剧取景地",kids:"带孩子",parents:"和父母一起",pick:"外国游客热门",fest:"本月节庆",food:"本月时令",trad:"传统文化",half:"",con:"",act:"户外活动"},
   agentTitle:"外国游客热门目的地", recOrigin:n=>`，按从${n}出发的便利程度排序`, agentSub:d=>"根据2025–2026年外国游客数据挑选",
-  acPopular:"热门", acNone:"没有找到。请输入市或郡的名称。", findLabel:"查找城市", county:"郡", city:"市", islet:"岛（郁陵郡）",
+  acPopular:"热门", acNone:"没有找到。请输入市或郡的名称。", acKeep:n=>`没有找到，仍是${n}。请在列表中选择`, findLabel:"查找城市", county:"郡", city:"市", islet:"岛（郁陵郡）",
   calcTitle:"要花多少钱？", barGo:"查看明细", metaPerson:"每人", totalLabel:"每人估算",
   lnTrans:"往返交通", lnLodge:"住宿", lnFood:"餐饮", lnLocal:"当地交通", lnLocalCar:"当地油费", lnAct:"体验·门票", lnMisc:"纪念品·特产",
   calcBus:km=>`普通高速·市外巴士·单程约${km}公里（按243条实际票价推算）`, calcBusReal:km=>`查到的最便宜巴士实际票价×往返（国土交通部TAGO，2026年11月查询）·单程约${km}公里`, calcCar:km=>`${CAR_EV ? "充电费＋高速费（电动车优惠）" : "油费＋高速费"} ${DV("zh")}·单程约${km}公里`, calcFlightVia:(a,km)=>`往返${a}机场的巴士，约${km}公里`, airport:{seoul:"金浦",incheon:"仁川",busan:"金海",daegu:"大邱",gwangju:"光州",cheongju:"清州",ulsan:"蔚山",pohang:"浦项庆州",yeosu:"丽水",sacheon:"泗川",gunsan:"群山",wonju:"原州"}, calcFlight:"平日折扣票价·往返（含燃油附加费和机场费）", calcFlightEst:"往返·该机场票价未确认，按釜山·清州计算",
@@ -4675,9 +4675,23 @@ if (typeof document !== "undefined") {
   const choOf = s => [...s].map(ch => { const c = ch.charCodeAt(0); return c >= 0xAC00 && c <= 0xD7A3 ? CHO[Math.floor((c - 0xAC00) / 588)] : ch; }).join("");
   const AC_PLACES = () => PLACES.filter(p => p.id !== "dokdo");
   const POPULAR = ["seoul","busan","jeju","gangneung","gyeongju","yeosu","jeonju","sokcho"];
-  function suggest(q){
+  /* v143: "무주군", "부산광역시", "전북 무주", "Muju-gun"처럼 행정구역을 붙여 적어도 찾기 (원래 결과가 0개일 때만 떼어 봄) */
+  const AC_PRE = /^(서울특별시|부산광역시|대구광역시|인천광역시|광주광역시|대전광역시|울산광역시|세종특별자치시|경기도|강원특별자치도|강원도|충청북도|충청남도|전북특별자치도|전라북도|전라남도|경상북도|경상남도|제주특별자치도|제주도|서울시|서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)(?=..)/;
+  const AC_SUF = /(특별자치시|특별자치도|특별시|광역시|시|군|구)$/;
+  const AC_SUF_EN = /[-\s]?(gun|si|gu|county|city)$/i;
+  function acVariants(q){
+    q = q.replace(/\s+/g, ""); const out = [];
+    const add = v => { if (v && v.length >= 2 && v !== q && !out.includes(v)) out.push(v); };
+    const a = q.replace(AC_SUF, ""), b = q.replace(AC_PRE, ""), c = b.replace(AC_SUF, "");
+    add(a); add(b); add(c); add(q.replace(AC_SUF_EN, ""));
+    return out;
+  }
+  function suggest(q, deep){
     q = q.replace(/\s+/g, "");
     if (!q) return {head:true, list: POPULAR.map(byId)};
+    if (deep !== false) { const r0 = suggest(q, false); if (r0.list.length) return r0;
+      for (const v of acVariants(q)) { const r = suggest(v, false); if (r.list.length) return Object.assign(r, {via: v}); }
+      return r0; }
     const qj = jamo(q), ql = q.toLowerCase(), onlyCho = /^[ㄱ-ㅎ]+$/.test(q);
     const scored = [];
     for (const p of AC_PLACES()) {
@@ -4692,7 +4706,23 @@ if (typeof document !== "undefined") {
     scored.sort((a,b) => a.s - b.s || a.p.tier - b.p.tier || a.p.ko.length - b.p.ko.length);
     return {head:false, list: scored.slice(0, 8).map(x => x.p)};
   }
+  function acResolve(txt){
+    const q = String(txt || "").replace(/\s+/g, ""); if (!q) return null;
+    const same = v => AC_PLACES().find(p => p.ko === v || p.en.toLowerCase().replace(/\s+/g, "") === v.toLowerCase() || String(T[lang].name(p)).replace(/\s+/g, "") === v);
+    let hit = same(q); if (hit) return hit;
+    for (const v of acVariants(q)) { hit = same(v); if (hit) return hit; }
+    const r = suggest(q); return !r.head && r.list.length === 1 ? r.list[0] : null;
+  }
+  /* v143: 공유 링크로 들어온 ?from=…&to=… 는 사용자가 장소를 바꾸면 주소에서 뺌 (새로고침·로그인 갔다 와도 옛 도착지로 안 돌아가게) */
+  function urlDropTrip(){
+    try { const u = new URL(location.href); let ch = false;
+      ["from","to","r","nights","people"].forEach(k => { if (u.searchParams.has(k)) { u.searchParams.delete(k); ch = true; } });
+      if (ch) history.replaceState(history.state, "", u.pathname + (u.search || "") + u.hash);
+    } catch(e) {}
+  }
+  function acMiss(cur){ try { toast(T[lang].acKeep(cur)); } catch(e) {} }
   function applyPlace(key, id){
+    urlDropTrip();
     if (key === "origin") state.origin = id;
     else { state.dest = id; state.half = halfOpen(id); state.picks = []; }
     render();
@@ -4725,8 +4755,9 @@ if (typeof document !== "undefined") {
     list.addEventListener("click", e => { const li = e.target.closest("li[data-id]"); if (li) choose(li.dataset.id); });
     inp.addEventListener("blur", () => {
       if (list.hidden) return;
-      const q = inp.value.replace(/\s+/g, ""), exact = AC_PLACES().find(p => p.ko === q || p.en.toLowerCase() === q.toLowerCase());
-      if (exact) applyPlace(key, exact.id);
+      const typed = inp.value.trim(), hit = acResolve(typed), was = current();
+      if (hit) { if (hit.id !== was.id) applyPlace(key, hit.id); }
+      else if (typed && typed.replace(/\s+/g, "") !== String(T[lang].name(was)).replace(/\s+/g, "")) acMiss(T[lang].name(was));
       inp.value = T[lang].name(current()); close();
     });
   }
@@ -5783,8 +5814,10 @@ if (typeof document !== "undefined") {
     list.addEventListener("mousedown", e => e.preventDefault());
     list.addEventListener("click", e => { const li = e.target.closest("li[data-id]"); if (li) choose(li.dataset.id); });
     inp.addEventListener("blur", () => { if (list.hidden) return;
-      const q = inp.value.replace(/\s+/g, ""), exact = AC_PLACES().find(p => p.ko === q || String(T[lang].name(p)).replace(/\s+/g, "") === q);
-      if (exact) { $(key).value = exact.id; cmRoute(); cmSave(); } close(); cmPaintRoute(); });
+      const typed = inp.value.trim(), hit = acResolve(typed), was = byId($(key).value);
+      if (hit) { $(key).value = hit.id; cmRoute(); cmSave(); }
+      else if (typed && was && typed.replace(/\s+/g, "") !== String(T[lang].name(was)).replace(/\s+/g, "")) acMiss(T[lang].name(was));
+      close(); cmPaintRoute(); });
   }
   function cmRoute(){
     const o = byId($("cm-origin").value), d = byId($("cm-dest").value), L = T[lang], X = RWT();
@@ -5850,7 +5883,6 @@ if (typeof document !== "undefined") {
     box.innerHTML = [1, 2, 3, 4, 5].map(n => `<button type="button" role="radio" data-n="${n}" aria-checked="${cmF.star === n}" aria-label="${X.starBtn(n, X.stars[n])}" class="${n <= cmF.star ? "on" : ""}" tabindex="${(cmF.star || 1) === n ? 0 : -1}">${RW_STAR_SVG}</button>`).join("");
     $("cm-star-t").textContent = cmF.star ? X.stars[cmF.star] : X.starHint;
     $("cm-star-t").classList.toggle("empty", !cmF.star);
-    $("rw-more").hidden = !cmF.star;
   }
   function rwSetStar(n){
     const first = !cmF.star, wasLow = cmF.star && cmF.star <= 3;
@@ -5860,7 +5892,6 @@ if (typeof document !== "undefined") {
     else rwStars();
     cmSave(); rwFoot();
     const b = $("cm-stars").querySelector(`[data-n="${n}"]`); if (b) b.focus({preventScroll: true});
-    if (first) setTimeout(() => { const m = $("rw-more"); if (m && !m.hidden) m.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "start"}); }, 220);
   }
   function cmFormBind(){
     cmAC("cm-origin"); cmAC("cm-dest");

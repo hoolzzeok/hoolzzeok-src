@@ -1,0 +1,16 @@
+const {chromium}=require('playwright');const fs=require('fs');const html=fs.readFileSync('/home/claude/www.hoolzzeok.com/index.html','utf8');
+(async()=>{const b=await chromium.launch();
+const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',hasTouch:true,isMobile:true});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.addInitScript(()=>{localStorage.setItem('hz-last-plan',JSON.stringify({key:'yangsan>busan>0',o:'yangsan',d:'busan',n:0,m:'car',p:1,at:Date.now()-13*3600e3}));window.supabase={createClient(){return{auth:{getSession:async()=>({data:{session:{user:{id:'u1',email:'t@gmail.com'}}}}),onAuthStateChange(){},signOut:async()=>{}},rpc:async()=>({data:false,error:null}),from(t){const q={select(){return q},eq(){return q},order(){return q},limit(){return q},gte(){return q},insert(){return Promise.resolve({error:null})},then(r){r({data:[],error:null})}};return q}}}};});
+await c.route('https://www.hoolzzeok.com/**',r=>{const u=new URL(r.request().url());if(u.pathname==='/')return r.fulfill({body:html,contentType:'text/html; charset=utf-8'});return r.fulfill({status:404,body:''})});
+await c.route(/cdn\.jsdelivr|unpkg|fonts\./,r=>r.fulfill({body:''}));
+await p.goto('https://www.hoolzzeok.com/');await p.evaluate(()=>localStorage.setItem('hz-sbtest','1'));await p.reload();await p.waitForTimeout(1500);
+await p.click('#rp-top');await p.waitForTimeout(300);await p.click('#rl-sum [data-rv-open]');await p.waitForTimeout(500);
+await p.fill('#cm-text','아침 일찍 가면 한적해요');await p.waitForTimeout(200);
+await p.$eval('#cm-send',e=>{e.scrollIntoView();e.click()});await p.waitForTimeout(300);console.log('별 없이 보내기 →',await p.$eval('#cm-msg',e=>e.textContent));
+await p.tap('#cm-stars [data-n="5"]');await p.waitForTimeout(400);console.log('별 누른 뒤 글 유지:',await p.inputValue('#cm-text'));
+await p.tap('#cm-route-edit');await p.waitForTimeout(300);await p.fill('#cm-dest-q','');await p.type('#cm-dest-q','무주군',{delay:30});await p.waitForTimeout(300);
+console.log(' list',await p.$$eval('#cm-dest-q ~ ul li',a=>a.filter(x=>x.offsetParent).map(x=>x.textContent.trim())));
+await p.tap('#cm-route-done');await p.waitForTimeout(400);console.log('무주군 →',await p.$eval('#cm-route-txt',e=>e.textContent),'| 글',await p.inputValue('#cm-text'));
+await p.screenshot({path:'shots/rv143.jpg',type:'jpeg',quality:60,fullPage:false});
+console.log('errs',errs);await b.close()})();

@@ -1,0 +1,14 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',colorScheme:'dark',hasTouch:true,isMobile:true});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/hoolzzeok_site/index.html');await p.waitForTimeout(1000);await p.click('#ui-junior');await p.waitForTimeout(400);
+const pick=async(id,q)=>{await p.fill('#'+id,'');await p.type('#'+id,q,{delay:30});await p.waitForTimeout(250);await p.tap('#'+id+'-list li:visible >> nth=0');await p.waitForTimeout(300)};
+await pick('origin','양산');await pick('dest','무주');
+await p.tap('#dd-n');await p.waitForTimeout(200);console.log('n opts',await p.$$eval('#dd-n-list li',a=>a.map(x=>x.textContent.trim())));await p.tap('#dd-n-list li >> nth=0');
+await p.tap('#dd-p');await p.waitForTimeout(200);await p.tap('#dd-p-list li >> nth=0');
+const s=async l=>console.log(l,'| dest',await p.inputValue('#dest'),'| strip',await p.$eval('#ts-t',e=>e.textContent),'| bar',await p.$eval('#bar-route',e=>e.textContent));
+await s('폼');await p.tap('#calc-go');await p.waitForTimeout(2500);await s('결과');
+console.log(' mode chips',await p.$$eval('#mode button',a=>a.map(x=>(x.id||'')+':'+x.textContent.trim()+(x.disabled?'(x)':''))));
+const car=await p.$('#mode button:has-text("자차")');if(car){await car.tap();await p.waitForTimeout(600)}await s('자차 누른 뒤');
+await p.screenshot({path:'shots/muju6.jpg',type:'jpeg',quality:60});
+console.log('errs',errs);await b.close()})();

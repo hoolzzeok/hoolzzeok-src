@@ -1,0 +1,14 @@
+const {chromium}=require('playwright');
+const run=async(b,label,fn)=>{const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',colorScheme:'dark',hasTouch:true,isMobile:true});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/hoolzzeok_site/index.html');await p.waitForTimeout(1000);await p.click('#ui-junior');await p.waitForTimeout(400);
+await fn(p);await p.waitForTimeout(2500);
+console.log(label,'→ stage',await p.evaluate(()=>junior.dataset.stage),'| strip:',await p.$eval('#ts-t',e=>e.textContent),'| dest input:',await p.inputValue('#dest'),errs);await c.close()};
+(async()=>{const b=await chromium.launch();
+const pick=async(p,id,q)=>{await p.fill('#'+id,'');await p.type('#'+id,q,{delay:30});await p.waitForTimeout(250);await p.tap('#'+id+'-list li:visible >> nth=0');await p.waitForTimeout(300)};
+await run(b,'A 고르기→계산',async p=>{await pick(p,'origin','양산');await pick(p,'dest','무주');await p.tap('#calc-go')});
+await run(b,'B 입력만→계산',async p=>{await pick(p,'origin','양산');await p.fill('#dest','');await p.type('#dest','무주',{delay:30});await p.tap('#calc-go')});
+await run(b,'C 입력만→바깥탭→계산',async p=>{await pick(p,'origin','양산');await p.fill('#dest','');await p.type('#dest','무주',{delay:30});await p.tap('h1');await p.waitForTimeout(300);await p.tap('#calc-go')});
+await run(b,'D 부산 먼저 계산→조건바꾸기→무주→계산',async p=>{await pick(p,'origin','양산');await pick(p,'dest','부산');await p.tap('#calc-go');await p.waitForTimeout(2500);await p.tap('#ts-edit');await p.waitForTimeout(500);await pick(p,'dest','무주');await p.tap('#calc-go')});
+await run(b,'E 부산 계산→조건바꾸기→무주 입력만→계산',async p=>{await pick(p,'origin','양산');await pick(p,'dest','부산');await p.tap('#calc-go');await p.waitForTimeout(2500);await p.tap('#ts-edit');await p.waitForTimeout(500);await p.fill('#dest','');await p.type('#dest','무주',{delay:30});await p.tap('#calc-go')});
+await b.close()})();

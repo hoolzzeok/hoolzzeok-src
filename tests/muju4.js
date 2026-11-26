@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',colorScheme:'dark',hasTouch:true,isMobile:true});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await c.route(/fonts\.|unpkg|supabase|jsdelivr/,r=>r.fulfill({body:''}));
+await p.goto('file:///home/claude/hoolzzeok_site/index.html');await p.waitForTimeout(1000);
+await p.click('#ui-junior');await p.waitForTimeout(500);
+const pick=async(id,q)=>{await p.fill('#'+id,'');await p.type('#'+id,q,{delay:30});await p.waitForTimeout(250);await p.tap('#'+id+'-list li:visible >> nth=0');await p.waitForTimeout(300)};
+await pick('origin','양산');console.log('o',await p.inputValue('#origin'),'d',await p.inputValue('#dest'),'stage',await p.evaluate(()=>junior.dataset.stage));
+await pick('dest','무주');console.log('o',await p.inputValue('#origin'),'d',await p.inputValue('#dest'),'stage',await p.evaluate(()=>junior.dataset.stage));
+await p.screenshot({path:'shots/muju3.jpg',type:'jpeg',quality:60,fullPage:false});
+const st=await p.evaluate(()=>({o:origin.value,d:dest.value,state:JSON.stringify(typeof state!=='undefined'?{o:state.origin,d:state.dest,n:state.nights,p:state.people,m:state.mode}:null)}));console.log(st);
+console.log('errs',errs);await b.close()})();
