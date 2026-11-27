@@ -853,6 +853,14 @@ html.one-card #top .search>#form{display:grid;gap:12px;margin:0;padding:0;backgr
 html.one-card #top .search>#calc-go{margin-top:6px}
 @media (min-width:760px){html.one-card #top .search>#form{grid-column:1/3}html.one-card #top .search>#calc-go{grid-column:3;align-self:end;margin-top:0}}
 html.cg-vis .bar{transform:translateY(110%);visibility:hidden}
+html.one-card #mode-hint.hint-info,html.one-card #form>p.hint[data-i="styleHint"]{display:none}
+@media (max-width:899px){
+  .recs li{flex:0 0 min(66%,250px)}
+  .rec-img{aspect-ratio:2/1}
+  .rec .why{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .rec .tags .pill:nth-child(n+3){display:none}
+  .recs .rec-promo{flex:0 0 min(66%,250px)}
+}
 #qk{display:grid;gap:12px}
 #qk .qk-g{display:grid;gap:6px}
 #qk .qk-h{margin:0;font-size:13.5px;font-weight:800;color:var(--muted);letter-spacing:-.01em}
@@ -860,9 +868,9 @@ html.cg-vis .bar{transform:translateY(110%);visibility:hidden}
 #qk .qk-row>.qk-b{min-width:0;align-content:center;min-height:52px}
 #qk .qk-row>.qk-b[hidden]{display:none}
 #qk .qk-n{display:block;font-size:11.5px;font-weight:700;color:var(--accent);line-height:1.2;margin-top:2px}
-#sat-seg button,.sr-week .seg button{display:grid;gap:1px;justify-items:center;line-height:1.25}
-#sat-seg .sat-d,.sr-week .sat-d{font-size:11.5px;font-weight:600;color:var(--muted)}
-#sat-seg button[aria-pressed="true"] .sat-d,.sr-week .seg button[aria-pressed="true"] .sat-d{color:var(--accent)}
+#sat-seg button,.sr-week .seg button,#mode button{display:grid;gap:1px;justify-items:center;line-height:1.25}
+#sat-seg .sat-d,.sr-week .sat-d,#mode .sat-d{font-size:11.5px;font-weight:600;color:var(--muted)}
+#sat-seg button[aria-pressed="true"] .sat-d,#mode button[aria-pressed="true"] .sat-d,.sr-week .seg button[aria-pressed="true"] .sat-d{color:var(--accent)}
 #sat-seg .sat-d:empty,.sr-week .sat-d:empty{display:none}
 .qt-au{font-size:14.5px;line-height:1.6;margin:8px 0}.qt-au a{display:inline-block;margin-right:10px;color:var(--accent);font-weight:600}
 /* v147 폴더블: 펼친 폴더블(갤럭시 폴드 840px 안팎·아이폰 듀오·트라이폴드)은 840px부터 두 칸(왼쪽 지역 소개, 오른쪽 경비표).
@@ -4932,7 +4940,7 @@ if (typeof document !== "undefined") {
       inp.addEventListener("input", go); inp.addEventListener("change", () => { go(); inp.value = state.people > 5 ? String(state.people) : ""; }); }
     ddBuild();
     $("mode").innerHTML = "";
-    ["transit","car","flight","ferry"].forEach(m => { const b = document.createElement("button"); b.type="button"; b.id="mode-"+m; b.textContent = L.mode[m]; b.addEventListener("click", () => { state.mode = m; render(); }); $("mode").appendChild(b); });
+    ["transit","car","flight","ferry"].forEach(m => { const b = document.createElement("button"); b.type="button"; b.id="mode-"+m; b.innerHTML = `<span>${esc(L.mode[m])}</span><small class="sat-d">${esc((MODE_SUB[lang] || MODE_SUB.en)[m])}</small>`; b.addEventListener("click", () => { state.mode = m; render(); }); $("mode").appendChild(b); });
     $("ev-seg").innerHTML = ""; $("ev-seg").setAttribute("aria-label", L.lMode); $("ev-seg").classList.add("car-seg");
     Object.keys(CAR_KINDS).forEach(k => { const b = document.createElement("button"); b.type = "button"; b.dataset.ev = k; b.textContent = L.carK[k]; b.addEventListener("click", () => { carSet(k); render(); renderSenior(); if (k === "my") { const i = $("car-my"); if (i && !CAR_MY) i.focus(); } }); $("ev-seg").appendChild(b); });
     { const w = document.createElement("label"); w.className = "car-my"; w.id = "car-my-box"; w.hidden = true;
@@ -5070,6 +5078,8 @@ if (typeof document !== "undefined") {
     else if (o.island !== d.island) hint = state.mode === "ferry" ? L.hintJejuFerry : avail.flight ? (state.mode === "flight" ? L.hintFlight : L.hintIsland) : L.hintNoFlight;
     else hint = state.mode === "car" ? L.hintCar : state.mode === "flight" ? L.hintFlight : L.hintTransit;
     $("mode-hint").textContent = hint;
+    /* v150: 같은 땅 안의 보통 안내(버스 등급·차 연비 설명)는 입력 화면에선 숨김 — 같은 내용이 결과의 계산 내역에 있음. 같은 곳·섬·배 같은 경고는 그대로 보임 */
+    $("mode-hint").classList.toggle("hint-info", o.id !== d.id && !sea && o.island === d.island);
     $("t-route").textContent = L.name(o) + " → " + L.name(d);
     $("t-meta").innerHTML = `<b class="pp">${esc(L.metaParty(state.people))}</b><span>${esc(L.metaPer)}, ${esc(L.nights(state.nights))}, ${esc(L.style[state.style])}</span>`;
     $("t-lines").innerHTML = "";
@@ -5186,6 +5196,11 @@ if (typeof document !== "undefined") {
     document.querySelectorAll("#sat-seg [data-sat]").forEach(b => { const sm = b.querySelector(".sat-d"); if (!sm) return;
       const k = b.dataset.sat; sm.textContent = k === "avg" ? (({ko: "평균 가격", en: "average price", ja: "平均価格", zh: "平均价格"})[lang] || "") : (df[k] != null ? satDiffTxt(df[k]) : ""); });
   }
+  /* v150: 이동 수단 버튼 밑에 무엇으로 계산하는지 한 줄 — 입력 화면의 긴 설명 대신 */
+  const MODE_SUB = {ko:{transit:"버스 최저가", car:"기름+통행료", flight:"최저 평일가", ferry:"배삯 포함"},
+    en:{transit:"cheapest bus", car:"fuel + tolls", flight:"lowest weekday", ferry:"ferry fare"},
+    ja:{transit:"最安バス", car:"燃料+通行料", flight:"平日最安", ferry:"船賃込み"},
+    zh:{transit:"最便宜巴士", car:"油费+过路费", flight:"工作日最低价", ferry:"含船票"}};
   function srCalc(){
     const o = byId(state.origin), d = byId(state.dest);
     if (o.id === d.id || !modeAvailable(o, d, state.mode)) return null;
