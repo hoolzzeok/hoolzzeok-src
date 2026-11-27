@@ -35,7 +35,7 @@ head = f'''<!doctype html>
 import json as _j
 _sc = _j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'supa_config.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'supa_config.json')) else {'on': False, 'url': '', 'key': ''}
 assert 'service_role' not in _j.dumps(_sc), 'service_role key must never go in the site'
-head = head.replace('<body>', '<body>\n<script>window.HZ_SUPA=' + _j.dumps({'on': bool(_sc.get('on')), 'url': _sc.get('url', ''), 'key': _sc.get('key', ''), 'providers': _sc.get('providers', ['google'])}) + ';</script>', 1)
+head = head.replace('<body>', '<body>\n<script>window.HZ_SUPA=' + _j.dumps({'on': bool(_sc.get('on')), 'url': _sc.get('url', ''), 'key': _sc.get('key', ''), 'providers': _sc.get('providers', ['google']), 'fb': bool(_sc.get('feedback'))}) + ';</script>', 1)
 open(f'{OUT}/index.html', 'w', encoding='utf-8').write(head + body + '\n<p style="text-align:center;font-size:13px;margin:0;padding:18px 16px 28px"><a href="/gyeongbi/" style="color:#0B7A75">구간별 1박 2일 경비 모아보기</a><br><a href="/privacy/" style="color:#0B7A75;font-weight:800">개인정보 처리방침</a> · <a href="/terms/" style="color:#0B7A75">이용약관</a> · <a href="/privacy/en/" style="color:#0B7A75">Privacy</a><br><a href="/en/korea-itinerary/" style="color:#0B7A75" lang="en">Korea itineraries</a> · <a href="/ja/korea-itinerary/" style="color:#0B7A75" lang="ja">韓国モデルコース</a> · <a href="/zh-tw/korea-itinerary/" style="color:#0B7A75" lang="zh-Hant">韓國行程</a><br><span style="color:#6B7280">문의 <a href="mailto:help@hoolzzeok.com" style="color:#0B7A75">help@hoolzzeok.com</a></span></p>\n</body>\n</html>\n')
 # v113: 지자체 누리집 끼워 넣기 화면 (검색 노출 안 함, 로그인·후기 끔)
 os.makedirs(f'{OUT}/embed', exist_ok=True)

@@ -54,6 +54,7 @@ PRIVACY = f"""
 <tr><td>여행 후기 작성</td><td>출발지, 도착지, 일정, 이동 방법, 인원, 별점, 쓴 돈, 고른 키워드(좋았던 점·아쉬웠던 점)·취미, 직접 쓴 글, 글을 쓴 화면의 언어, 작성일</td><td>후기 게시, 경비 계산을 다듬기 위한 통계(개인을 알아볼 수 없게)</td><td>후기를 지우거나 탈퇴할 때까지</td></tr>
 <tr><td>외국인 후기 보상 신청 (선택, 외국어 화면)</td><td>가입 이메일, 신청한 후기, 보상 금액</td><td>미화 {GIFT_USD}달러 디지털 기프트카드 발송, 중복 지급 확인</td><td>신청 표시는 후기를 지우거나 탈퇴할 때까지. 발송 기록은 아래 발송 업체 보관 기간</td></tr>
 <tr><td>후기 신고</td><td>신고한 후기, 신고한 회원, 신고 시각</td><td>부적절한 후기 처리</td><td>그 후기가 지워지거나 탈퇴할 때까지</td></tr>
+<tr><td>경비 의견 (선택, 가입 없이)</td><td>여행 조건(출발지·도착지·일정·인원·이동 방법·스타일), 계산된 1인 금액, 실제와 비교(더 들었음·비슷함·덜 들었음), 실제 쓴 1인 금액(적은 경우), 화면 언어, 보낸 시각. 이름·연락처·회원 정보는 함께 저장하지 않음</td><td>경비 계산 정확도 개선</td><td>받은 날부터 2년</td></tr>
 <tr><td>서비스 이용 중 자동 생성</td><td>접속 IP, 접속 시각, 브라우저 정보</td><td>보안, 장애 확인</td><td>아래 처리 위탁 업체의 기록 보관 기간</td></tr>
 </tbody></table></div>
 <ul><li>이름, 전화번호, 주소, 생년월일, 결제 정보, 민감정보는 받지 않습니다.</li><li>만 14세 미만은 가입할 수 없습니다.</li><li>정식 사이트에는 AI 답변 기능이 없으며, 입력 내용을 AI에 보내지 않습니다.</li></ul>
@@ -64,7 +65,7 @@ PRIVACY = f"""
 <h2>3. 처리 위탁과 국외 이전</h2>
 <p>서비스 운영을 위해 아래 업체에 처리를 맡깁니다. 모두 미국 회사이므로 국외 이전에 해당할 수 있습니다.</p>
 <div class="wrap"><table><thead><tr><th>받는 곳 (연락처)</th><th>하는 일</th><th>이전 국가·시기·방법</th><th>항목</th><th>보유 기간</th></tr></thead><tbody>
-<tr><td>Supabase Inc. (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>)</td><td>회원 인증, 후기·신고 보관</td><td>저장 위치 대한민국(서울 리전). 미국 회사가 운영. 가입·후기 작성 때 네트워크로 전송</td><td>회원 식별값, 이메일, 닉네임·프로필 사진 주소, 후기, 신고, 접속 기록</td><td>탈퇴·삭제할 때까지, 백업은 업체 보관 주기에 따라 자동 삭제</td></tr>
+<tr><td>Supabase Inc. (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>)</td><td>회원 인증, 후기·신고·경비 의견 보관</td><td>저장 위치 대한민국(서울 리전). 미국 회사가 운영. 가입·후기 작성 때 네트워크로 전송</td><td>회원 식별값, 이메일, 닉네임·프로필 사진 주소, 후기, 신고, 접속 기록</td><td>탈퇴·삭제할 때까지, 백업은 업체 보관 주기에 따라 자동 삭제</td></tr>
 <tr><td>Cloudflare, Inc. (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>)</td><td>사이트 전송, 보안</td><td>미국 및 전 세계 데이터센터. 사이트에 접속할 때 네트워크로 전송</td><td>접속 IP, 접속 시각, 브라우저 정보</td><td>업체 기록 보관 기간</td></tr>
 <tr><td>Tremendous, LLC (미국 뉴욕, <a href="https://www.tremendous.com/privacy/" target="_blank" rel="noopener">tremendous.com/privacy</a>)</td><td>외국인 후기 보상 기프트카드 발송</td><td>미국. 보상을 신청한 후기가 승인된 뒤, 운영자가 발송 화면에 입력해 네트워크로 전송</td><td>이메일, 보상 금액</td><td>업체 보관 기간</td></tr>
 </tbody></table></div>
@@ -122,13 +123,14 @@ PRIVACY_EN = f"""
 <tr><td>Writing a trip review</td><td>Start and destination, trip length, transport, number of people, star rating, money spent, chosen keywords and hobby tags, your text, the language of the page, date</td><td>Publishing the review; statistics to improve cost estimates (not identifying you)</td><td>Until you delete the review or your account</td></tr>
 <tr><td>Asking for a review gift card (optional, non-Korean pages)</td><td>Your sign-in email, the review, the gift amount</td><td>Sending a US${GIFT_USD} digital gift card, preventing double payment</td><td>The request mark: until you delete the review or account. Delivery record: as kept by Tremendous</td></tr>
 <tr><td>Reporting a review</td><td>The review, the member who reported, time</td><td>Handling inappropriate reviews</td><td>Until the review or your account is deleted</td></tr>
+<tr><td>Cost feedback (optional, no sign-up)</td><td>Trip settings (start, destination, length, group size, transport, style), the estimated cost per person, how it compared (more, about the same, less), the actual cost per person if you enter it, page language, time sent. Not linked to any name, contact or account</td><td>Making cost estimates more accurate</td><td>2 years from receipt</td></tr>
 <tr><td>Automatically, while you use the site</td><td>IP address, access time, browser information</td><td>Security and troubleshooting</td><td>As kept by the processors below</td></tr>
 </tbody></table></div>
 <ul><li>We don't collect your name, phone number, address, date of birth, payment details or sensitive information.</li><li>People under 14 can't sign up.</li></ul>
 <h2>2. Sharing with third parties</h2><p>We don't give your information to third parties, except when Korean law requires it through proper legal process.</p>
 <h2>3. Processors and transfers outside Korea</h2>
 <div class="wrap"><table><thead><tr><th>Recipient</th><th>Task</th><th>Where, when, how</th><th>Data</th><th>How long</th></tr></thead><tbody>
-<tr><td>Supabase Inc. (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>)</td><td>Sign-in, storing reviews and reports</td><td>Stored in Korea (Seoul region), run by a US company; sent over the network when you sign up or write</td><td>Account ID, email, nickname and picture URL, reviews, reports, access logs</td><td>Until deletion; backups expire on the provider's schedule</td></tr>
+<tr><td>Supabase Inc. (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>)</td><td>Sign-in, storing reviews, reports and cost feedback</td><td>Stored in Korea (Seoul region), run by a US company; sent over the network when you sign up or write</td><td>Account ID, email, nickname and picture URL, reviews, reports, access logs</td><td>Until deletion; backups expire on the provider's schedule</td></tr>
 <tr><td>Cloudflare, Inc. (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>)</td><td>Delivering the site, security</td><td>US and data centers worldwide; whenever you open the site</td><td>IP address, access time, browser information</td><td>As kept by the provider</td></tr>
 <tr><td>Tremendous, LLC (New York, USA, <a href="https://www.tremendous.com/privacy/" target="_blank" rel="noopener">tremendous.com/privacy</a>)</td><td>Sending review gift cards</td><td>USA; after a review that asked for a gift card is approved, we enter it on their site</td><td>Email, gift amount</td><td>As kept by the provider</td></tr>
 </tbody></table></div>

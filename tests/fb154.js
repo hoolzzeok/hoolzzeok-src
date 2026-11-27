@@ -1,0 +1,23 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const errs=[];const posted=[];
+const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',deviceScaleFactor:2});
+await c.addInitScript(()=>{let v;Object.defineProperty(window,'HZ_SUPA',{configurable:true,get(){return v},set(x){v=Object.assign({},x,{fb:true})}});});
+await c.route(/fonts\.|unpkg|jsdelivr/,r=>r.fulfill({body:''}));
+await c.route(/supabase\.co\/rest\/v1\/cost_feedback/,r=>{posted.push({h:r.request().headers(),b:r.request().postData()});r.fulfill({status:201,body:''});});
+await c.route(/supabase\.co(?!\/rest\/v1\/cost_feedback)/,r=>r.fulfill({body:''}));
+const p=await c.newPage();p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html?from=seoul&to=yeosu&nights=1&people=2');await p.waitForTimeout(1300);
+await p.click('#ui-junior').catch(()=>{});await p.waitForTimeout(300);if(await p.isVisible('#calc-go'))await p.click('#calc-go');await p.waitForTimeout(1300);
+console.log('fb-box:',await p.$eval('#fb-box',e=>e.innerText.replace(/\s+/g,' ')));
+await p.click('#fb-box [data-fb="more"]');await p.fill('#fb-box .fb-amt','210000');
+const y=await p.evaluate(()=>{const e=document.querySelector('#fb-box');e.scrollIntoView();return e.getBoundingClientRect().top+scrollY});
+await p.screenshot({path:'shots/fb154.png',clip:{x:0,y:y-10,width:390,height:260},fullPage:true});
+await p.click('#fb-box .fb-send');await p.waitForTimeout(700);
+console.log('after:',await p.$eval('#fb-box',e=>e.innerText.replace(/\s+/g,' ')));
+console.log('posted:',posted.length, posted[0]&&posted[0].b, posted[0]&&Object.keys(posted[0].h).filter(k=>/apikey|prefer|authorization/.test(k)));
+await p.reload();await p.waitForTimeout(1300);await p.click('#ui-junior').catch(()=>{});if(await p.isVisible('#calc-go'))await p.click('#calc-go');await p.waitForTimeout(1000);
+console.log('reload:',await p.$eval('#fb-box',e=>e.innerText.replace(/\s+/g,' ')));
+// 기본(설정 꺼짐)에선 안 보이는지
+const c2=await b.newContext({locale:'ko-KR'});await c2.route(/fonts\.|unpkg|jsdelivr|supabase/,r=>r.fulfill({body:''}));const q=await c2.newPage();await q.goto('file:///home/claude/www.hoolzzeok.com/index.html?from=seoul&to=yeosu&nights=1&people=2');await q.waitForTimeout(1200);
+console.log('off:',JSON.stringify(await q.$eval('#fb-box',e=>e.innerHTML)));
+console.log('errs',errs);await b.close()})();
