@@ -29,6 +29,7 @@ for pid, v in HUB.items():
         for L, svc in SVC.items():
             best = None
             for r in call(svc, x, y):
+                if str(r.get('contenttypeid')) in ('77', '80', '82', '85'): continue   # 교통·숙박·음식점·행사는 빼고
                 try: dd = dist((float(r['mapx']), float(r['mapy'])), (x, y))
                 except Exception: continue
                 if dd <= 0.3 and (best is None or dd < best[0]): best = (dd, r.get('title', '').strip())
