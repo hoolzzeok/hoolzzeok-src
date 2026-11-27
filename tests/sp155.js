@@ -1,0 +1,10 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const errs=[];
+const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR',deviceScaleFactor:2});await c.route(/fonts\.|unpkg|jsdelivr|supabase/,r=>r.fulfill({body:''}));
+const p=await c.newPage();p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html?from=seoul&to=yeosu&nights=1&people=2');await p.waitForTimeout(1300);
+await p.click('#ui-junior').catch(()=>{});if(await p.isVisible('#calc-go'))await p.click('#calc-go');await p.waitForTimeout(1300);
+await p.evaluate(()=>{const t=[...document.querySelectorAll('#dest-info details')].find(d=>/대표 관광지/.test(d.innerText));t.open=true;t.scrollIntoView();});await p.waitForTimeout(400);
+await p.click('#dest-info .sp-intro >> nth=0');await p.waitForTimeout(200);
+const el=await p.$('#dest-info .spot-list');await el.screenshot({path:'shots/sp155.png'});
+console.log('errs',errs);await b.close()})();
