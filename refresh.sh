@@ -43,7 +43,7 @@ if [ "${SKIP_SRC_PUSH:-}" = 1 ]; then   # GitHub Actions: 원본 저장소엔 �
 fi
 cd "$WWW"; git add -A; safe
 if git diff --cached --quiet; then echo "바뀐 것 없음"; else
-  git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE): 공공데이터 $(TZ=Asia/Seoul date +%F)"; git -c push.negotiate=true push -q origin HEAD 2>&1 | grep -v 'moved\|new location' || true; log "배포함 $(git rev-parse --short HEAD)"; fi
+  git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE): 공공데이터 $(TZ=Asia/Seoul date +%F)"; { git push -q origin HEAD 2>/dev/null || { git pull -q --rebase origin "$(git rev-parse --abbrev-ref HEAD)" && git push -q origin HEAD; }; } 2>&1 | grep -v 'moved\|new location' || true; log "배포함 $(git rev-parse --short HEAD)"; fi
 [ "${SKIP_SRC_PUSH:-}" = 1 ] && { echo "완료"; exit 0; }
 cd "$SRC"; git add -A; safe
 if ! git diff --cached --quiet; then git -c user.name="hoolzzeok-bot" -c user.email="hoolzzeok-bot@users.noreply.github.com" commit -q -m "자동 갱신($MODE) 데이터 $(TZ=Asia/Seoul date +%F)"; git -c push.negotiate=true push -q origin HEAD 2>&1 | grep -v 'moved\|new location' || true; fi

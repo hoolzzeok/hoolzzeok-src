@@ -4,7 +4,13 @@ import json, sys, os, re
 src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), 'hub78_i18n.json')
 P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'site', 'index.html')
 d = json.load(open(src, encoding='utf-8')) if os.path.exists(src) else {}
-out = {L: {pid: {k: v[0] for k, v in m.items()} for pid, m in d.get(L, {}).items()} for L in ('en', 'ja', 'zh')}
+def clean(t):
+    """한글 표기 괄호를 지움: '海印寺（陜川）（해인사（합천））' → '海印寺（陜川）'"""
+    for _ in range(3): t = re.sub(r'[(（][^()（）]*[가-힣][^()（）]*[)）]', '', t)
+    t = re.sub(r'[가-힣][가-힣0-9 ·]*', '', t)
+    t = re.sub(r'[(（]\s*[)）]', '', t); t = re.sub(r'\s+', ' ', t).strip(' -·')
+    return t
+out = {L: {pid: {k: clean(v[0]) for k, v in m.items() if clean(v[0])} for pid, m in d.get(L, {}).items()} for L in ('en', 'ja', 'zh')}
 line = 'const HUB78_I18N = ' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';'
 s = open(P, encoding='utf-8').read()
 if re.search(r'^const HUB78_I18N = .*;$', s, re.M): s = re.sub(r'^const HUB78_I18N = .*;$', lambda m: line, s, count=1, flags=re.M)
