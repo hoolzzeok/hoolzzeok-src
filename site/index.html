@@ -870,6 +870,12 @@ html.one-card #mode-hint.hint-info,html.one-card #form>p.hint[data-i="styleHint"
 .save-v{font-size:16px;font-weight:800;color:var(--accent);white-space:nowrap}.save-v small{font-size:11.5px;font-weight:600;color:var(--muted);margin-right:2px}
 .save-go{border:0;border-radius:10px;padding:8px 12px;min-height:40px;background:var(--ink);color:var(--bg);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
 #save-box .save{margin:12px 0 0}
+/* v153 반값여행 달력 알림 */
+.hp-cal{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px;grid-column:1/-1}
+.hp-cal-b{border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;min-height:42px;background:var(--surface);color:var(--ink);font:inherit;font-size:14.5px;font-weight:700;cursor:pointer}
+.hp-cal-g{font-size:14px;font-weight:700;color:var(--accent)}
+.hp-cal small{flex-basis:100%;font-size:12.5px;color:var(--muted)}
+.sr-half+.hp-cal,#half-cal .hp-cal{margin:6px 0 12px}
 /* v152 다른 곳과 비교 */
 .cmp{margin:14px 0;padding:14px 16px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:10px}
 .cmp-chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -1841,6 +1847,7 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
           </div>
         </div>
         <div class="half-wrap">
+          <div id="half-cal"></div>
           <label class="check" for="half" id="half-box">
             <input type="checkbox" id="half">
             <span><span id="half-label"></span><small data-i="halfSmall"></small><button type="button" class="half-how" id="half-how" data-i="halfHow"></button></span>
@@ -2120,6 +2127,7 @@ const HALF = new Set(["pyeongchang","yeongwol","hoengseong","jecheon","gochang",
 /* v99: 반값여행(2026 지역사랑 휴가지원) 25곳. 한국관광공사 공식 '대한민국 반값여행'(korean.visitkorea.or.kr/dgtourcard/tour50.do)을
    2026-11-27에 확인(거창 3차는 '준비중'이라 open:false). 지역마다 가장 최근 차수만 적음. open = 그 차수 신청을 받는 중. 상태는 매일 바뀌므로 기준일에서 14일이 지나면 자동으로 '확인 필요'로 처리 */
 const HALF_ASOF = "2026-11-27";
+const HALF_URL = "https://korean.visitkorea.or.kr/dgtourcard/tour50.do";   // 반값여행 공식 안내(관광공사)
 const HALF_INFO = {
   "goseong-gn":{r:"4차", t:["12-01","12-13"], open:true}, jangheung:{r:"4차", t:["12-01","12-13"], open:true},
   yeongcheon:{r:"4차", t:["12-01","12-13"], open:true}, sancheong:{r:"4차", t:["11-18","12-10"], open:true},
@@ -5193,6 +5201,7 @@ if (typeof document !== "undefined") {
     if (halfEff() && c.refund > 0) $("bar-route").textContent += ", " + L.barAfter(w(c.total));
     $("calc-go-sub").textContent = L.calcGoSub(w(halfEff() ? c.final : c.total));
     saveBoxSync();
+    { const hc = $("half-cal"); if (hc) { const v = lang === "ko" && !EMBED && isHalf(d.id) ? halfCalHtml(d.id) : ""; if (hc.dataset.v !== v) { hc.innerHTML = v; hc.dataset.v = v; halfCalBind(hc); } } }
     stageSync();
     /* 여행 준비물: 접어 두고 누르면 펼침 (다시 계산해도 열림 상태 유지) */
     const si = shopItems(d);
@@ -5668,6 +5677,7 @@ if (typeof document !== "undefined") {
       const pt = srParty(c), mNow = srMonthNum();
       let h = `<div class="sr-big"><span>${L.srAllLabel(state.people)}</span><b class="num">${L.easy(pt.all)}</b>${state.people > 1 ? `<em>${L.srPerLabel(L.easy(pt.per))}</em>` : ""}</div>`;
       if (isHalf(d.id) && halfOpen(d.id)) h += `<p class="sr-half">${L.srHalf(L.easy(Math.min(Math.floor((c.lodging + c.food + c.act + c.misc) * .5 / 100) * 100, halfCap())))}</p>`;
+      if (isHalf(d.id) && !EMBED) h += halfCalHtml(d.id);
       h += saveHtml();
       { const ps = state.picks.length ? state.picks.reduce((s2, i) => s2 + (ACTS[i][9] || 0), 0) : null, H = lineHows(o, d, c, ps);
         h += `<ul class="sr-rows">${rows.map(srRow).join("")}</ul>${EMBED ? "" : `<button type="button" class="sr-btn dark sr-share-top" id="sr-share-top"><b>${L.srShareTop}</b><small>${L.srShareTopSub}</small></button>`}${calcBox(rows, H)}${EMBED ? "" : cmpHtml()}`; }
@@ -5726,7 +5736,7 @@ if (typeof document !== "undefined") {
       body.innerHTML = h; bindPromo(body); srSwapBind(body);
       body.querySelectorAll("[data-went]").forEach(b => { b.hidden = !rvOk(); b.addEventListener("click", rvWentGo); });
       { const wk = body.querySelector("details.sr-week"); if (wk) wk.addEventListener("toggle", () => { SR_WEEK_OPEN = wk.open; }); }
-      saveBind(body); cmpBind(body, () => renderSenior());
+      saveBind(body); cmpBind(body, () => renderSenior()); halfCalBind(body);
       body.querySelectorAll(".sr-week [data-sat]").forEach(b => b.addEventListener("click", () => { SR_WEEK_OPEN = true; WKND = b.dataset.sat === "avg" ? null : b.dataset.sat; render(); renderSenior(); const n = $("sr-body").querySelector(`.sr-week [data-sat="${b.dataset.sat}"]`); if (n) n.focus({preventScroll: true}); }));
       { const sv = body.querySelector("[data-souv]"); if (sv) sv.addEventListener("click", () => { SOUV_ON = !SOUV_ON; render(); renderSenior(); }); }
       body.querySelectorAll(".sr-act[data-more]").forEach(b => b.addEventListener("click", () => { const m = b.closest("li").querySelector(".sr-ln-more"); m.hidden = !m.hidden; b.setAttribute("aria-expanded", String(!m.hidden)); }));
@@ -6466,10 +6476,39 @@ if (typeof document !== "undefined") {
   /* ===== v99: 반값여행 안내 페이지 (전체 화면). 자료는 HALF_INFO에서 자동으로 ===== */
   const HP_URL = "https://korean.visitkorea.or.kr/dgtourcard/tour50.do";
   const hpMd = (a, b) => { const [am, ad] = a.split("-").map(Number), [bm, bd] = b.split("-").map(Number); return am === bm ? `${am}월 ${ad}일~${bd}일` : `${am}월 ${ad}일~${bm}월 ${bd}일`; };
+  /* v153: 반값여행 알림을 휴대폰 달력에 — 개인정보 없이 .ics 파일(아이폰·안드로이드 달력) 또는 구글 캘린더 링크.
+     신청 받는 중이면 여행 기간 끝 3일 전(이미 지났으면 내일) 오전 9시, 아직 시작 전이면 시작일 오전 9시 */
+  function halfRemind(id){
+    const h = HALF_INFO[id], p = byId(id); if (!h || !p) return null;
+    const st = "2026-" + h.t[0], en = "2026-" + h.t[1], ymd = d => d.toISOString().slice(0, 10), add = (x, n) => ymd(new Date(Date.parse(x + "T12:00:00Z") + n * 864e5));
+    const nm = T.ko.name(p), per = `${+h.t[0].slice(0, 2)}월 ${+h.t[0].slice(3)}일~${+h.t[1].slice(0, 2)}월 ${+h.t[1].slice(3)}일`;
+    if (halfState(id) === "open" && en > TODAY) { let d = add(en, -3); if (d <= TODAY) d = add(TODAY, 1); if (d > en) d = en;
+      return {id, date: d, title: `[훌쩍] ${nm} 반값여행 ${h.r} 신청 서두르기`, desc: `여행 기간 ${per}. 신청은 여행 하루 전까지, 승인받고 떠나야 해요. 예산이 떨어지면 일찍 마감돼요. 공식 안내: ${HALF_URL}`, btn: "📅 마감 전 알림 달력에 넣기"}; }
+    if (st > TODAY) return {id, date: st, title: `[훌쩍] ${nm} 반값여행 ${h.r} 신청 시작 예정`, desc: `여행 기간 ${per}. 시작일은 바뀔 수 있으니 공식 안내에서 확인하세요: ${HALF_URL}`, btn: "📅 신청 시작 알림 달력에 넣기"};
+    return null;
+  }
+  function halfIcs(r){
+    const D = r.date.replace(/-/g, ""), D2 = new Date(Date.parse(r.date + "T12:00:00Z") + 864e5).toISOString().slice(0, 10).replace(/-/g, "");
+    const now = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z", ec = t => t.replace(/[\\;,]/g, m => "\\" + m);
+    return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//hoolzzeok//half//KO", "CALSCALE:GREGORIAN", "BEGIN:VEVENT",
+      `UID:half-${r.id}-${D}@hoolzzeok.com`, `DTSTAMP:${now}`, `DTSTART;VALUE=DATE:${D}`, `DTEND;VALUE=DATE:${D2}`, `SUMMARY:${ec(r.title)}`, `DESCRIPTION:${ec(r.desc)}`, `URL:${HALF_URL}`,
+      "BEGIN:VALARM", "ACTION:DISPLAY", "TRIGGER:PT9H", `DESCRIPTION:${ec(r.title)}`, "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+  }
+  function halfCalHtml(id){
+    const r = halfRemind(id); if (!r) return "";
+    const D = r.date.replace(/-/g, ""), D2 = new Date(Date.parse(r.date + "T12:00:00Z") + 864e5).toISOString().slice(0, 10).replace(/-/g, "");
+    const g = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(r.title)}&dates=${D}/${D2}&details=${encodeURIComponent(r.desc)}`;
+    return `<div class="hp-cal"><button type="button" class="hp-cal-b" data-half-ics="${id}">${esc(r.btn)}</button><a class="hp-cal-g" href="${esc(g)}" target="_blank" rel="noopener noreferrer">구글 캘린더</a><small>${+r.date.slice(5, 7)}월 ${+r.date.slice(8)}일 오전 9시 알림 · 개인정보를 받지 않아요</small></div>`;
+  }
+  function halfCalBind(root){ root.querySelectorAll("[data-half-ics]").forEach(b => b.addEventListener("click", () => {
+    const r = halfRemind(b.dataset.halfIcs); if (!r) return;
+    try { const u = URL.createObjectURL(new Blob([halfIcs(r)], {type: "text/calendar;charset=utf-8"})), a = document.createElement("a");
+      a.href = u; a.download = `hoolzzeok-half-${r.id}.ics`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000);
+      toast("달력 파일을 받았어요. 열어서 '추가'를 누르세요"); } catch(e) { toast("이 브라우저에선 안 돼요. 구글 캘린더를 눌러 주세요"); } })); }
   function hpRow(id, mark){
     const p = byId(id), h = HALF_INFO[id], L = T.ko; if (!p || !h) return "";
     const st = halfState(id), pill = st === "open" ? `<span class="hp-pill on">신청 받는 중</span>` : st === "closed" ? `<span class="hp-pill">신청 마감</span>` : `<span class="hp-pill">확인 필요</span>`;
-    return `<li class="hp-row${mark === id ? " mark" : ""}" id="hp-r-${id}"><div class="hp-rk"><b>${esc(L.name(p))}${/\(/.test(L.name(p)) ? "" : ` <small>${esc(L.prov(p))}</small>`}</b><span>${h.r} 여행 ${hpMd(h.t[0], h.t[1])}</span></div>${pill}<button type="button" class="hp-go" data-hp-go="${id}">경비 보기</button></li>`;
+    return `<li class="hp-row${mark === id ? " mark" : ""}" id="hp-r-${id}"><div class="hp-rk"><b>${esc(L.name(p))}${/\(/.test(L.name(p)) ? "" : ` <small>${esc(L.prov(p))}</small>`}</b><span>${h.r} 여행 ${hpMd(h.t[0], h.t[1])}</span></div>${pill}<button type="button" class="hp-go" data-hp-go="${id}">경비 보기</button>${halfCalHtml(id)}</li>`;
   }
   function hpRender(mark){
     const ids = [...HALF].filter(id => HALF_INFO[id] && byId(id)).sort((a, b) => byId(a).ko.localeCompare(byId(b).ko, "ko"));
@@ -6507,6 +6546,7 @@ if (typeof document !== "undefined") {
         <button type="button" class="rv-sub" id="hp-map">지도에서 반값여행 지역 보기</button>
       </div>
       <p class="hp-fine">훌쩍은 정부·지자체의 공식 서비스가 아니에요. 신청과 승인, 정산은 각 지자체가 해요. 출처: <a href="${HP_URL}" target="_blank" rel="noopener">한국관광공사 대한민국 반값여행</a>(2026-11-19 확인), <a href="https://www.make2t.kr/2026/11/2026-half-price-travel-regions-application-settlement.html" target="_blank" rel="noopener">지역사랑 휴가지원 정리</a>(2026-11-16).</p>`;
+    halfCalBind($("hp-body"));
     $("hp-body").querySelectorAll("[data-hp-go]").forEach(b => b.addEventListener("click", () => {
       const id = b.dataset.hpGo; hpClose(); if (ui === "senior") setUi("junior", true);
       state.dest = id; state.picked = id; state.half = halfOpen(id); state.picks = []; if (state.origin === id) state.origin = id === "seoul" ? "busan" : "seoul";
