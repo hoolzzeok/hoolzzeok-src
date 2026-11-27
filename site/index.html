@@ -1789,6 +1789,33 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
 .qt-more summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--accent);min-height:40px;display:flex;align-items:center}
 .qt-more .c-desc,.qt-more .acc-c,.qt-more .acc,.qt-more .acc-more{display:none}
 .qt-again{border:0;background:none;color:var(--muted);font-weight:700;min-height:44px;cursor:pointer}
+/* v160 다듬기: 직접 화면 타일 — 굵은 검은 테두리·흐린 사진 배경·알록달록 그림 대신 얇은 선 + 한 색 아이콘 */
+.tiles.has-bg{padding:0;margin-inline:0;border-radius:0;overflow:visible}
+.tiles.has-bg::before,.tiles.has-bg::after{display:none}
+.tiles>details.fold{border:0;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line);transition:box-shadow .15s}
+.tiles>details.fold:hover{box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 55%,var(--line))}
+.tiles>details.fold[open]{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.tiles .t-ic{width:34px;height:34px}
+.tiles-more{border:0;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:14px;font-weight:700;color:var(--accent)}
+.t-ic{display:grid;place-items:center;border-radius:10px;background:var(--accent-soft);box-sizing:border-box;padding:5px}
+.t-ic svg{stroke:var(--accent);stroke-width:2.6}
+.t-ic svg .l,.t-ic svg .y,.t-ic svg .p,.t-ic svg .s{fill:none}
+.t-ic svg .k{fill:var(--accent)}
+/* v160 쉽게 화면 버튼 */
+.sr-btn{border-radius:16px;transition:box-shadow .15s,background .15s,transform .1s}
+.sr-btn:hover{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.sr-btn:active{transform:scale(.985);background:var(--surface-2)}
+.sr-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sr-btn.dark:hover{box-shadow:none;opacity:.92}
+.sr-btn b{font-weight:750}
+.sr-btn-d{align-content:start;gap:3px}
+.sr-d-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.sr-tag{font-style:normal;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:99px;line-height:1.2}
+.sr-px{font-size:17px;font-weight:800;color:var(--accent);letter-spacing:-.01em;line-height:1.3}
+.sr-btn-d small{font-size:14px;line-height:1.45}
+.sr-nav #sr-back{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line);gap:6px}
+.sr-nav #sr-back::before{content:"";width:20px;height:20px;background:currentColor;-webkit-mask:var(--chev) center/contain no-repeat;mask:var(--chev) center/contain no-repeat;transform:scaleX(-1)}
+.sr-nav #sr-reset{background:none;box-shadow:none;color:var(--muted);font-weight:700}
 </style>
 
 <header class="top">
@@ -5861,8 +5888,13 @@ if (typeof document !== "undefined") {
       const set = id => srPick(() => { if (from) state.origin = id; else { state.dest = id; state.half = halfOpen(id); state.picks = []; } });
       const about = (p, noFest) => { const v = from ? null : priceOf(p); const base = v != null ? L.srAbout(L.easy(v)) : (L.prov(p) !== L.name(p) ? L.prov(p) : ""); if (from || noFest) return base; const fw = festWhen(calcId(p)) || festWhen(p.id); return fw ? [base, L.srFestShort(festWhenText(fw, lang))].filter(Boolean).join(", ") : base; };
       const recs = from ? [] : rankRecs().slice(0, 3);
-      recs.forEach(r => { const p = byId(r.place); grid.appendChild(btn(`${L.name(p)}, ${L.srPickTag}`, `${lang==="ko"?r.ko:(r[lang]||r.en)} ${about(p, true)}`, () => set(r.place), "wide")); });
-      (from ? SR_FROM : SR_TO).filter(id => from || (id !== state.origin && !recs.some(r => r.place === id))).forEach(id => { const p = byId(id); grid.appendChild(btn(L.name(p), about(p), () => set(id))); });
+      /* v160: 목적지 버튼은 금액을 문장 끝에 묻지 않고 따로 크게 */
+      const px = p => { const v = from ? null : priceOf(p); return v != null ? L.srAbout(L.easy(v)) : ""; };
+      const festS = p => { const fw = festWhen(calcId(p)) || festWhen(p.id); return fw ? L.srFestShort(festWhenText(fw, lang)) : ""; };
+      const btnD = (name, tag, price, note, on, cls) => { const b = document.createElement("button"); b.type = "button"; b.className = "sr-btn sr-btn-d" + (cls ? " " + cls : "");
+        b.innerHTML = `<span class="sr-d-h"><b>${esc(name)}</b>${tag ? `<em class="sr-tag">${esc(tag)}</em>` : ""}</span>${price ? `<span class="sr-px num">${esc(price)}</span>` : ""}${note ? `<small>${esc(note)}</small>` : ""}`; b.addEventListener("click", on); return b; };
+      recs.forEach(r => { const p = byId(r.place); grid.appendChild(btnD(L.name(p), L.srPickTag, px(p), lang==="ko"?r.ko:(r[lang]||r.en), () => set(r.place), "wide")); });
+      (from ? SR_FROM : SR_TO).filter(id => from || (id !== state.origin && !recs.some(r => r.place === id))).forEach(id => { const p = byId(id); grid.appendChild(from ? btn(L.name(p), about(p), () => set(id)) : btnD(L.name(p), "", px(p), festS(p) || (px(p) ? "" : about(p, true)), () => set(id))); });
       if (!from) { const n = document.createElement("p"); n.className = "sr-note"; n.textContent = L.srPriceNote(L.nights(state.nights)); body.appendChild(n); }
       const more = document.createElement("div"); more.className = "sr-more";
       more.innerHTML = `<label for="sr-q">${L.srOther}</label><input id="sr-q" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="${L.srOtherPh}"><div class="sr-grid"></div>`;
