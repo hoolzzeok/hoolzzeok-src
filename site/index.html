@@ -1793,6 +1793,26 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
 .qt-again{border:0;background:none;color:var(--muted);font-weight:700;min-height:44px;cursor:pointer}
 /* v161: 아주 좁은 폰(340px 이하) 쉽게 화면 한국어 머리줄 넘침 방지 */
 @media (max-width:340px){:root[data-ui="senior"] header.top .lang button{padding:6px 6px;font-size:13.5px}:root[data-ui="senior"] header.top .rv-open{padding:4px 5px;font-size:12.5px}:root[data-ui="senior"] .lang-pick select{max-width:64px;font-size:13px}}
+/* v162 후기 */
+.rl-card .cm-paid{border-left:0;padding:0;background:none;font-size:12.5px;font-weight:500;color:var(--muted);line-height:1.45}
+.rl-card .cm-paid b{color:var(--deal);font-weight:800}
+.rl-top{grid-template-columns:minmax(0,1fr) auto}
+.rl-star{display:inline-flex;align-items:center;gap:3px;background:var(--surface-2);border-radius:99px;padding:4px 10px;font-size:14px}
+.rl-star .ico{color:var(--star)}
+.rl-acts .go{background:var(--accent-soft);color:var(--accent);min-height:40px}
+.rl-sum{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line);padding:16px 18px;gap:6px}
+.rl-sum-dest{font-size:15px;font-weight:800;color:var(--accent);align-self:center}
+.rl-sum-star{font-size:28px}
+.rl-sum-n{color:var(--muted);opacity:1}
+.rl-sum-diff{font-size:14.5px;color:var(--ink)}.rl-sum-diff b{color:var(--accent)}.rl-sum-diff small{color:var(--muted)}
+.rl-sum-empty{color:var(--ink)}
+.rl-sum-cta{background:var(--accent);color:var(--on-accent)}.rl-sum-cta small{color:inherit;opacity:.85}
+.rw-kw [hidden]{display:none}
+.rw-kw .rw-kw-more{border:0;box-shadow:none;background:none;color:var(--accent);font:inherit;font-size:15px;font-weight:700;min-height:44px;padding:6px 10px;cursor:pointer}
+.rw-kw-h2.rw-kw-tog{justify-self:start;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink);font-size:15px;font-weight:700;cursor:pointer;margin-top:10px}
+.rw-kw-h2.rw-kw-tog::before{content:"+";color:var(--accent);font-weight:800}
+.fb-more{flex-wrap:wrap}.fb-more .fb-amt{flex:1 1 140px;min-width:0}
+.fb-rv{flex:1 1 100%;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;border:0;border-radius:12px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent);font:inherit;font-size:15px;font-weight:700;cursor:pointer}
 /* v160 다듬기: 직접 화면 타일 — 굵은 검은 테두리·흐린 사진 배경·알록달록 그림 대신 얇은 선 + 한 색 아이콘 */
 .tiles.has-bg{padding:0;margin-inline:0;border-radius:0;overflow:visible}
 .tiles.has-bg::before,.tiles.has-bg::after{display:none}
@@ -4437,7 +4457,7 @@ if (typeof document !== "undefined") {
   /* 직접 화면 '더 싸게 가는 법'은 결과가 보일 때만 계산(입력 중엔 계산하지 않아 가볍게) */
   function saveBoxSync(){ const sb = $("save-box"), cb = $("cmp-box"); if (!sb) return; if (EMBED || JSTAGE === "form") { sb.innerHTML = ""; if (cb) cb.innerHTML = ""; return; } sb.innerHTML = saveHtml(); saveBind(sb);
     if (cb) { cb.innerHTML = cmpHtml(); cmpBind(cb, saveBoxSync); }
-    { const fb = $("fb-box"); if (fb) { const k = fbOn() ? fbKey() : ""; if (fb.dataset.k !== k) { fb.dataset.k = k; fb.innerHTML = fbHtml(); fbBind(fb); } } } }
+    { const fb = $("fb-box"); if (fb) { const k = fbOn() ? fbKey() + (rvOk() ? "|rv" : "") : ""; if (fb.dataset.k !== k) { fb.dataset.k = k; fb.innerHTML = fbHtml(); fbBind(fb); } } } }
   function setStage(sg){ JSTAGE = sg; if (sg === "result") setTimeout(saveBoxSync, 0); $("junior").dataset.stage = sg; document.documentElement.classList.toggle("stg-result", sg === "result"); stageSync();
     if (sg === "result") { const b = $("dig-open"); b.classList.remove("nudge"); setTimeout(() => b.classList.add("nudge"), 900); setTimeout(() => b.classList.remove("nudge"), 3000); } }
   function stageSync(){
@@ -5585,6 +5605,7 @@ if (typeof document !== "undefined") {
     en:{t:"Been there? Was this close to what you spent", s:"One tap. No name or contact; used only to improve estimates", more:"Spent more", same:"About right", less:"Spent less", amt:"Actual cost per person (optional, KRW)", send:"Send", thx:"Thank you! We'll use it to improve estimates", fail:"Couldn't send right now. Please try again shortly", done:"You already sent feedback for this trip. Thank you"},
     ja:{t:"行ってきましたか？実際と近かったですか", s:"1回押すだけ。名前・連絡先は受け取らず、計算の改善だけに使います", more:"もっとかかった", same:"ほぼ同じ", less:"少なかった", amt:"実際の1人の金額（任意・ウォン）", send:"送る", thx:"ありがとうございます！計算の改善に使います", fail:"今は送れませんでした。少ししてからもう一度押してください", done:"この条件ではすでに送っていただきました"},
     zh:{t:"去过了吗？和实际花费差不多吗", s:"点一下就行。不收姓名和联系方式，只用来改进计算", more:"花得更多", same:"差不多", less:"花得更少", amt:"实际每人花费（选填，韩元）", send:"发送", thx:"谢谢！会用来改进计算", fail:"现在发送失败，请稍后再试", done:"这个行程条件已经发送过了，谢谢"}};
+  const FB_RV = {ko: "별점·한마디까지 남겨 후기로 올리기", en: "Make it a review (stars + one line)", ja: "星とひとことでレビューにする", zh: "加上星级和一句话写成评价"};
   const fbOn = () => { const c = window.HZ_SUPA; return !!(c && c.fb && c.url && c.key && !EMBED); };
   const fbKey = () => ["hz-fb", state.origin, state.dest, state.nights, state.people, state.mode, state.style].join("|");
   function fbHtml(){
@@ -5593,7 +5614,7 @@ if (typeof document !== "undefined") {
     if (sent) return `<section class="fb"><p class="fb-done">${IE("✅")} ${esc(X.done)}</p></section>`;
     return `<section class="fb" aria-label="${esc(X.t)}"><div class="save-h"><b>${IE("🙋")} ${esc(X.t)}</b><small>${esc(X.s)}</small></div>
       <div class="fb-row">${["more", "same", "less"].map(k => `<button type="button" class="fb-b" data-fb="${k}" aria-pressed="false">${esc(X[k])}</button>`).join("")}</div>
-      <div class="fb-more" hidden><input class="fb-amt" type="number" inputmode="numeric" min="0" max="5000000" step="1000" placeholder="${esc(X.amt)}" aria-label="${esc(X.amt)}"><button type="button" class="fb-send">${esc(X.send)}</button></div>
+      <div class="fb-more" hidden><input class="fb-amt" type="number" inputmode="numeric" min="0" max="5000000" step="1000" placeholder="${esc(X.amt)}" aria-label="${esc(X.amt)}"><button type="button" class="fb-send">${esc(X.send)}</button>${rvOk() ? `<button type="button" class="fb-rv"><i class="ico ico-pen-line" aria-hidden="true"></i> ${esc(FB_RV[lang] || FB_RV.en)}</button>` : ""}</div>
       <p class="fb-msg" role="status" hidden></p></section>`;
   }
   function fbBind(root){
@@ -5612,6 +5633,7 @@ if (typeof document !== "undefined") {
         box.innerHTML = `<p class="fb-done">${IE("✅")} ${esc(X.thx)}</p>`;
       } catch(err) { btn.disabled = false; msg.hidden = false; msg.textContent = X.fail; }
     });
+    const rvb = box.querySelector(".fb-rv"); if (rvb) rvb.addEventListener("click", () => { if (!v) return; const a = +box.querySelector(".fb-amt").value; rvWentGo(v === "more" ? "more" : v === "less" ? "less" : "same", a > 0 && a <= 5000000 ? Math.round(a) : 0); });
   }
   /* v151: '자세한 계산 보기'를 영수증처럼 — 항목 비율 막대 + 항목마다 금액·비율·계산식(숫자는 굵게) */
   const CALC_IC = {trans:"🚌", lodge:"🛏️", food:"🍚", local:"🚕", act:"🎟️", misc:"🛍️"};
@@ -6009,7 +6031,7 @@ if (typeof document !== "undefined") {
       h += promoHtml("senior", d);
       h += `<div class="sr-card sr-copy"><button type="button" class="sr-btn dark" id="sr-share"><b>${L.srShare}</b></button><p class="sr-note" id="sr-share-msg" aria-live="polite"></p><textarea id="sr-share-txt" readonly hidden></textarea></div>`;
       body.innerHTML = h; bindPromo(body); srSwapBind(body);
-      body.querySelectorAll("[data-went]").forEach(b => { b.hidden = !rvOk(); b.addEventListener("click", rvWentGo); });
+      body.querySelectorAll("[data-went]").forEach(b => { b.hidden = !rvOk() || fbOn(); b.addEventListener("click", () => rvWentGo()); });
       { const wk = body.querySelector("details.sr-week"); if (wk) wk.addEventListener("toggle", () => { SR_WEEK_OPEN = wk.open; }); }
       saveBind(body); cmpBind(body, () => renderSenior()); halfCalBind(body); fbBind(body);
       body.querySelectorAll(".sr-week [data-sat]").forEach(b => b.addEventListener("click", () => { SR_WEEK_OPEN = true; WKND = b.dataset.sat === "avg" ? null : b.dataset.sat; render(); renderSenior(); const n = $("sr-body").querySelector(`.sr-week [data-sat="${b.dataset.sat}"]`); if (n) n.focus({preventScroll: true}); }));
@@ -6342,7 +6364,7 @@ if (typeof document !== "undefined") {
   const CM_MOODS = [["good","좋았어요"],["ok","괜찮았어요"],["bad","아쉬웠어요"]];
   const CM_SAYS = ["가성비 좋았어요","예상보다 돈이 더 들었어요","사람 적고 한적해요","사람이 많아요","먹을 곳이 많아요","먹을 곳이 적어요","대중교통으로 다니기 편해요","대중교통이 불편해요","차 없으면 힘들어요","혼자 가기 좋아요","아이와 가기 좋아요","부모님과 가기 좋아요","다시 가고 싶어요"];
   const cmMoodTxt = k => (CM_MOODS.find(x => x[0] === k) || [])[1] || "";
-  const cm = {db:null, user:null, uid:null, admin:false, canWrite:null, reviews:[], pending:[], reports:{}, myReports:[], mine:[], myAll:[], region:"all", tag:null, open:{}, loaded:false};
+  const cm = {db:null, user:null, uid:null, admin:false, canWrite:null, reviews:[], pending:[], reports:{}, myReports:[], mine:[], myAll:[], region:"all", tag:null, open:{}, loaded:false, destF:null, wantDest:null};
   const regionOfPlace = p => CM_REGION_OF[p.prov] || "gyeongsang";
   const cmPlaces = () => PLACES.filter(p => p.id !== "dokdo");
   /* v95: 눌러서 고르는 후기 쓰기 */
@@ -6495,6 +6517,18 @@ if (typeof document !== "undefined") {
     const FK = ["card", "engmenu", "cashonly", "krphone"], kwL = list => lang === "ko" ? list.filter(x => !FK.includes(x[0])) : [...list.filter(x => FK.includes(x[0])), ...list.filter(x => !FK.includes(x[0]))];
     kwBox($("cm-say"), kwL(lowFirst ? RW_KW.bad : RW_KW.good), lowFirst ? "bad" : "");
     kwBox($("cm-say2"), kwL(lowFirst ? RW_KW.good : RW_KW.bad), lowFirst ? "" : "bad");
+    /* v162: 고를 게 18개라 길었음 → 처음엔 6개, 반대쪽(아쉬운 점)은 눌러야 펼침. 이미 고른 건 늘 보임 */
+    { const MORE = {ko: n => `더 보기 ${n}개`, en: n => `${n} more`, ja: n => `ほか${n}個`, zh: n => `还有${n}个`}, mf = MORE[lang] || MORE.en;
+      const b1 = $("cm-say"), bs = [...b1.querySelectorAll("button")];
+      if (bs.length > 7) { bs.slice(6).forEach(b => { if (b.getAttribute("aria-pressed") !== "true") b.hidden = true; });
+        const hid = bs.filter(b => b.hidden).length;
+        if (hid) { const m = document.createElement("button"); m.type = "button"; m.className = "rw-kw-more"; m.textContent = mf(hid); m.addEventListener("click", () => { bs.forEach(b => b.hidden = false); m.remove(); }); b1.appendChild(m); } }
+      const b2 = $("cm-say2"), h2 = $("rw-kw-h2"), any2 = !!b2.querySelector('[aria-pressed="true"]');
+      b2.hidden = !any2; h2.classList.toggle("rw-kw-tog", !any2);
+      if (!any2) { h2.setAttribute("role", "button"); h2.tabIndex = 0; h2.setAttribute("aria-expanded", "false");
+        const open = () => { b2.hidden = false; h2.classList.remove("rw-kw-tog"); h2.removeAttribute("role"); h2.removeAttribute("tabindex"); h2.removeAttribute("aria-expanded"); };
+        h2.onclick = open; h2.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } }; }
+      else { h2.onclick = null; h2.onkeydown = null; h2.removeAttribute("role"); h2.removeAttribute("tabindex"); h2.removeAttribute("aria-expanded"); } }
     $("cm-tagpick").innerHTML = CM_TAGS.map(t => `<button type="button" data-t="${t}" aria-pressed="${cmF.tags.includes(t)}">#${RWT().tags[t] || t}</button>`).join("");
     $("cm-tagpick").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { const t = b.dataset.t, on = !cmF.tags.includes(t);
       if (on && cmF.tags.length >= 3) { $("cm-msg").textContent = RWT().tagMax(3); return; }
@@ -6538,9 +6572,12 @@ if (typeof document !== "undefined") {
   function cmChips(){
     const cnt = {}; cm.reviews.forEach(r => { cnt[r.region] = (cnt[r.region] || 0) + 1; });
     const regs = CM_REGIONS.filter(([k]) => k === "all" || cnt[k] || cm.region === k);
-    $("cm-regions").hidden = regs.length < 3;
-    $("cm-regions").innerHTML = regs.map(([k]) => `<button type="button" data-r="${k}" aria-pressed="${cm.region === k}">${RWT().regions[k]} <small>${k === "all" ? cm.reviews.length : cnt[k] || 0}</small></button>`).join("");
-    $("cm-regions").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { cm.region = b.dataset.r; cmRender(); }));
+    /* v162: 지금 보던 도착지 후기를 맨 앞 칩으로 */
+    const dn = cm.destF || (cm.reviews.some(r => r.dest === state.dest) ? state.dest : null), dc = dn ? cm.reviews.filter(r => r.dest === dn).length : 0;
+    $("cm-regions").hidden = regs.length < 3 && !dn;
+    $("cm-regions").innerHTML = (dn && byId(dn) ? `<button type="button" data-d="${dn}" aria-pressed="${cm.destF === dn}">${esc(T[lang].name(byId(dn)))} <small>${dc}</small></button>` : "")
+      + regs.map(([k]) => `<button type="button" data-r="${k}" aria-pressed="${!cm.destF && cm.region === k}">${RWT().regions[k]} <small>${k === "all" ? cm.reviews.length : cnt[k] || 0}</small></button>`).join("");
+    $("cm-regions").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { if (b.dataset.d) { cm.destF = cm.destF === b.dataset.d ? null : b.dataset.d; cm.region = "all"; } else { cm.destF = null; cm.region = b.dataset.r; } cmRender(); }));
     $("cm-tags").hidden = !cm.tag;
     $("cm-tags").innerHTML = cm.tag ? `<button type="button" aria-label="${esc(RWT().tagOff(RWT().tags[cm.tag] || cm.tag))}">#${esc(RWT().tags[cm.tag] || cm.tag)} <i class="ico ico-x" aria-hidden="true"></i></button>` : "";
     const tb = $("cm-tags").querySelector("button"); if (tb) tb.addEventListener("click", () => { cm.tag = null; cmRender(); });
@@ -6548,7 +6585,7 @@ if (typeof document !== "undefined") {
   const cmSum = c => +c.total > 0 ? +c.total : CM_COSTS.reduce((s, [k]) => s + (+c[k] || 0), 0);
   /* v122 경제적 이해관계 표시(공정위 추천·보증 심사지침): 베타 기간 지인 후기는 보상을 주므로 카드 맨 위 첫 줄에 표시.
      until = 이 시각 전에 쓴 후기에 표시 (null이면 지금 쓰는 후기 전부). 보상은 좋고 나쁨과 상관없이 같게 */
-  const REVIEW_PAID = {until: null, txt: "훌쩍에서 보상을 받고 쓴 후기예요 (지인 베타 테스트). 좋고 나쁨과 상관없이 같은 보상을 드려요."};
+  const REVIEW_PAID = {until: null, head: "훌쩍에서 보상받고 쓴 후기", rest: "지인 베타 테스트, 좋고 나쁨과 상관없이 같은 보상", txt: "훌쩍에서 보상받고 쓴 후기예요 (지인 베타 테스트). 좋고 나쁨과 상관없이 같은 보상이에요."};
   const reviewPaid = r => REVIEW_PAID.until == null || String(r.at || "") < REVIEW_PAID.until;
   /* v134 외국인 후기 보상: 추첨 없이 "승인된 후기 선착순 정액"(운이 없어 각국 경품 규정 대상 아님). 외국어 화면에서 본인이 고른 경우만.
      매달 승인 순 20건, 1건 US$5 디지털 기프트카드(Tremendous, 가입 이메일로). 처리방침 시행일(12/1)부터. 끄려면 on:false */
@@ -6592,15 +6629,15 @@ if (typeof document !== "undefined") {
       : `<button type="button" class="go" data-act="calc" data-id="${esc(r.id)}">${X.calc}</button>${(r.text || "").length > 140 ? `<button type="button" class="sub" data-act="more" data-id="${esc(r.id)}">${open ? X.fold : X.more}</button>` : ""}<span class="sp"></span>${cm.uid && !cm.admin ? (cm.myReports.includes(r.id) ? `<button type="button" class="sub" disabled>${X.reported}</button>` : `<button type="button" class="sub" data-act="report" data-id="${esc(r.id)}">${X.report}</button>`) : ""}${cm.admin ? `<button type="button" class="sub warn" data-act="hide" data-id="${esc(r.id)}">${X.hide}${cm.reports[r.id] ? X.rep(cm.reports[r.id]) : ""}</button>` : ""}`;
     /* 보상 표시: 한국어 문장이 맨 위(법), 외국어 화면은 바로 아래에 그 말로 */
     const gift = giftOf(r), paidTr = gift ? (X.paidGiftTr ? X.paidGiftTr(gift) : "") : X.paidTr;
-    const paid = gift || reviewPaid(r) ? `<p class="cm-paid"><span lang="ko">${gift ? GIFT_KO(gift) : REVIEW_PAID.txt}</span>${lang !== "ko" && paidTr ? `<span class="cm-paid-tr" lang="${tl}">${paidTr}</span>` : ""}</p>` : "";
+    const paid = gift || reviewPaid(r) ? `<p class="cm-paid"><span lang="ko">${gift ? `<b>훌쩍에서 보상(미화 ${gift}달러 기프트카드)받는 후기</b> · 좋고 나쁨과 상관없이 같은 보상` : `<b>${REVIEW_PAID.head}</b> · ${REVIEW_PAID.rest}`}</span>${lang !== "ko" && paidTr ? `<span class="cm-paid-tr" lang="${tl}">${paidTr}</span>` : ""}</p>` : "";
     /* 관리자만: 보상 신청 표시, 이번 달 몇 번째인지, 발송할 때 쓸 회원 ID(Supabase 사용자 화면에서 이메일 확인) */
     const giftAdm = cm.admin && gift ? `<p class="cm-gift-adm">${IE("🎁")} 기프트카드 신청 US$${gift} · 이번 달 승인 ${giftMonthN()}/${GIFT.cap}건${giftMonthN() >= GIFT.cap && mode === "pending" ? " (이번 달 자리 다 참)" : ""}${mode === "pending" && r.uid && cm.giftUsers && cm.giftUsers.has(r.uid) ? " · 이 회원은 이번 달 이미 받음" : ""}${r.uid ? ` · <button type="button" class="ac-lk" data-copy="${esc(r.uid)}">회원 ID 복사</button>` : ""}</p>` : "";
     return `<li class="cm-card rl-card" data-id="${esc(r.id)}">${paid}${giftAdm}
-      <div class="rl-top"><span class="rl-av" aria-hidden="true">${esc(String(L.name(d)).slice(0, 1))}</span><div class="rl-tt"><h3>${esc(L.name(d))} ${L.nights(r.nights)}</h3><span class="rl-meta">${esc(meta)}</span></div>
+      <div class="rl-top"><div class="rl-tt"><h3>${esc(L.name(d))} ${L.nights(r.nights)}</h3><span class="rl-meta">${esc(meta)}</span></div>
         ${star ? `<span class="rl-star" aria-label="${X.starAria(star)}"><i class="ico ico-star-f" aria-hidden="true"></i> ${star}</span>` : r.mood ? `<span class="rl-mood">${esc(X.moods[r.mood] || "")}</span>` : ""}</div>
+      ${money}
       ${kws.length || hob.length ? `<div class="rl-kws">${kws.map(([k, ic, , g]) => `<span class="rl-kw${g === "bad" ? " bad" : ""}">${IE(ic)} ${X.kw[k]}</span>`).join("")}${hob.map(t => `<button type="button" class="rl-tag" data-act="tag" data-id="${esc(r.id)}" data-tag="${esc(t)}">#${esc(X.tags[t] || t)}</button>`).join("")}</div>` : ""}
       ${r.text ? `${rl !== lang ? `<span class="rl-lang">${X.langTag[rl] || ""}</span>` : ""}<p class="cm-text${open ? "" : " short"}" lang="${rl === "zh" ? "zh-CN" : rl}">${esc(r.text)}</p>${tr}` : ""}
-      ${money}
       <div class="rl-acts">${btns}</div></li>`;
   }
   function cmBind(box){
@@ -6610,17 +6647,18 @@ if (typeof document !== "undefined") {
   function cmRender(){
     if (!$("rp")) return;
     try { rvSync(); } catch(e) {}
+    if (cm.loaded && cm.wantDest) { if (cm.reviews.some(r => r.dest === cm.wantDest)) { cm.destF = cm.wantDest; cm.region = "all"; } cm.wantDest = null; }
     cmChips();
-    const list = cm.reviews.filter(r => (cm.region === "all" || r.region === cm.region) && (!cm.tag || (r.tags || []).includes(cm.tag)));
+    const list = cm.reviews.filter(r => (!cm.destF || r.dest === cm.destF) && (cm.region === "all" || r.region === cm.region) && (!cm.tag || (r.tags || []).includes(cm.tag)));
     const canWrite = !(cm.canWrite === false || (!cm.sb && !cm.uid) || cm.db === false);
     /* 요약: 평균 별점, 실제 경비와 예상의 평균 차이 (훌쩍만의 숫자) */
-    { const stars = cm.reviews.map(cmStarOf).filter(Boolean), diffs = cm.reviews.map(r => cmDiff(r).pct).filter(x => x != null);
+    { const base = cm.destF || cm.region !== "all" ? list : cm.reviews, stars = base.map(cmStarOf).filter(Boolean), diffs = base.map(r => cmDiff(r).pct).filter(x => x != null);
       const avg = stars.length ? (stars.reduce((a, b) => a + b, 0) / stars.length).toFixed(1) : null;
       const md = diffs.length ? Math.round(diffs.reduce((a, b) => a + b, 0) / diffs.length) : null;
       const X = RWT(), cta = canWrite ? `<button type="button" class="rl-sum-cta" data-rv-open>${IE("✏️")} ${X.writeCta}<small>${X.sec30}</small></button>` : "";
       $("rl-sum").innerHTML = !cm.loaded ? "" : cm.reviews.length
-        ? `<div class="rl-sum-top">${avg ? `<span class="rl-sum-star"><i class="ico ico-star-f" aria-hidden="true"></i> ${avg}</span>` : ""}<span class="rl-sum-n">${X.sumN(cm.reviews.length)}</span></div>
-           ${md != null ? `<p class="rl-sum-diff">${Math.abs(md) < 5 ? X.sumSame : X.sumDiff(Math.abs(md), md < 0)} <small>${X.sumBase(diffs.length)}</small></p>` : ""}${cta}`
+        ? `<div class="rl-sum-top">${cm.destF && byId(cm.destF) ? `<span class="rl-sum-dest">${esc(T[lang].name(byId(cm.destF)))}</span>` : ""}${avg ? `<span class="rl-sum-star"><i class="ico ico-star-f" aria-hidden="true"></i> ${avg}</span>` : ""}<span class="rl-sum-n">${X.sumN(base.length)}</span></div>
+           ${md != null ? `<p class="rl-sum-diff">${Math.abs(md) < 5 ? X.sumSame : X.sumDiff(Math.abs(md), md < 0)} <small>${X.sumBase(diffs.length)}</small></p>` : ""}`
         : `<p class="rl-sum-empty"><b>${X.sumEmptyT}</b><br>${X.sumEmpty}</p>${cta}`;
       $("rl-sum").querySelectorAll("[data-rv-open]").forEach(b => b.addEventListener("click", () => rvOpen())); }
     if (!cm.loaded) $("cm-list").innerHTML = "";
@@ -6659,6 +6697,7 @@ if (typeof document !== "undefined") {
     const o = byId(state.origin), d = byId(state.dest);
     state.mode = modeAvailable(o, d, r.mode) ? r.mode : ["transit","ferry","flight","car"].find(m => modeAvailable(o, d, m));
     state.half = halfOpen(r.dest); state.picks = []; render();
+    if (ui === "senior") { try { rpClose(); } catch(e) {} sr.step = SR_DONE; renderSenior(); window.scrollTo(0, 0); return; }
     $("pass").scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "start"});
   }
   /* v91: 저장 장치 두 갈래. Claude 페이지 = Claude 공유 데이터, 정식 사이트 = Supabase (HZ_SUPA.on 일 때만) */
@@ -7144,7 +7183,8 @@ if (typeof document !== "undefined") {
   /* v100: 여행 후기 화면, 가입하기 화면 */
   const lockSync = () => document.body.classList.toggle("rv-lock", ["rv", "hp", "rp", "ac", "rt", "qt"].some(id => $(id) && !$(id).hidden));
   function rpOpen(){
-    if (ui === "senior") setUi("junior", true);
+    /* v162: 예전엔 쉽게 화면에서 후기를 열면 직접 화면으로 바뀌어 버렸음(닫아도 그대로). 이제 화면은 그대로 */
+    cm.destF = null; cm.wantDest = state.dest || null;
     rwApply();
     $("rp").hidden = false; lockSync(); $("rp").scrollTop = 0; cmRender();
     if (!(history.state && history.state.rp)) { try { history.pushState({rp: 1}, ""); } catch(e) {} }
@@ -7697,8 +7737,9 @@ if (typeof document !== "undefined") {
   function rvSync(){
     const ok = !!(cm.sb || (cm.db && cm.uid && cm.canWrite !== false));
     const qb = document.querySelector("[data-qk-rv]"); if (qb) qb.hidden = !ok;
-    { const wb = $("went-btn"); if (wb) wb.hidden = !ok || EMBED; }
-    document.querySelectorAll("[data-went]").forEach(b => { b.hidden = !ok; });
+    { const wb = $("went-btn"); if (wb) wb.hidden = !ok || EMBED || fbOn(); }
+    document.querySelectorAll("[data-went]").forEach(b => { b.hidden = !ok || fbOn(); });
+    { const fb = $("fb-box"); if (fb && fbOn()) { const k = fbKey() + (rvOk() ? "|rv" : ""); if (fb.dataset.k && fb.dataset.k !== k) { fb.dataset.k = k; fb.innerHTML = fbHtml(); fbBind(fb); } } }
     { const r = $("sr-rv-row"); if (r) r.hidden = !ok || EMBED; }
     try { rwApply(); } catch(e) {}
     { const X = RWT();
@@ -7746,13 +7787,14 @@ if (typeof document !== "undefined") {
   }
   /* v113: 계산 결과에서 바로 '실제로 쓴 돈' 후기로 (지금 구간·박수·수단·인원 미리 채움) */
   function rvOk(){ try { return !!(cm.sb || (cm.db && cm.uid && cm.canWrite !== false)); } catch(e) { return false; } }
-  function rvWentGo(){
+  function rvWentGo(pick, amt){
     if (state.origin === state.dest) return;
     try { localStorage.removeItem("hz-cm-draft"); } catch(e) {}
+    if (typeof pick === "string") { try { localStorage.setItem("hz-cm-draft", JSON.stringify({o: state.origin, d: state.dest, n: state.nights, m: state.mode, p: state.people || 2, pick, total: amt ? String(amt) : ""})); } catch(e) {} }
     rv.lastPlan = {key: `${state.origin}>${state.dest}>${state.nights}`, o: state.origin, d: state.dest, n: state.nights, m: state.mode, p: state.people || 2, at: Date.now()};
     rvOpen();
   }
-  $("went-btn").addEventListener("click", rvWentGo);
+  $("went-btn").addEventListener("click", () => rvWentGo());
   $("sr-rv").addEventListener("click", () => rpOpen());
   function rvOpen(){
     let has = false; try { has = !!localStorage.getItem("hz-cm-draft"); } catch(e) {}
