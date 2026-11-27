@@ -19,6 +19,14 @@ def call(svc, x, y):
             it = it.get('item', []); return it if isinstance(it, list) else [it]
         except Exception as e: err = e; time.sleep(2 + a)
     print('오류', svc, str(err)[:80], flush=True); return []
+HANGUL = re.compile(r'[가-힣]+')
+def nz(t): return re.sub(r'[^가-힣0-9]', '', re.sub(r'\([^)]*\)|\[[^]]*\]', '', t or ''))
+def same(ko, title):
+    """외국어 제목 안의 한글 표기(괄호 속 등)가 우리 명소 이름과 같은 곳인지. 괄호 안 설명은 빼고 비교"""
+    k = nz(ko); h = ''.join(HANGUL.findall(re.sub(r'\[[^]]*\]', '', title)))
+    if len(k) < 2 or len(h) < 2: return False
+    h2 = nz(''.join(re.findall(r'[가-힣0-9 ()\[\]]+', title)))
+    return k in h or k in h2 or (len(h2) >= 3 and h2 in k) or (len(h2) >= 2 and k.startswith(h2))
 def dist(a, b): return math.hypot((a[0] - b[0]) * 88.0, (a[1] - b[1]) * 111.0)
 out = {L: {} for L in SVC}; hit = {L: 0 for L in SVC}; n = 0
 for pid, v in HUB.items():
@@ -32,7 +40,8 @@ for pid, v in HUB.items():
                 if str(r.get('contenttypeid')) in ('77', '80', '82', '85'): continue   # 교통·숙박·음식점·행사는 빼고
                 try: dd = dist((float(r['mapx']), float(r['mapy'])), (x, y))
                 except Exception: continue
-                if dd <= 0.3 and (best is None or dd < best[0]): best = (dd, r.get('title', '').strip())
+                t = r.get('title', '').strip()
+                if dd <= 0.5 and same(ko, t) and (best is None or dd < best[0]): best = (dd, t)
             if best and best[1]:
                 out[L].setdefault(pid, {})[ko] = [re.sub(r'\s+', ' ', best[1])]; hit[L] += 1
             time.sleep(0.05)
