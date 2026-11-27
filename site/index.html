@@ -4272,17 +4272,19 @@ if (typeof document !== "undefined") {
   let RT_NOTE = "";
   function qkCourseAuto(){ RT_NOTE = T[lang].qk.courseAuto(T[lang].name(byId(state.dest))); rtOpen(); }
   /* v148: 바로가기를 목적별 두 묶음으로 — "어디 갈까?"(여행지 찾기) / "○○ 여행 준비"(고른 곳 정보·내 기록). 축제·반값은 지금 개수를 같이 보여 줌 */
-  const QK_H = {ko:{find:"어디 갈까?", prep:n=>`${n} 여행 준비`, festN:n=>`${n}곳`, halfN:n=>`${n}곳 신청 중`, wishN:n=>`${n}곳`},
-    en:{find:"Where to go?", prep:n=>`Plan for ${n}`, festN:n=>`${n} places`, halfN:n=>`${n} open`, wishN:n=>`${n} saved`},
-    ja:{find:"どこへ行く?", prep:n=>`${n}の旅の準備`, festN:n=>`${n}か所`, halfN:n=>`${n}か所受付中`, wishN:n=>`${n}件`},
-    zh:{find:"去哪儿?", prep:n=>`${n}旅行准备`, festN:n=>`${n}处`, halfN:n=>`${n}处申请中`, wishN:n=>`${n}处`}};
+  const QK_H = {ko:{find:"어디 갈까?", bud:"예산으로 찾기", budN:(m,n)=>`${m}만 원 이하 ${n}곳`, prep:n=>`${n} 여행 준비`, festN:n=>`${n}곳`, halfN:n=>`${n}곳 신청 중`, wishN:n=>`${n}곳`},
+    en:{find:"Where to go?", bud:"By budget", budN:(m,n)=>`${n} under $${Math.round(m*10000/FX.usd)}`, prep:n=>`Plan for ${n}`, festN:n=>`${n} places`, halfN:n=>`${n} open`, wishN:n=>`${n} saved`},
+    ja:{find:"どこへ行く?", bud:"予算で探す", budN:(m,n)=>`${JPY(m*10000).toLocaleString("ja-JP")}円以下${n}か所`, prep:n=>`${n}の旅の準備`, festN:n=>`${n}か所`, halfN:n=>`${n}か所受付中`, wishN:n=>`${n}件`},
+    zh:{find:"去哪儿?", bud:"按预算找", budN:(m,n)=>`${CNY(m*10000).toLocaleString("zh-CN")}元内${n}处`, prep:n=>`${n}旅行准备`, festN:n=>`${n}处`, halfN:n=>`${n}处申请中`, wishN:n=>`${n}处`}};
   function renderQuick(){
     const L = T[lang], Q = L.qk, H = QK_H[lang] || QK_H.en;
     const soon = new Date(Date.parse(TODAY) + 30 * 864e5).toISOString().slice(0, 10);
     const festN = new Set(liveFests().filter(f => (f.start || TODAY) <= soon).map(f => f.place)).size;
     const halfN = lang === "ko" ? [...HALF].filter(id => halfState(id) === "open").length : 0;
+    /* v150: '지도로 고르기' → '예산으로 찾기': 1인 15만 원 이하로 갈 수 있는 곳을 지도에 바로(막대로 바꿀 수 있음) */
+    const budN = PLACES.filter(p => p.id !== "dokdo" && p.id !== state.origin).filter(p => { const v = priceOf(p); return v != null && v <= 150000; }).length;
     const find = [
-      ["map", Q.map, "", () => openMap()],
+      ["map", H.bud, H.budN(15, budN), () => { state.budget = 15; $("budget").value = "15"; renderBudget(); openMap(); }],
       ["fest", Q.fest, festN ? H.festN(festN) : "", () => { state.filter = "fest"; themeN = 8; renderTools(); openMap(); }],
       ...(lang === "ko" ? [["half", Q.half, halfN ? H.halfN(halfN) : "", () => hpOpen()]] : []),
       ["drama", Q.drama, "", () => { state.filter = "drama"; themeN = 8; renderTools(); openMap(); }]];
