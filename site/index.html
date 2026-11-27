@@ -966,6 +966,26 @@ html.one-card #mode-hint.hint-info,html.one-card #form>p.hint[data-i="styleHint"
 #sat-seg .sat-d,.sr-week .sat-d,#mode .sat-d{font-size:11.5px;font-weight:600;color:var(--muted)}
 #sat-seg button[aria-pressed="true"] .sat-d,#mode button[aria-pressed="true"] .sat-d,.sr-week .seg button[aria-pressed="true"] .sat-d{color:var(--accent)}
 #sat-seg .sat-d:empty,.sr-week .sat-d:empty{display:none}
+/* v158 머리줄: 로고(훌쩍 캐릭터)는 절대 줄이지 않고, 좁은 외국어 화면에선 후기·내 정보 버튼을 아이콘만 */
+header.top .logo{flex:0 1 auto;min-width:32px}
+header.top .top-right{min-width:0}
+@media (max-width:480px){
+  html:not([lang="ko"]) .logo b,html:not([lang="ko"]) .logo>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  html:not([lang="ko"]) header.top .rv-open{font-size:0;width:36px;min-width:36px;padding:0;display:inline-grid;place-items:center}
+  html:not([lang="ko"]) header.top .rv-open[hidden]{display:none}
+  html:not([lang="ko"]) header.top .rv-open::before{font-size:17px;line-height:1}
+  html:not([lang="ko"]) #rp-top::before{content:"✍️"}
+  html:not([lang="ko"]) #ac-open::before{content:"👤"}
+  html:not([lang="ko"]) header.top .lang-pick select{width:62px;text-overflow:ellipsis}
+  html:not([lang="ko"]) header.top .rv-open .rv-dot{position:absolute;top:2px;right:2px}
+}
+@media (max-width:360px){
+  html:not([lang="ko"]) header.top .lang button{padding:5px 6px;font-size:13px}
+  html:not([lang="ko"]) header.top .lang-pick select{font-size:13px;padding-left:8px!important;padding-right:18px!important;background-position:right 6px center!important}
+  html:not([lang="ko"]) header.top .rv-open{width:32px;min-width:32px}
+  html:not([lang="ko"]) header.top .lang-pick select{width:54px}
+  html:not([lang="ko"]) header.top .top-right{gap:3px}
+}
 .qt-au{font-size:14.5px;line-height:1.6;margin:8px 0}.qt-au a{display:inline-block;margin-right:10px;color:var(--accent);font-weight:600}
 /* v147 폴더블: 펼친 폴더블(갤럭시 폴드 840px 안팎·아이폰 듀오·트라이폴드)은 840px부터 두 칸(왼쪽 지역 소개, 오른쪽 경비표).
    두 칸이면 지역 소개는 옆에 바로 보이므로 '어떤 곳일까요?' 버튼은 숨김 */
@@ -5053,6 +5073,7 @@ if (typeof document !== "undefined") {
     document.querySelectorAll("[data-i]").forEach(el => { const v = L[el.dataset.i]; if (typeof v === "string") el.textContent = v; });
     $("swap").setAttribute("aria-label", L.swap);
     $("lang-sel").value = lang === "zh" && zhT ? "zh-tw" : lang;
+    langSelSync();
     fillPlaceSelect($("find"));
     $("find").value = state.picked;
     $("nights").innerHTML = "";
@@ -5461,6 +5482,12 @@ if (typeof document !== "undefined") {
   function hdrBottom(){ const h = document.querySelector("header.top"); return h ? Math.max(0, Math.ceil(h.getBoundingClientRect().bottom)) : 70; }
   function hdrSync(){ try { document.documentElement.style.setProperty("--hdr", hdrBottom() + "px"); } catch(e) {} }
   hdrSync(); addEventListener("resize", hdrSync, {passive: true}); addEventListener("orientationchange", () => setTimeout(hdrSync, 300)); addEventListener("load", hdrSync);
+  /* v158: 좁은 화면 외국어 머리줄 — 언어 목록은 짧은 이름(EN·JA·简·繁)으로 보여 훌쩍 캐릭터가 가려지지 않게. 펼친 목록 안은 그대로 */
+  const LANG_FULL = {ko: "한국어", en: "English", ja: "日本語", zh: "简体中文", "zh-tw": "繁體中文"}, LANG_SHORT = {ko: "KO", en: "EN", ja: "JA", zh: "简中", "zh-tw": "繁中"};
+  function langSelSync(){ const sel = $("lang-sel"); if (!sel) return; const short = lang !== "ko" && innerWidth <= 480;
+    [...sel.options].forEach(o => { if (LANG_FULL[o.value]) o.textContent = short && o.selected ? LANG_SHORT[o.value] : LANG_FULL[o.value]; }); }
+  addEventListener("resize", () => { try { langSelSync(); } catch(e) {} }, {passive: true});
+  try { const sel = $("lang-sel"); ["focus", "mousedown", "touchstart"].forEach(ev => sel.addEventListener(ev, () => [...sel.options].forEach(o => { if (LANG_FULL[o.value]) o.textContent = LANG_FULL[o.value]; }), {passive: true})); sel.addEventListener("blur", langSelSync); } catch(e) {}
   function saveBind(root){ root.querySelectorAll("[data-save]").forEach(b => b.addEventListener("click", () => { const x = SAVE_CUR[+b.dataset.save]; if (!x) return; x.apply(); render(); renderSenior(); try { toast(({ko: "바꿔서 다시 계산했어요", en: "Switched and recalculated", ja: "変更して再計算しました", zh: "已更换并重新计算"})[lang]); } catch(e) {} })); }
   function srCalc(){
     const o = byId(state.origin), d = byId(state.dest);
