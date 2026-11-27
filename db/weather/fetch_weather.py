@@ -22,8 +22,10 @@ def get(path, **q):
     for a in range(6):
         try:
             with urllib.request.urlopen(url, timeout=60) as r: d = json.loads(r.read().decode())
+            if d['response']['header']['resultCode'] == '03': raise LookupError(d['response']['header'])
             if d['response']['header']['resultCode'] != '00': raise RuntimeError(d['response']['header'])
             it = d['response']['body']['items']['item']; return it if isinstance(it, list) else [it]
+        except LookupError: raise
         except Exception as e: err = e; time.sleep(3 + a)
     raise err
 KST = datetime.timezone(datetime.timedelta(hours=9)); now = datetime.datetime.now(KST)
@@ -51,11 +53,13 @@ for pid, (lat, lon, reg) in CITY.items():
         if not day: continue
         k = kind_short(max(set(sky), key=sky.count) if sky else 1, max(set(pty), key=pty.count) if pty else 0)
         days[dte] = [k, pop, None if tmn is None else round(tmn), None if tmx is None else round(tmx)]
-    try: m = get('MidFcstInfoService/getMidLandFcst', numOfRows=1, regId=reg, tmFc=mt.strftime('%Y%m%d%H00'))[0]
-    except Exception as e:   # 중기예보가 비어 있어도(예: NO_DATA) 단기예보 3~4일치는 살림
-        m = {}; print(pid, reg, '중기예보 없음:', str(e)[:80], flush=True)
+    m = {}; mtu = mt
+    for tm in (mt, mt - datetime.timedelta(hours=12)):   # 최신 발표가 아직 안 올라왔으면(NO_DATA) 바로 전 발표를 씀
+        try: m = get('MidFcstInfoService/getMidLandFcst', numOfRows=1, regId=reg, tmFc=tm.strftime('%Y%m%d%H00'))[0]; mtu = tm; break
+        except Exception as e: print(pid, reg, tm.strftime('%m%d%H'), '중기예보 없음:', str(e)[:60], flush=True)
+    out.setdefault('mid_used', {})[pid] = mtu.strftime('%Y%m%d%H')
     for n in range(4, 11):
-        dte = (mt + datetime.timedelta(days=n)).strftime('%Y%m%d')
+        dte = (mtu + datetime.timedelta(days=n)).strftime('%Y%m%d')
         if dte in days: continue
         if f'rnSt{n}Am' in m: pop = max(m[f'rnSt{n}Am'], m[f'rnSt{n}Pm']); wf = m[f'wf{n}Am'] + ' ' + m[f'wf{n}Pm']
         elif f'rnSt{n}' in m: pop = m[f'rnSt{n}']; wf = m[f'wf{n}']
@@ -63,4 +67,4 @@ for pid, (lat, lon, reg) in CITY.items():
         days[dte] = [kind_mid(wf), int(pop), None, None]
     out['d'][pid] = dict(sorted(days.items())); print(pid, nx, ny, len(days), list(days.items())[:2], flush=True)
 json.dump(out, open('weather.json', 'w'), ensure_ascii=False)
-print('at', out['at'], 'short', out['short'], 'mid', out['mid'])
+print('at', out['at'], 'short', out['short'], 'mid', out['mid'], '중기 쓴 발표', sorted(set(out.get('mid_used', {}).values())), '5일 넘게 있는 도시', sum(len(v) > 4 for v in out['d'].values()), '/', len(out['d']))
