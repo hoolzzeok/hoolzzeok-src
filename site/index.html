@@ -751,7 +751,7 @@ body.rv-lock{overflow:hidden}
 .cm-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .cm-my{background:var(--accent-soft,var(--deal-soft));border-radius:var(--r-lg);padding:14px;margin-bottom:14px;display:grid;gap:8px}
 .cm-my[hidden]{display:none}
-.cm-my{scroll-margin-top:72px}
+.cm-my{scroll-margin-top:calc(var(--hdr,72px) + 8px)}
 .cm-my h3{margin:0;font-size:16px;font-weight:800}
 .cm-my-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .cm-my-row{background:var(--surface);border-radius:var(--r-md,12px);padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center}
@@ -1164,7 +1164,7 @@ button:active,.rec:active,.cta:active,.qk-b:active,.c-chip:active{transform:scal
 .t-ic svg{width:100%;height:100%;fill:none;stroke:var(--ic-ink);stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;overflow:visible}
 .t-ic .l{fill:var(--t-lime)}.t-ic .y{fill:var(--t-sun)}.t-ic .p{fill:var(--t-pink)}.t-ic .s{fill:var(--t-sea)}.t-ic .k{fill:var(--ic-ink);stroke:none}
 .tiles>details.fold[open]>summary{border-bottom:1px solid var(--line);margin-bottom:4px}
-.tiles>details{scroll-margin-top:84px}
+.tiles>details{scroll-margin-top:calc(var(--hdr,84px) + 12px)}
 .tiles-more{grid-column:1/-1;min-height:46px;border:2px solid var(--tile-line);border-radius:14px;background:var(--surface);color:var(--ink);font:inherit;font-weight:800;font-size:15px;cursor:pointer}
 .tiles-more:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .tiles>details.fold>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:16px}
@@ -1455,7 +1455,7 @@ html.stg-result .bar{display:none}
 .wx-year li b{font-size:13px}
 .wx-year li.on{box-shadow:inset 0 0 0 2px var(--accent)}
 
-#pass,#planner,#community,#kit,#picks{scroll-margin-top:calc(60px + env(safe-area-inset-top,0px))}
+#pass,#planner,#community,#kit,#picks{scroll-margin-top:calc(var(--hdr,60px) + 8px)}
 
 /* ===== v129 여행 후기 새 화면 ===== */
 :root{--star:#f2a100;--star-off:#d8dce3;--on-accent:#ffffff}
@@ -1570,7 +1570,7 @@ html.stg-result .bar{display:none}
 .rw-foot{display:grid;gap:6px;padding:4px 0 calc(env(safe-area-inset-bottom,0px) + 10px)}
 .rw-foot.stick{position:sticky;bottom:0;z-index:4;padding-top:14px;background:linear-gradient(to top,var(--bg) 78%,transparent)}
 .rw-foot .rv-msg:empty{display:none}
-.rw-more,.rw-q{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 76px)}
+.rw-more,.rw-q{scroll-margin-top:calc(var(--hdr,76px) + 12px)}
 .rw-paid{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
 .rw-foot .rv-main[aria-disabled="true"]{background:var(--surface-2);color:var(--muted)}
 .rw-foot .cm-agree{padding:10px 12px}
@@ -4713,7 +4713,7 @@ if (typeof document !== "undefined") {
       if (tl.length > 7) { const L2 = T[lang], rest = tl.slice(6), b = document.createElement("button"); b.type = "button"; b.className = "tiles-more";
         const set = () => { rest.forEach(x => { x.hidden = !TILES_ALL; if (!TILES_ALL) x.open = false; }); b.textContent = TILES_ALL ? L2.tilesLess : L2.tilesMore(rest.length); b.setAttribute("aria-expanded", String(TILES_ALL)); };
         b.addEventListener("click", () => { TILES_ALL = !TILES_ALL; set(); if (!TILES_ALL) box.scrollIntoView({block: "nearest"}); }); box.appendChild(b); set(); } }
-    tl.forEach(x => x.addEventListener("toggle", () => { if (x.open) { tl.forEach(y => { if (y !== x && y.open) y.open = false; }); requestAnimationFrame(() => { const r = x.getBoundingClientRect(); if (r.top < 70 || r.top > innerHeight * 0.45) x.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}); }); } }));
+    tl.forEach(x => x.addEventListener("toggle", () => { if (x.open) { tl.forEach(y => { if (y !== x && y.open) y.open = false; }); requestAnimationFrame(() => { const r = x.getBoundingClientRect(), hb = hdrBottom(); if (r.top < hb + 8 || r.top > innerHeight * 0.45) window.scrollBy({top: r.top - hb - 12, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); }); } }));
     $("dest-info").querySelectorAll(".near button").forEach(b => b.addEventListener("click", () => {
       const q = byId(b.dataset.id); if (q.id === "dokdo") return;
       state.dest = q.id; state.half = halfOpen(q.id); state.picks = [];
@@ -5457,6 +5457,10 @@ if (typeof document !== "undefined") {
   }
   document.addEventListener("click", e => { const t = e.target.closest && e.target.closest(".sp-intro"); if (!t) return; const o = t.classList.toggle("open"); t.setAttribute("aria-expanded", String(o)); });
   document.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("sp-intro")) { e.preventDefault(); e.target.click(); } });
+  /* v157: 위에 붙는 머리줄의 실제 아래 끝(아이폰 상단 여백 포함). 칸을 펼칠 때 머리줄 밑에 가려 위가 잘리던 문제 */
+  function hdrBottom(){ const h = document.querySelector("header.top"); return h ? Math.max(0, Math.ceil(h.getBoundingClientRect().bottom)) : 70; }
+  function hdrSync(){ try { document.documentElement.style.setProperty("--hdr", hdrBottom() + "px"); } catch(e) {} }
+  hdrSync(); addEventListener("resize", hdrSync, {passive: true}); addEventListener("orientationchange", () => setTimeout(hdrSync, 300)); addEventListener("load", hdrSync);
   function saveBind(root){ root.querySelectorAll("[data-save]").forEach(b => b.addEventListener("click", () => { const x = SAVE_CUR[+b.dataset.save]; if (!x) return; x.apply(); render(); renderSenior(); try { toast(({ko: "바꿔서 다시 계산했어요", en: "Switched and recalculated", ja: "変更して再計算しました", zh: "已更换并重新计算"})[lang]); } catch(e) {} })); }
   function srCalc(){
     const o = byId(state.origin), d = byId(state.dest);
