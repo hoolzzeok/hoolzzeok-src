@@ -1085,7 +1085,8 @@ header.top .logo{flex:0 1 auto;min-width:32px}
 header.top .top-right{min-width:0}
 @media (max-width:480px){
   html:not([lang="ko"]) .logo b,html:not([lang="ko"]) .logo>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  html:not([lang="ko"]) header.top .rv-open{font-size:0;width:36px;min-width:36px;padding:0;display:inline-grid;place-items:center}
+  html:not([lang="ko"]) header.top .rv-open{font-size:0!important;width:36px!important;min-width:36px;height:36px!important;min-height:0!important;padding:0!important;border-radius:50%;display:inline-grid;place-items:center;overflow:hidden;white-space:nowrap}
+  html:not([lang="ko"]) header.top .rv-open>span{font-size:0!important}
   html:not([lang="ko"]) header.top .rv-open[hidden]{display:none}
   html:not([lang="ko"]) header.top .rv-open::before{content:"";width:19px;height:19px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
   html:not([lang="ko"]) #rp-top::before{--i:var(--i-pen)}
@@ -1096,7 +1097,8 @@ header.top .top-right{min-width:0}
 @media (max-width:360px){
   html:not([lang="ko"]) header.top .lang button{padding:5px 6px;font-size:13px}
   html:not([lang="ko"]) header.top .lang-pick select{font-size:13px;padding-left:8px!important;padding-right:18px!important;background-position:right 6px center!important}
-  html:not([lang="ko"]) header.top .rv-open{width:32px;min-width:32px}
+  html:not([lang="ko"]) header.top .rv-open{width:34px!important;min-width:34px;height:34px!important}
+  html:not([lang="ko"])[data-ui="senior"] header.top .lang button{padding:6px 7px;font-size:13.5px}
   html:not([lang="ko"]) header.top .lang-pick select{width:54px}
   html:not([lang="ko"]) header.top .top-right{gap:3px}
 }
@@ -1789,6 +1791,8 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
 .qt-more summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--accent);min-height:40px;display:flex;align-items:center}
 .qt-more .c-desc,.qt-more .acc-c,.qt-more .acc,.qt-more .acc-more{display:none}
 .qt-again{border:0;background:none;color:var(--muted);font-weight:700;min-height:44px;cursor:pointer}
+/* v161: 아주 좁은 폰(340px 이하) 쉽게 화면 한국어 머리줄 넘침 방지 */
+@media (max-width:340px){:root[data-ui="senior"] header.top .lang button{padding:6px 6px;font-size:13.5px}:root[data-ui="senior"] header.top .rv-open{padding:4px 5px;font-size:12.5px}:root[data-ui="senior"] .lang-pick select{max-width:64px;font-size:13px}}
 /* v160 다듬기: 직접 화면 타일 — 굵은 검은 테두리·흐린 사진 배경·알록달록 그림 대신 얇은 선 + 한 색 아이콘 */
 .tiles.has-bg{padding:0;margin-inline:0;border-radius:0;overflow:visible}
 .tiles.has-bg::before,.tiles.has-bg::after{display:none}
