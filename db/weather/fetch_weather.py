@@ -51,7 +51,9 @@ for pid, (lat, lon, reg) in CITY.items():
         if not day: continue
         k = kind_short(max(set(sky), key=sky.count) if sky else 1, max(set(pty), key=pty.count) if pty else 0)
         days[dte] = [k, pop, None if tmn is None else round(tmn), None if tmx is None else round(tmx)]
-    m = get('MidFcstInfoService/getMidLandFcst', numOfRows=1, regId=reg, tmFc=mt.strftime('%Y%m%d%H00'))[0]
+    try: m = get('MidFcstInfoService/getMidLandFcst', numOfRows=1, regId=reg, tmFc=mt.strftime('%Y%m%d%H00'))[0]
+    except Exception as e:   # 중기예보가 비어 있어도(예: NO_DATA) 단기예보 3~4일치는 살림
+        m = {}; print(pid, reg, '중기예보 없음:', str(e)[:80], flush=True)
     for n in range(4, 11):
         dte = (mt + datetime.timedelta(days=n)).strftime('%Y%m%d')
         if dte in days: continue
