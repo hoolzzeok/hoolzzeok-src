@@ -861,6 +861,45 @@ html.one-card #mode-hint.hint-info,html.one-card #form>p.hint[data-i="styleHint"
   .rec .tags .pill:nth-child(n+3){display:none}
   .recs .rec-promo{flex:0 0 min(66%,250px)}
 }
+/* v151 더 싸게 가는 법 */
+.save{margin:14px 0;padding:14px 16px;border-radius:18px;background:var(--accent-soft);display:grid;gap:8px}
+.save-h{display:grid;gap:2px}.save-h b{font-size:17px;font-weight:800;letter-spacing:-.02em}.save-h small{font-size:13px;color:var(--muted)}
+.save ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.save li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:var(--surface)}
+.save-l{font-size:15.5px;font-weight:600;line-height:1.35;min-width:0}
+.save-v{font-size:16px;font-weight:800;color:var(--accent);white-space:nowrap}.save-v small{font-size:11.5px;font-weight:600;color:var(--muted);margin-right:2px}
+.save-go{border:0;border-radius:10px;padding:8px 12px;min-height:40px;background:var(--ink);color:var(--bg);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+#save-box .save{margin:12px 0 0}
+/* v151 자세한 계산 */
+.sc{margin:14px 0;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.sc>summary{list-style:none;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px;cursor:pointer}
+.sc>summary::-webkit-details-marker{display:none}
+.sc-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--accent-soft);font-size:20px}
+.sc-t{display:grid;gap:2px;min-width:0}.sc-t b{font-size:16.5px;font-weight:800}.sc-t small{font-size:13px;color:var(--muted)}
+.sc .chev{width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:0 4px 4px 0;transition:transform .2s}
+.sc[open] .chev{transform:rotate(225deg);margin:4px 4px 0 0}
+.sc-body{padding:0 16px 16px;display:grid;gap:12px}
+.sc-bar{display:flex;height:12px;border-radius:99px;overflow:hidden;gap:2px;background:var(--line)}
+.sc-bar span{min-width:4px}
+.k-trans{--k:#2f7fd8}.k-lodge{--k:#8b5cf6}.k-food{--k:#e8833a}.k-local{--k:#1f9d8b}.k-act{--k:#d6457a}.k-misc{--k:#9a8a3a}
+.sc-bar span{background:var(--k)}
+.sc-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.sc-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;padding:12px;border-radius:14px;background:var(--bg);border-left:4px solid var(--k)}
+.sc-dot{font-size:18px;line-height:1.4}
+.sc-m{display:grid;gap:6px;min-width:0}
+.sc-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.sc-h>b:first-child{font-size:16px;font-weight:800}
+.sc-p{font-size:12px;font-weight:700;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);padding:1px 7px;border-radius:99px}
+.sc-v{margin-left:auto;font-size:17px;font-weight:800}
+.sc-f{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}.sc-f b{color:var(--ink);font-weight:700}
+.sc-note{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+/* v151 아래 링크 두 개 → 카드 버튼 */
+.sr-links{display:grid;gap:8px;margin:24px 0 8px}
+.sr-links .sr-switch{margin:0;text-align:left}
+.sr-links .sr-switch[hidden]{display:none}
+.sr-links .sr-switch button{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;min-height:56px;border-radius:16px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink);text-decoration:none;font-size:16px;font-weight:700;text-align:left}
+.sr-links .sr-switch button::before{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:10px;background:var(--accent-soft);font-size:18px}
+.sr-links .sr-switch button::after{content:"›";margin-left:auto;font-size:22px;color:var(--muted);font-weight:400}
+#sr-to-jr::before{content:"🎛️"}#sr-rv::before{content:"✍️"}
 #qk{display:grid;gap:12px}
 #qk .qk-g{display:grid;gap:6px}
 #qk .qk-h{margin:0;font-size:13.5px;font-weight:800;color:var(--muted);letter-spacing:-.01em}
@@ -1774,6 +1813,7 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
         <div class="total" id="sum">
           <div class="bigsum"><span data-i="totalLabel"></span><span class="num" id="t-total"></span></div>
           <p class="party" id="t-party"></p>
+          <div id="save-box"></div>
           <a class="emb-more" id="emb-more" target="_blank" rel="noopener" href="https://www.hoolzzeok.com/">훌쩍에서 루트·준비물까지 보기 ↗</a>
           <button type="button" class="went" id="went-btn" hidden><b data-rw="wentT">다녀오셨어요? 실제로 쓴 돈 남기기</b><small data-rw="wentS">경비가 미리 채워져 있어요. 다음 사람 계산이 정확해져요.</small></button>
           <button type="button" class="rt-open" id="rt-open"><b id="rt-open-t">이 경비로 루트 짜기</b><small id="rt-open-s">명소·밥집을 넣고 순서를 바로 점검해요</small></button>
@@ -1927,8 +1967,8 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
       <div class="sr-track" aria-hidden="true"><i id="sr-bar"></i></div>
     </div>
     <div class="sr-body" id="sr-body"></div>
-    <p class="sr-switch"><button type="button" id="sr-to-jr"></button></p>
-    <p class="sr-switch" id="sr-rv-row" hidden><button type="button" id="sr-rv" data-rw="srRv">여행 후기 보기·쓰기</button></p>
+    <div class="sr-links"><p class="sr-switch"><button type="button" id="sr-to-jr"></button></p>
+    <p class="sr-switch" id="sr-rv-row" hidden><button type="button" id="sr-rv" data-rw="srRv">여행 후기 보기·쓰기</button></p></div>
     <details class="sr-card fold" id="sr-ask" hidden>
       <summary><span><h3 data-i="srAskTitle"></h3><small data-i="srAskPeek"></small></span><span class="chev" aria-hidden="true"></span></summary>
       <div class="fold-body">
@@ -4158,7 +4198,9 @@ if (typeof document !== "undefined") {
   /* ===== v120 직접 화면 3단계: 입력 → 잠깐 계산(실제 숫자를 하나씩 보여 줌) → 결과 + '이 여행지 한눈에' =====
      계산은 바로 끝나지만, 무엇을 계산했는지 보여 주는 1초 남짓. 움직임 줄이기 설정이면 0.4초, 누르면 바로 넘어감 */
   let JSTAGE = EMBED ? "all" : "form", clTimer = null, clDone = null, stgPushed = false;
-  function setStage(sg){ JSTAGE = sg; $("junior").dataset.stage = sg; document.documentElement.classList.toggle("stg-result", sg === "result"); stageSync();
+  /* 직접 화면 '더 싸게 가는 법'은 결과가 보일 때만 계산(입력 중엔 계산하지 않아 가볍게) */
+  function saveBoxSync(){ const sb = $("save-box"); if (!sb) return; if (EMBED || JSTAGE === "form") { sb.innerHTML = ""; return; } sb.innerHTML = saveHtml(); saveBind(sb); }
+  function setStage(sg){ JSTAGE = sg; if (sg === "result") setTimeout(saveBoxSync, 0); $("junior").dataset.stage = sg; document.documentElement.classList.toggle("stg-result", sg === "result"); stageSync();
     if (sg === "result") { const b = $("dig-open"); b.classList.remove("nudge"); setTimeout(() => b.classList.add("nudge"), 900); setTimeout(() => b.classList.remove("nudge"), 3000); } }
   function stageSync(){
     try { if (!JSTAGE) return; } catch(e) { return; }
@@ -5131,6 +5173,7 @@ if (typeof document !== "undefined") {
     $("bar-total").textContent = w(halfEff() ? c.final : c.total);
     if (halfEff() && c.refund > 0) $("bar-route").textContent += ", " + L.barAfter(w(c.total));
     $("calc-go-sub").textContent = L.calcGoSub(w(halfEff() ? c.final : c.total));
+    saveBoxSync();
     stageSync();
     /* 여행 준비물: 접어 두고 누르면 펼침 (다시 계산해도 열림 상태 유지) */
     const si = shopItems(d);
@@ -5203,6 +5246,53 @@ if (typeof document !== "undefined") {
     en:{transit:"cheapest bus", car:"fuel + tolls", flight:"lowest weekday", ferry:"ferry fare"},
     ja:{transit:"最安バス", car:"燃料+通行料", flight:"平日最安", ferry:"船賃込み"},
     zh:{transit:"最便宜巴士", car:"油费+过路费", flight:"工作日最低价", ferry:"含船票"}};
+  /* v151: "더 싸게 가는 법" — 지금 조건에서 하나만 바꿨을 때 1인 경비가 얼마나 줄어드는지 계산해 큰 순서로 3개.
+     평일 밤 / 다른 이동 수단 / 한 단계 아래 스타일 / 근처 비슷한 곳(40km 안). 누르면 그 조건으로 바로 바뀜 */
+  const SAVE = {
+    ko:{t:"더 싸게 가는 법", s:"누르면 바로 바꿔서 다시 계산해요", go:"바꾸기", per:"1인", wk:"평일 밤에 자면", mode:{transit:"버스로 가면", car:n=>n > 1 ? `차 한 대로 ${n}명이 가면` : "내 차로 가면", flight:"비행기로 가면", ferry:"배로 가면"}, style:n=>{ const c = n.charCodeAt(n.length - 1) - 0xAC00, j = c >= 0 && c < 11172 ? c % 28 : 0; return `'${n}'${j && j !== 8 ? "으로" : "로"} 하면`; }, near:n=>`대신 근처 ${n} 가면`},
+    en:{t:"Ways to pay less", s:"Tap to switch and recalculate", go:"Switch", per:"pp", wk:"Stay on weeknights", mode:{transit:"Go by bus", car:n=>n > 1 ? `Drive, ${n} sharing one car` : "Drive", flight:"Fly", ferry:"Take the ferry"}, style:n=>`Choose “${n}”`, near:n=>`Go to nearby ${n} instead`},
+    ja:{t:"もっと安くする方法", s:"押すと条件を変えて再計算します", go:"変える", per:"1人", wk:"平日の夜に泊まると", mode:{transit:"バスで行くと", car:n=>n > 1 ? `車1台に${n}人で行くと` : "車で行くと", flight:"飛行機で行くと", ferry:"船で行くと"}, style:n=>`「${n}」にすると`, near:n=>`近くの${n}にすると`},
+    zh:{t:"更省钱的办法", s:"点一下就换条件重新计算", go:"换", per:"每人", wk:"改住工作日晚上", mode:{transit:"坐巴士去", car:n=>n > 1 ? `${n}人一辆车自驾` : "自驾", flight:"坐飞机去", ferry:"坐船去"}, style:n=>`改成“${n}”`, near:n=>`改去附近的${n}`}};
+  function saveList(){
+    const o = byId(state.origin), d = byId(state.dest), L = T[lang], X = SAVE[lang] || SAVE.en;
+    const tot = c => c ? (halfEff() ? c.final : c.total) : null;
+    const base = tot(srCalc()); if (base == null) return [];
+    const keep = {mode: state.mode, style: state.style, dest: state.dest, half: state.half, wk: WKND}, out = [];
+    const tryIt = (f, label, apply, k) => { try { f(); const v = tot(srCalc()); if (v != null && base - v >= 1000) out.push({k, label, save: base - v, apply}); }
+      finally { state.mode = keep.mode; state.style = keep.style; state.dest = keep.dest; state.half = keep.half; WKND = keep.wk; } };
+    if (state.nights > 0 && WKND !== "none") tryIt(() => { WKND = "none"; }, X.wk, () => { WKND = "none"; }, "wk");
+    ["transit", "car", "flight", "ferry"].filter(m => m !== state.mode && modeAvailable(o, d, m)).forEach(m =>
+      tryIt(() => { state.mode = m; }, m === "car" ? X.mode.car(Math.min(state.people, 5)) : X.mode[m], () => { state.mode = m; }, "m-" + m));
+    const si = STYLES.indexOf(state.style);
+    if (si > 0) { const ns = STYLES[si - 1]; tryIt(() => { state.style = ns; }, X.style(L.style[ns]), () => { state.style = ns; }, "st"); }
+    /* 근처 비슷한 곳: 40km 안, 같은 땅, 출발지가 아닌 곳 중 가장 많이 아끼는 1곳 */
+    let best = null;
+    nearby(d).filter(x => x.d <= 40 && x.q.id !== o.id && x.q.id !== "dokdo").slice(0, 6).forEach(({q}) => {
+      try { state.dest = q.id; state.half = halfOpen(q.id); const v = tot(srCalc()); if (v != null && base - v >= 5000 && (!best || v < best.v)) best = {q, v}; }
+      finally { state.dest = keep.dest; state.half = keep.half; } });
+    if (best) { const q = best.q; out.push({k: "near", label: X.near(L.name(q)), save: base - best.v, apply: () => { state.picked = q.id; $("find").value = q.id; renderInfo(); }}); }
+    return out.sort((a, b) => b.save - a.save).slice(0, 3);
+  }
+  function saveHtml(){
+    const X = SAVE[lang] || SAVE.en, L = T[lang], li = saveList(); SAVE_CUR = li;
+    if (!li.length) return "";
+    return `<section class="save" aria-label="${esc(X.t)}"><div class="save-h"><b>💸 ${esc(X.t)}</b><small>${esc(X.s)}</small></div><ol>${li.map((x, i) =>
+      `<li><span class="save-l">${esc(x.label)}</span><span class="save-v"><small>${esc(X.per)}</small> −${esc(L.easy(x.save))}</span><button type="button" class="save-go" data-save="${i}">${esc(X.go)}</button></li>`).join("")}</ol></section>`;
+  }
+  let SAVE_CUR = [];
+  /* v151: '자세한 계산 보기'를 영수증처럼 — 항목 비율 막대 + 항목마다 금액·비율·계산식(숫자는 굵게) */
+  const CALC_IC = {trans:"🚌", lodge:"🛏️", food:"🍚", local:"🚕", act:"🎟️", misc:"🛍️"};
+  const CALC_SUB = {ko:"항목마다 어떻게 계산했는지 보여 드려요", en:"How each amount was worked out", ja:"項目ごとの計算方法", zh:"每一项是怎么算的"};
+  function calcBox(rows, H){
+    const L = T[lang], sum = rows.reduce((a, r) => a + r[1], 0) || 1;
+    const pct = v => Math.max(1, Math.round(v / sum * 100));
+    const fx = t => esc(t).replace(/(\d[\d,.]*\s?(?:원|명|박|번|잔|회|km|일|인분|실|%|won|nights?|people|times|万|円|元)?)/g, '<b class="num">$1</b>');
+    return `<details class="sc"><summary><span class="sc-ic" aria-hidden="true">🧾</span><span class="sc-t"><b>${L.srCalcT.replace(/\s*보기$/, "")}</b><small>${esc(CALC_SUB[lang] || CALC_SUB.en)}</small></span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="sc-body"><div class="sc-bar" role="img" aria-label="${esc(rows.map(r => `${r[0]} ${pct(r[1])}%`).join(", "))}">${rows.map(r => `<span class="k-${r[2]}" style="flex:${r[1]}"></span>`).join("")}</div>
+      <ul class="sc-list">${rows.map(([n, v, k]) => `<li class="k-${k}"><span class="sc-dot" aria-hidden="true">${CALC_IC[k] || "•"}</span><div class="sc-m"><div class="sc-h"><b>${n}</b><span class="sc-p">${pct(v)}%</span><b class="num sc-v">${L.easy(v)}</b></div><p class="sc-f">${fx(H[k] || "")}</p></div></li>`).join("")}</ul>
+      <p class="sc-note">ⓘ ${esc(L.srCalcPer)}</p></div></details>`;
+  }
+  function saveBind(root){ root.querySelectorAll("[data-save]").forEach(b => b.addEventListener("click", () => { const x = SAVE_CUR[+b.dataset.save]; if (!x) return; x.apply(); render(); renderSenior(); try { toast(({ko: "바꿔서 다시 계산했어요", en: "Switched and recalculated", ja: "変更して再計算しました", zh: "已更换并重新计算"})[lang]); } catch(e) {} })); }
   function srCalc(){
     const o = byId(state.origin), d = byId(state.dest);
     if (o.id === d.id || !modeAvailable(o, d, state.mode)) return null;
@@ -5512,8 +5602,9 @@ if (typeof document !== "undefined") {
       const pt = srParty(c), mNow = srMonthNum();
       let h = `<div class="sr-big"><span>${L.srAllLabel(state.people)}</span><b class="num">${L.easy(pt.all)}</b>${state.people > 1 ? `<em>${L.srPerLabel(L.easy(pt.per))}</em>` : ""}</div>`;
       if (isHalf(d.id) && halfOpen(d.id)) h += `<p class="sr-half">${L.srHalf(L.easy(Math.min(Math.floor((c.lodging + c.food + c.act + c.misc) * .5 / 100) * 100, halfCap())))}</p>`;
+      h += saveHtml();
       { const ps = state.picks.length ? state.picks.reduce((s2, i) => s2 + (ACTS[i][9] || 0), 0) : null, H = lineHows(o, d, c, ps);
-        h += `<ul class="sr-rows">${rows.map(srRow).join("")}</ul>${EMBED ? "" : `<button type="button" class="sr-btn dark sr-share-top" id="sr-share-top"><b>${L.srShareTop}</b><small>${L.srShareTopSub}</small></button>`}<details class="more-fold sr-calc"><summary>${L.srCalcT}</summary><p class="sr-note">${L.srCalcPer}</p><ul>${rows.map(([n, v, k]) => `<li><b>${n} ${L.easy(v)}</b><small>${esc(H[k])}</small></li>`).join("")}</ul></details>`; }
+        h += `<ul class="sr-rows">${rows.map(srRow).join("")}</ul>${EMBED ? "" : `<button type="button" class="sr-btn dark sr-share-top" id="sr-share-top"><b>${L.srShareTop}</b><small>${L.srShareTopSub}</small></button>`}${calcBox(rows, H)}`; }
       if (state.nights > 0) { const sk = WKND || "avg", r = weekR(d), sd = satOptDiffs();
         h += `<details class="sr-week"${SR_WEEK_OPEN || WKND ? " open" : ""}><summary><b>${L.lSat}</b><small>${({ko: "지금", en: "Now", ja: "現在", zh: "当前"})[lang] || "Now"}: ${L.satKind[sk]}</small></summary><div class="seg seg-wrap">${["avg", "none", "fri", "sat", "both"].filter(k => k !== "both" || state.nights > 1).map(k => `<button type="button" data-sat="${k}" aria-pressed="${k === sk}"><span>${L.satKind[k]}</span><small class="sat-d">${k === "avg" ? "" : (sd[k] != null ? satDiffTxt(sd[k]) : "")}</small></button>`).join("")}</div><p class="sr-note">${WKND == null ? L.srWeekNote + " " : ""}${L.satNote(r, 1 + FRI_POS * (r - 1))}</p></details>`; }
       h += `<button type="button" class="sr-souv" data-souv aria-pressed="${SOUV_ON}">${SOUV_ON ? L.srSouvDel : L.srSouvAdd(L.easy(c.souv.total))}</button>`;
@@ -5569,6 +5660,7 @@ if (typeof document !== "undefined") {
       body.innerHTML = h; bindPromo(body); srSwapBind(body);
       body.querySelectorAll("[data-went]").forEach(b => { b.hidden = !rvOk(); b.addEventListener("click", rvWentGo); });
       { const wk = body.querySelector("details.sr-week"); if (wk) wk.addEventListener("toggle", () => { SR_WEEK_OPEN = wk.open; }); }
+      saveBind(body);
       body.querySelectorAll(".sr-week [data-sat]").forEach(b => b.addEventListener("click", () => { SR_WEEK_OPEN = true; WKND = b.dataset.sat === "avg" ? null : b.dataset.sat; render(); renderSenior(); const n = $("sr-body").querySelector(`.sr-week [data-sat="${b.dataset.sat}"]`); if (n) n.focus({preventScroll: true}); }));
       { const sv = body.querySelector("[data-souv]"); if (sv) sv.addEventListener("click", () => { SOUV_ON = !SOUV_ON; render(); renderSenior(); }); }
       body.querySelectorAll(".sr-act[data-more]").forEach(b => b.addEventListener("click", () => { const m = b.closest("li").querySelector(".sr-ln-more"); m.hidden = !m.hidden; b.setAttribute("aria-expanded", String(!m.hidden)); }));
