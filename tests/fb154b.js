@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const errs=[];const posted=[];
+const c=await b.newContext({viewport:{width:390,height:844},locale:'ko-KR'});
+await c.route(/fonts\.|unpkg|jsdelivr/,r=>r.fulfill({body:''}));
+await c.route(/supabase\.co\/rest\/v1\/cost_feedback/,r=>{posted.push(r.request().postData());r.fulfill({status:201,body:''});});
+await c.route(/supabase\.co(?!\/rest\/v1\/cost_feedback)/,r=>r.fulfill({body:''}));
+const p=await c.newPage();p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/www.hoolzzeok.com/index.html?from=seoul&to=yeosu&nights=1&people=2');await p.waitForTimeout(1300);
+await p.click('#ui-junior').catch(()=>{});if(await p.isVisible('#calc-go'))await p.click('#calc-go');await p.waitForTimeout(1200);
+console.log('보임:',(await p.$eval('#fb-box',e=>e.innerText.replace(/\s+/g,' '))).slice(0,40));
+await p.click('#fb-box [data-fb="same"]');await p.click('#fb-box .fb-send');await p.waitForTimeout(600);console.log('보냄:',posted.length,'|',await p.$eval('#fb-box',e=>e.innerText.trim()));
+console.log('errs',errs);await b.close()})();
