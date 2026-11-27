@@ -870,6 +870,23 @@ html.one-card #mode-hint.hint-info,html.one-card #form>p.hint[data-i="styleHint"
 .save-v{font-size:16px;font-weight:800;color:var(--accent);white-space:nowrap}.save-v small{font-size:11.5px;font-weight:600;color:var(--muted);margin-right:2px}
 .save-go{border:0;border-radius:10px;padding:8px 12px;min-height:40px;background:var(--ink);color:var(--bg);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
 #save-box .save{margin:12px 0 0}
+/* v152 다른 곳과 비교 */
+.cmp{margin:14px 0;padding:14px 16px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:10px}
+.cmp-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cmp-chip{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:7px 12px;min-height:38px;font:inherit;font-size:14.5px;font-weight:700;cursor:pointer}
+.cmp-chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.cmp-in{flex:1 1 140px;min-width:0;border:1.5px dashed var(--line);border-radius:99px;padding:7px 12px;min-height:38px;font:inherit;font-size:14.5px;background:var(--bg);color:var(--ink)}
+.cmp-v{margin:0;font-size:16.5px;font-weight:800;color:var(--accent)}
+.cmp-no{margin:0;color:var(--muted)}
+.cmp-tw{overflow-x:auto}
+.cmp-t{width:100%;border-collapse:collapse;font-size:15px}
+.cmp-t th,.cmp-t td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.cmp-t th:first-child{text-align:left;font-weight:600;color:var(--muted)}
+.cmp-t thead th{font-size:14px;font-weight:800;color:var(--ink)}
+.cmp-t .cmp-tot th,.cmp-t .cmp-tot td{font-size:16.5px;font-weight:800;color:var(--ink)}
+.cmp-t td.cmp-lo{color:var(--accent);font-weight:800}
+.cmp-go{border:0;border-radius:12px;padding:12px 14px;min-height:48px;background:var(--ink);color:var(--bg);font:inherit;font-size:15.5px;font-weight:700;cursor:pointer}
+#cmp-box .cmp{margin:12px 0 0}
 /* v151 자세한 계산 */
 .sc{margin:14px 0;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
 .sc>summary{list-style:none;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px;cursor:pointer}
@@ -1814,6 +1831,7 @@ html:not([lang="ko"]) #easy-go{opacity:.95}
           <div class="bigsum"><span data-i="totalLabel"></span><span class="num" id="t-total"></span></div>
           <p class="party" id="t-party"></p>
           <div id="save-box"></div>
+          <div id="cmp-box"></div>
           <a class="emb-more" id="emb-more" target="_blank" rel="noopener" href="https://www.hoolzzeok.com/">훌쩍에서 루트·준비물까지 보기 ↗</a>
           <button type="button" class="went" id="went-btn" hidden><b data-rw="wentT">다녀오셨어요? 실제로 쓴 돈 남기기</b><small data-rw="wentS">경비가 미리 채워져 있어요. 다음 사람 계산이 정확해져요.</small></button>
           <button type="button" class="rt-open" id="rt-open"><b id="rt-open-t">이 경비로 루트 짜기</b><small id="rt-open-s">명소·밥집을 넣고 순서를 바로 점검해요</small></button>
@@ -4199,7 +4217,8 @@ if (typeof document !== "undefined") {
      계산은 바로 끝나지만, 무엇을 계산했는지 보여 주는 1초 남짓. 움직임 줄이기 설정이면 0.4초, 누르면 바로 넘어감 */
   let JSTAGE = EMBED ? "all" : "form", clTimer = null, clDone = null, stgPushed = false;
   /* 직접 화면 '더 싸게 가는 법'은 결과가 보일 때만 계산(입력 중엔 계산하지 않아 가볍게) */
-  function saveBoxSync(){ const sb = $("save-box"); if (!sb) return; if (EMBED || JSTAGE === "form") { sb.innerHTML = ""; return; } sb.innerHTML = saveHtml(); saveBind(sb); }
+  function saveBoxSync(){ const sb = $("save-box"), cb = $("cmp-box"); if (!sb) return; if (EMBED || JSTAGE === "form") { sb.innerHTML = ""; if (cb) cb.innerHTML = ""; return; } sb.innerHTML = saveHtml(); saveBind(sb);
+    if (cb) { cb.innerHTML = cmpHtml(); cmpBind(cb, saveBoxSync); } }
   function setStage(sg){ JSTAGE = sg; if (sg === "result") setTimeout(saveBoxSync, 0); $("junior").dataset.stage = sg; document.documentElement.classList.toggle("stg-result", sg === "result"); stageSync();
     if (sg === "result") { const b = $("dig-open"); b.classList.remove("nudge"); setTimeout(() => b.classList.add("nudge"), 900); setTimeout(() => b.classList.remove("nudge"), 3000); } }
   function stageSync(){
@@ -5280,6 +5299,53 @@ if (typeof document !== "undefined") {
       `<li><span class="save-l">${esc(x.label)}</span><span class="save-v"><small>${esc(X.per)}</small> −${esc(L.easy(x.save))}</span><button type="button" class="save-go" data-save="${i}">${esc(X.go)}</button></li>`).join("")}</ol></section>`;
   }
   let SAVE_CUR = [];
+  /* v152: 다른 곳과 비교 — 지금 도착지와 다른 한 곳의 1인 경비를 항목별로 나란히. 후보 칩(근처·추천) + 아무 곳이나 이름으로 찾기. "바꾸기"로 바로 이동 */
+  const CMP = {
+    ko:{t:"다른 곳과 비교", s:"같은 조건(출발·일정·인원·스타일)으로 나란히 계산해요", find:"다른 곳 이름 입력", total:"1인 총액", km:"편도 거리", go:n=>`${n}${josa(n, "으로", "로")} 바꾸기`, cheaper:(n,v)=>`${n}${josa(n, "이", "가")} 1인 ${v} 더 싸요`, same:"거의 같아요", no:"이 조건으로는 갈 수 없어요"},
+    en:{t:"Compare with another place", s:"Same start, length, group and style, side by side", find:"Type another place", total:"Per person", km:"One way", go:n=>`Switch to ${n}`, cheaper:(n,v)=>`${n} is ${v} cheaper per person`, same:"About the same", no:"Not reachable with these settings"},
+    ja:{t:"ほかの場所と比べる", s:"同じ条件（出発・日程・人数・スタイル）で並べて計算", find:"ほかの場所を入力", total:"1人の合計", km:"片道距離", go:n=>`${n}に変える`, cheaper:(n,v)=>`${n}の方が1人${v}安い`, same:"ほぼ同じ", no:"この条件では行けません"},
+    zh:{t:"和别处比较", s:"同样条件（出发地、行程、人数、风格）并排计算", find:"输入其他地方", total:"每人合计", km:"单程距离", go:n=>`换成${n}`, cheaper:(n,v)=>`${n}每人便宜${v}`, same:"差不多", no:"这个条件去不了"}};
+  let CMP_ID = null;
+  function josa(w, a, b){ const c = String(w).replace(/\s*\(.*\)$/, ""); const k = c.charCodeAt(c.length - 1) - 0xAC00; if (k < 0 || k >= 11172) return b; const j = k % 28; return j && !(a === "으로" && j === 8) ? a : b; }
+  function cmpCands(){
+    const d = byId(state.dest), o = byId(state.origin), seen = new Set([d.id, o.id, "dokdo"]), out = [];
+    const add = id => { if (id && !seen.has(id) && byId(id)) { seen.add(id); out.push(id); } };
+    nearby(d).slice(0, 3).forEach(x => add(x.q.id));
+    try { rankRecs().slice(0, 4).forEach(r => add(r.place)); } catch(e) {}
+    return out.slice(0, 5);
+  }
+  function cmpCalcFor(id){
+    const keep = {dest: state.dest, half: state.half};
+    try { state.dest = id; state.half = halfOpen(id); return srCalc(); } finally { state.dest = keep.dest; state.half = keep.half; }
+  }
+  function cmpHtml(){
+    const L = T[lang], X = CMP[lang] || CMP.en, d = byId(state.dest), c0 = srCalc(); if (!c0) return "";
+    const cands = cmpCands(); if (CMP_ID === d.id || (CMP_ID && !byId(CMP_ID))) CMP_ID = null;
+    const id = CMP_ID || cands[0]; if (!id) return "";
+    const q = byId(id), c1 = cmpCalcFor(id);
+    const t0 = halfEff() ? c0.final : c0.total, t1 = c1 ? (halfOpen(id) && lang === "ko" ? c1.final : c1.total) : null;
+    const chips = [...new Set([id, ...cands])].slice(0, 5).map(k => `<button type="button" class="cmp-chip" data-cmp="${k}" aria-pressed="${k === id}">${esc(L.name(byId(k)))}</button>`).join("");
+    const rowsK = [["transport", L.srRow.trans], ["lodging", L.srRow.lodge], ["food", L.srRow.food], ["local", L.srRow.local], ["act", L.srRow.act]].filter(([k]) => (c0[k] || 0) + ((c1 && c1[k]) || 0) > 0);
+    const cell = (v, other) => `<td class="num${other != null && v < other - 500 ? " cmp-lo" : ""}">${L.easy(v)}</td>`;
+    let verdict = "";
+    if (t1 != null) { const df = t0 - t1; verdict = Math.abs(df) < 1000 ? X.same : df > 0 ? X.cheaper(L.name(q), L.easy(df)) : X.cheaper(L.name(d), L.easy(-df)); }
+    const dl = PLACES.filter(p => p.id !== "dokdo" && p.id !== d.id).map(p => `<option value="${esc(L.name(p))}"></option>`).join("");
+    return `<section class="cmp" aria-label="${esc(X.t)}"><div class="save-h"><b>⚖️ ${esc(X.t)}</b><small>${esc(X.s)}</small></div>
+      <div class="cmp-chips">${chips}<input class="cmp-in" type="text" list="cmp-dl" placeholder="${esc(X.find)}" aria-label="${esc(X.find)}" autocomplete="off"><datalist id="cmp-dl">${dl}</datalist></div>
+      ${t1 == null ? `<p class="cmp-no">${esc(L.name(q))}: ${esc(X.no)}</p>` : `<p class="cmp-v">${esc(verdict)}</p>
+      <div class="cmp-tw"><table class="cmp-t"><thead><tr><th></th><th>${esc(L.name(d))}</th><th>${esc(L.name(q))}</th></tr></thead><tbody>
+        <tr class="cmp-tot"><th>${esc(X.total)}</th>${cell(t0, t1)}${cell(t1, t0)}</tr>
+        ${rowsK.map(([k, n]) => `<tr><th>${esc(n)}</th>${cell(c0[k] || 0, c1[k] || 0)}${cell(c1[k] || 0, c0[k] || 0)}</tr>`).join("")}
+        <tr><th>${esc(X.km)}</th><td class="num">${Math.round(c0.km)}km</td><td class="num">${Math.round(c1.km)}km</td></tr>
+      </tbody></table></div>
+      <button type="button" class="cmp-go" data-cmp-go="${id}">${esc(X.go(L.name(q)))}</button>`}</section>`;
+  }
+  function cmpBind(root, rerender){
+    root.querySelectorAll("[data-cmp]").forEach(b => b.addEventListener("click", () => { CMP_ID = b.dataset.cmp; rerender(); }));
+    const inp = root.querySelector(".cmp-in");
+    if (inp) inp.addEventListener("change", () => { const v = inp.value.trim(), L = T[lang]; const p = PLACES.find(x => L.name(x) === v || x.ko === v || x.en === v); if (p && p.id !== CMP_ID) { CMP_ID = p.id; setTimeout(rerender, 0); } });
+    root.querySelectorAll("[data-cmp-go]").forEach(b => b.addEventListener("click", () => { const id = b.dataset.cmpGo; CMP_ID = state.dest; state.picked = id; $("find").value = id; renderInfo(); render(); renderSenior(); try { toast(({ko: "도착지를 바꿨어요", en: "Destination switched", ja: "目的地を変えました", zh: "已更换目的地"})[lang]); } catch(e) {} }));
+  }
   /* v151: '자세한 계산 보기'를 영수증처럼 — 항목 비율 막대 + 항목마다 금액·비율·계산식(숫자는 굵게) */
   const CALC_IC = {trans:"🚌", lodge:"🛏️", food:"🍚", local:"🚕", act:"🎟️", misc:"🛍️"};
   const CALC_SUB = {ko:"항목마다 어떻게 계산했는지 보여 드려요", en:"How each amount was worked out", ja:"項目ごとの計算方法", zh:"每一项是怎么算的"};
@@ -5604,7 +5670,7 @@ if (typeof document !== "undefined") {
       if (isHalf(d.id) && halfOpen(d.id)) h += `<p class="sr-half">${L.srHalf(L.easy(Math.min(Math.floor((c.lodging + c.food + c.act + c.misc) * .5 / 100) * 100, halfCap())))}</p>`;
       h += saveHtml();
       { const ps = state.picks.length ? state.picks.reduce((s2, i) => s2 + (ACTS[i][9] || 0), 0) : null, H = lineHows(o, d, c, ps);
-        h += `<ul class="sr-rows">${rows.map(srRow).join("")}</ul>${EMBED ? "" : `<button type="button" class="sr-btn dark sr-share-top" id="sr-share-top"><b>${L.srShareTop}</b><small>${L.srShareTopSub}</small></button>`}${calcBox(rows, H)}`; }
+        h += `<ul class="sr-rows">${rows.map(srRow).join("")}</ul>${EMBED ? "" : `<button type="button" class="sr-btn dark sr-share-top" id="sr-share-top"><b>${L.srShareTop}</b><small>${L.srShareTopSub}</small></button>`}${calcBox(rows, H)}${EMBED ? "" : cmpHtml()}`; }
       if (state.nights > 0) { const sk = WKND || "avg", r = weekR(d), sd = satOptDiffs();
         h += `<details class="sr-week"${SR_WEEK_OPEN || WKND ? " open" : ""}><summary><b>${L.lSat}</b><small>${({ko: "지금", en: "Now", ja: "現在", zh: "当前"})[lang] || "Now"}: ${L.satKind[sk]}</small></summary><div class="seg seg-wrap">${["avg", "none", "fri", "sat", "both"].filter(k => k !== "both" || state.nights > 1).map(k => `<button type="button" data-sat="${k}" aria-pressed="${k === sk}"><span>${L.satKind[k]}</span><small class="sat-d">${k === "avg" ? "" : (sd[k] != null ? satDiffTxt(sd[k]) : "")}</small></button>`).join("")}</div><p class="sr-note">${WKND == null ? L.srWeekNote + " " : ""}${L.satNote(r, 1 + FRI_POS * (r - 1))}</p></details>`; }
       h += `<button type="button" class="sr-souv" data-souv aria-pressed="${SOUV_ON}">${SOUV_ON ? L.srSouvDel : L.srSouvAdd(L.easy(c.souv.total))}</button>`;
@@ -5660,7 +5726,7 @@ if (typeof document !== "undefined") {
       body.innerHTML = h; bindPromo(body); srSwapBind(body);
       body.querySelectorAll("[data-went]").forEach(b => { b.hidden = !rvOk(); b.addEventListener("click", rvWentGo); });
       { const wk = body.querySelector("details.sr-week"); if (wk) wk.addEventListener("toggle", () => { SR_WEEK_OPEN = wk.open; }); }
-      saveBind(body);
+      saveBind(body); cmpBind(body, () => renderSenior());
       body.querySelectorAll(".sr-week [data-sat]").forEach(b => b.addEventListener("click", () => { SR_WEEK_OPEN = true; WKND = b.dataset.sat === "avg" ? null : b.dataset.sat; render(); renderSenior(); const n = $("sr-body").querySelector(`.sr-week [data-sat="${b.dataset.sat}"]`); if (n) n.focus({preventScroll: true}); }));
       { const sv = body.querySelector("[data-souv]"); if (sv) sv.addEventListener("click", () => { SOUV_ON = !SOUV_ON; render(); renderSenior(); }); }
       body.querySelectorAll(".sr-act[data-more]").forEach(b => b.addEventListener("click", () => { const m = b.closest("li").querySelector(".sr-ln-more"); m.hidden = !m.hidden; b.setAttribute("aria-expanded", String(!m.hidden)); }));
